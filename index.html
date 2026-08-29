@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.google.com; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none';">
   <title>O'Tennis - Restaurant Buvette chez Kryste | Reconvilier</title>
   <meta name="description"
     content="Restaurant-buvette O'Tennis chez Kryste, au cœur du club de tennis et paddle de Reconvilier. Cuisine maison, viandes, salades fraîches, ambiance sportive et conviviale.">
@@ -92,8 +94,7 @@
       <div class="presentation-image">
         <!-- EMPLACEMENT : photo du lieu / terrasse -->
         <!-- <img src="image/terrasse.jpg" alt="Terrasse du restaurant O'Tennis"> -->
-        <img src="image/terrasse.jpg" alt="Photo du restaurant O'Tennis (à ajouter)"
-          onerror="this.src='';this.alt='Photo du lieu à venir';this.style.cssText='min-height:260px;display:flex;align-items:center;justify-content:center;color:#1B2A4A;font-weight:600;background:#e9e4d4;border-radius:14px;'">
+        <img id="photo-terrasse" src="image/terrasse.jpg" alt="Photo du restaurant O'Tennis (à ajouter)">
       </div>
     </div>
   </section>
@@ -141,7 +142,7 @@
             <div>
               <strong>Email</strong><br>
               <!-- EMPLACEMENT : email à ajouter -->
-              <a href="mailto:Krystebitz@hotmail.com">Krystebitz@hotmail.com</a>
+              <a href="#" data-email-user="Krystebitz" data-email-domaine="hotmail.com">Email</a>
             </div>
           </div>
           <div class="ligne-info">
@@ -214,7 +215,7 @@
         <h4>Contact</h4>
         <p><a href="tel:+41324814831">032 481 48 31</a></p>
         <!-- EMPLACEMENT : email -->
-        <a href="mailto:Krystebitz@hotmail.com">Krystebitz@hotmail.com</a>
+        <a href="#" data-email-user="Krystebitz" data-email-domaine="hotmail.com">Email</a>
       </div>
 
       <div class="footer-col">

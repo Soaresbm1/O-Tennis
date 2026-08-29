@@ -1,0 +1,17 @@
+# Secrets et configuration locale
+.env
+.env.*
+*.pem
+*.key
+
+# Fichiers systeme / editeur
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.vscode/
+.idea/
+
+# Brouillons et fichiers de travail non destines au site public
+*.docx
+*.doc

@@ -23,4 +23,20 @@ document.addEventListener('DOMContentLoaded', function () {
   if (anneeEl) {
     anneeEl.textContent = new Date().getFullYear();
   }
+
+  const photoTerrasse = document.getElementById('photo-terrasse');
+  if (photoTerrasse) {
+    photoTerrasse.addEventListener('error', function () {
+      this.src = '';
+      this.alt = 'Photo du lieu à venir';
+      this.classList.add('photo-manquante');
+    });
+  }
+
+  // Email reconstruit en JS pour limiter le scraping automatise par les bots
+  document.querySelectorAll('[data-email-user]').forEach(function (el) {
+    const adresse = el.getAttribute('data-email-user') + '@' + el.getAttribute('data-email-domaine');
+    el.href = 'mailto:' + adresse;
+    el.textContent = adresse;
+  });
 });

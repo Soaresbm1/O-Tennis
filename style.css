@@ -257,6 +257,14 @@ section.alt {
   background-color: #e9e4d4;
 }
 
+.presentation-image img.photo-manquante {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1B2A4A;
+  font-weight: 600;
+}
+
 .atouts {
   display: flex;
   gap: 20px;
