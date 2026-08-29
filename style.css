@@ -1,0 +1,586 @@
+/* ===========================================================
+   O'Tennis - Restaurant Buvette chez Kryste
+   Feuille de style principale
+   =========================================================== */
+
+:root {
+  --color-creme: #FAF6EC;
+  --color-vert-tennis: #7FB069;
+  --color-bleu-marine: #1B2A4A;
+  --color-jaune-balle: #D4D94A;
+  --color-blanc: #FFFFFF;
+  --color-texte: #2B2B2B;
+
+  --font-titre: 'Caveat', 'Segoe Script', cursive;
+  --font-texte: 'Poppins', 'Segoe UI', Arial, sans-serif;
+
+  --rayon: 14px;
+  --ombre: 0 4px 14px rgba(27, 42, 74, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-texte);
+  background-color: var(--color-creme);
+  color: var(--color-texte);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-titre);
+  color: var(--color-bleu-marine);
+  letter-spacing: 0.5px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===================== HEADER ===================== */
+
+.site-header {
+  background-color: var(--color-blanc);
+  box-shadow: var(--ombre);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.logo-bloc {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+/* Emplacement du logo : remplacer image/logo.jpeg par le fichier definitif si besoin */
+.logo-bloc img {
+  height: 64px;
+  width: auto;
+  border-radius: 50%;
+}
+
+.logo-texte h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.logo-texte p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-vert-tennis);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+nav.main-nav {
+  display: flex;
+  gap: 24px;
+}
+
+nav.main-nav a {
+  font-weight: 600;
+  color: var(--color-bleu-marine);
+  padding: 8px 4px;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+nav.main-nav a:hover,
+nav.main-nav a.actif {
+  border-color: var(--color-vert-tennis);
+  color: var(--color-vert-tennis);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--color-bleu-marine);
+  cursor: pointer;
+}
+
+/* ===================== HERO ===================== */
+
+.hero {
+  position: relative;
+  /* Emplacement photo d'ambiance : remplacer l'URL ci-dessous ou dans le HTML (image/hero-placeholder.jpg) */
+  background: linear-gradient(rgba(27, 42, 74, 0.55), rgba(27, 42, 74, 0.55)),
+    url('image/hero-placeholder.jpg') center/cover no-repeat;
+  background-color: var(--color-bleu-marine);
+  color: var(--color-blanc);
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.hero h2 {
+  color: var(--color-blanc);
+  font-size: 3rem;
+  margin: 0 0 10px;
+}
+
+.hero p.accroche {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.horaires-rapides {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.horaires-rapides .case {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--rayon);
+  padding: 10px 18px;
+  font-size: 0.95rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--color-jaune-balle);
+  color: var(--color-bleu-marine);
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 50px;
+  box-shadow: var(--ombre);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background-color: var(--color-vert-tennis);
+  color: var(--color-blanc);
+}
+
+.btn-secondaire {
+  background-color: transparent;
+  border: 2px solid var(--color-bleu-marine);
+  color: var(--color-bleu-marine);
+}
+
+.btn-secondaire:hover {
+  background-color: var(--color-bleu-marine);
+  color: var(--color-blanc);
+}
+
+/* ===================== SECTIONS GENERALES ===================== */
+
+section {
+  padding: 60px 0;
+}
+
+section.alt {
+  background-color: var(--color-blanc);
+}
+
+.section-titre {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 2.4rem;
+}
+
+.section-soustitre {
+  text-align: center;
+  color: var(--color-vert-tennis);
+  font-weight: 600;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+/* ===================== PRESENTATION ===================== */
+
+.presentation {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.presentation-texte {
+  flex: 1 1 320px;
+}
+
+.presentation-image {
+  flex: 1 1 320px;
+}
+
+/* Emplacement photo du lieu / des plats */
+.presentation-image img {
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+  min-height: 260px;
+  object-fit: cover;
+  background-color: #e9e4d4;
+}
+
+.atouts {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.atouts .atout {
+  flex: 1 1 150px;
+  text-align: center;
+  background-color: var(--color-creme);
+  padding: 16px;
+  border-radius: var(--rayon);
+}
+
+.atouts .atout .emoji {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* ===================== MENU ===================== */
+
+.menu-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.menu-nav a {
+  background-color: var(--color-blanc);
+  border: 1px solid var(--color-vert-tennis);
+  color: var(--color-bleu-marine);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.menu-nav a:hover {
+  background-color: var(--color-vert-tennis);
+  color: var(--color-blanc);
+}
+
+.categorie-menu {
+  margin-bottom: 50px;
+  scroll-margin-top: 90px;
+}
+
+.categorie-menu h3 {
+  font-size: 1.9rem;
+  border-bottom: 3px solid var(--color-jaune-balle);
+  display: inline-block;
+  padding-bottom: 4px;
+  margin-bottom: 6px;
+}
+
+.categorie-note {
+  font-style: italic;
+  color: var(--color-vert-tennis);
+  margin-top: -4px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.plats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+
+.plat {
+  background-color: var(--color-blanc);
+  border-radius: var(--rayon);
+  padding: 16px 20px;
+  box-shadow: var(--ombre);
+}
+
+/* Photo d'article (optionnelle) : reste absente si aucun fichier n'est fourni dans image/articles/ */
+.plat-photo {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.plat-entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.plat-entete h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-family: var(--font-texte);
+  font-weight: 700;
+  color: var(--color-bleu-marine);
+}
+
+.plat-prix {
+  font-weight: 700;
+  color: var(--color-vert-tennis);
+  white-space: nowrap;
+}
+
+.plat-prix.indisponible {
+  color: #B0795A;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.plat-description {
+  margin: 6px 0 0;
+  font-size: 0.92rem;
+  color: #555;
+}
+
+.plat-tailles {
+  display: flex;
+  gap: 14px;
+  font-size: 0.85rem;
+  margin-top: 6px;
+  color: var(--color-bleu-marine);
+}
+
+/* Liste simple (boissons, vins) */
+.liste-simple {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px 18px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.liste-simple li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--color-blanc);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+  padding: 10px 18px;
+}
+
+/* Photo d'article (optionnelle) : reste absente si aucun fichier n'est fourni dans image/articles/ */
+.article-photo {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  display: block;
+}
+
+/* ===================== CONTACT / HORAIRES ===================== */
+
+.contact-grille {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.bloc-infos .ligne-info {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+  align-items: flex-start;
+}
+
+.bloc-infos .ligne-info .emoji {
+  font-size: 1.4rem;
+}
+
+table.horaires {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background-color: var(--color-blanc);
+  border-radius: var(--rayon);
+  overflow: hidden;
+  box-shadow: var(--ombre);
+}
+
+table.horaires td {
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(27, 42, 74, 0.08);
+}
+
+table.horaires tr:last-child td {
+  border-bottom: none;
+}
+
+table.horaires td:first-child {
+  font-weight: 600;
+  color: var(--color-bleu-marine);
+}
+
+.carte-embed {
+  border-radius: var(--rayon);
+  overflow: hidden;
+  box-shadow: var(--ombre);
+  min-height: 320px;
+}
+
+.carte-embed iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  border: 0;
+}
+
+/* ===================== FOOTER ===================== */
+
+footer.site-footer {
+  background-color: var(--color-bleu-marine);
+  color: var(--color-creme);
+  padding: 40px 0 20px;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-logo img {
+  height: 50px;
+  border-radius: 50%;
+}
+
+.footer-col h4 {
+  color: var(--color-jaune-balle);
+  font-family: var(--font-texte);
+  font-size: 1rem;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-col p,
+.footer-col a {
+  font-size: 0.9rem;
+  color: var(--color-creme);
+  opacity: 0.9;
+}
+
+.footer-reseaux {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.footer-reseaux a {
+  border: 1px solid var(--color-creme);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.footer-bas {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+@media (max-width: 768px) {
+  nav.main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-blanc);
+    flex-direction: column;
+    padding: 10px 20px 20px;
+    box-shadow: var(--ombre);
+  }
+
+  nav.main-nav.ouvert {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .hero h2 {
+    font-size: 2.1rem;
+  }
+
+  .hero p.accroche {
+    font-size: 1.05rem;
+  }
+
+  .contact-grille {
+    grid-template-columns: 1fr;
+  }
+
+  .presentation {
+    flex-direction: column;
+  }
+}
