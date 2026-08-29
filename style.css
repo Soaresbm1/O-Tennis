@@ -140,9 +140,6 @@ nav.main-nav a.actif {
 
 .hero {
   position: relative;
-  /* Emplacement photo d'ambiance : remplacer l'URL ci-dessous ou dans le HTML (image/hero-placeholder.jpg) */
-  background: linear-gradient(rgba(27, 42, 74, 0.55), rgba(27, 42, 74, 0.55)),
-    url('image/hero-placeholder.jpg') center/cover no-repeat;
   background-color: var(--color-bleu-marine);
   color: var(--color-blanc);
   padding: 90px 20px;
