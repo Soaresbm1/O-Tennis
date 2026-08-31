@@ -241,6 +241,10 @@ nav.main-nav a.actif {
   color: var(--color-blanc);
 }
 
+.hero .btn + .btn {
+  margin-left: 16px;
+}
+
 .btn-secondaire {
   background-color: transparent;
   border: 2px solid var(--color-bleu-marine);
