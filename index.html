@@ -11,10 +11,62 @@
   <meta name="description"
     content="Restaurant-buvette O'Tennis chez Kryste, au cœur du club de tennis et paddle de Reconvilier. Cuisine maison, viandes, salades fraîches, ambiance sportive et conviviale.">
 
+  <!-- Apercu de partage (WhatsApp, Facebook, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_CH">
+  <meta property="og:title" content="O'Tennis - Restaurant Buvette chez Kryste | Reconvilier">
+  <meta property="og:description"
+    content="Restaurant-buvette au cœur du club de tennis et paddle de Reconvilier. Cuisine maison, viandes grillées et salades fraîches.">
+  <meta property="og:url" content="https://restaurant-buvette-otennis.ch/index.html">
+  <meta property="og:image" content="https://restaurant-buvette-otennis.ch/image/terrasse.jpg">
+  <meta property="og:image:width" content="1320">
+  <meta property="og:image:height" content="1218">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="O'Tennis - Restaurant Buvette chez Kryste | Reconvilier">
+  <meta name="twitter:description"
+    content="Restaurant-buvette au cœur du club de tennis et paddle de Reconvilier. Cuisine maison, viandes grillées et salades fraîches.">
+  <meta name="twitter:image" content="https://restaurant-buvette-otennis.ch/image/terrasse.jpg">
+
   <!-- Polices : Caveat (titres) et Poppins (texte courant), hebergees localement dans fonts/ -->
   <link rel="stylesheet" href="style.css">
 
   <link rel="icon" href="image/logo.jpeg">
+
+  <!-- Donnees structurees pour les moteurs de recherche (horaires, adresse, telephone) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "O'Tennis - Restaurant Buvette chez Kryste",
+    "image": "https://restaurant-buvette-otennis.ch/image/terrasse.jpg",
+    "url": "https://restaurant-buvette-otennis.ch/",
+    "telephone": "+41324814831",
+    "servesCuisine": "Suisse",
+    "priceRange": "CHF",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Vie des Crêts 49",
+      "postalCode": "2732",
+      "addressLocality": "Reconvilier",
+      "addressCountry": "CH"
+    },
+    "menu": "https://restaurant-buvette-otennis.ch/menu.html",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Sunday"],
+        "opens": "10:00",
+        "closes": "22:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Friday", "Saturday"],
+        "opens": "10:00",
+        "closes": "22:30"
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
