@@ -5,18 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.google.com; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none';">
+    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; frame-src https://www.google.com; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none';">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>O'Tennis - Restaurant Buvette chez Kryste | Reconvilier</title>
   <meta name="description"
     content="Restaurant-buvette O'Tennis chez Kryste, au cœur du club de tennis et paddle de Reconvilier. Cuisine maison, viandes, salades fraîches, ambiance sportive et conviviale.">
 
-  <!-- Polices : une manuscrite/decontractee pour les titres, une lisible pour le texte courant -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
-
+  <!-- Polices : Caveat (titres) et Poppins (texte courant), hebergees localement dans fonts/ -->
   <link rel="stylesheet" href="style.css">
 
   <link rel="icon" href="image/logo.jpeg">
@@ -182,7 +177,8 @@
         <div class="carte-embed">
           <!-- Carte Google Maps : Vie des Crêts 49, 2732 Reconvilier -->
           <iframe src="https://www.google.com/maps?q=Vie+des+Cr%C3%AAts+49,+2732+Reconvilier,+Suisse&output=embed"
-            loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Carte - O'Tennis Reconvilier">
+            loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Carte - O'Tennis Reconvilier"
+            sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
           </iframe>
         </div>
       </div>
