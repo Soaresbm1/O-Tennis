@@ -15,3 +15,7 @@ desktop.ini
 # Brouillons et fichiers de travail non destines au site public
 *.docx
 *.doc
+
+# Outils et données de vérification WordPress locaux
+.wordpress-qa/
+.cms-qa/

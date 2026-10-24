@@ -1,0 +1,166 @@
+media:
+  input: image
+  output: /image
+  extensions: [jpg, jpeg, png, webp, avif]
+  rename: safe
+
+settings:
+  content:
+    merge: true
+  commit:
+    identity: app
+
+content:
+  - name: home
+    label: Accueil et présentation
+    type: file
+    path: data/home.json
+    format: json
+    fields:
+      - {name: announcement, label: Annonce temporaire, type: text, description: "Congés, événement ou plat du jour. Laisser vide pour masquer."}
+      - {name: heroTitle, label: Grand titre, type: string, required: true}
+      - {name: heroText, label: Texte sous le grand titre, type: text, required: true}
+      - {name: heroButton, label: Bouton vers le menu, type: string, required: true}
+      - {name: welcomeLabel, label: Surtitre de présentation, type: string}
+      - {name: presentationTitle, label: Titre de présentation, type: string, required: true}
+      - {name: presentationText, label: Présentation du restaurant, type: text, required: true}
+      - name: highlights
+        label: Les points forts
+        type: object
+        list:
+          collapsible:
+            summary: "{text}"
+        fields:
+          - {name: emoji, label: Emoji, type: string}
+          - {name: text, label: Texte, type: string, required: true}
+      - {name: photo, label: Photo du restaurant, type: image, required: true}
+      - {name: photoAlt, label: Description de la photo, type: string}
+      - {name: menuLabel, label: Surtitre de la section menu, type: string}
+      - {name: menuTitle, label: Titre de la section menu, type: string}
+      - {name: menuText, label: Présentation de la carte, type: text}
+      - {name: menuButton, label: Texte du bouton de la carte, type: string}
+      - {name: contactLabel, label: Surtitre du contact, type: string}
+      - {name: contactTitle, label: Titre du contact, type: string}
+
+  - name: restaurant
+    label: Coordonnées et horaires
+    type: file
+    path: data/restaurant.json
+    format: json
+    fields:
+      - {name: name, label: Nom du restaurant, type: string, required: true}
+      - {name: tagline, label: Sous-titre, type: string, required: true}
+      - {name: logo, label: Logo, type: image, required: true}
+      - {name: street, label: Rue et numéro, type: string, required: true}
+      - {name: postalCode, label: Code postal, type: string, required: true}
+      - {name: city, label: Localité, type: string, required: true}
+      - {name: country, label: Pays, type: string, required: true}
+      - {name: phone, label: Téléphone, type: string, required: true, description: "Exemple : 032 481 48 31 ou +41 32 481 48 31"}
+      - {name: email, label: Email, type: string, required: true}
+      - {name: reservation, label: Comment réserver, type: text}
+      - {name: mapAddress, label: Adresse sur Google Maps, type: string, required: true}
+      - name: hours
+        label: Horaires d’ouverture
+        type: object
+        list:
+          min: 7
+          max: 7
+          collapsible:
+            collapsed: true
+            summary: "{day}"
+        fields:
+          - {name: day, label: Jour, type: string, required: true}
+          - name: schemaDay
+            label: Jour pour les moteurs de recherche
+            type: select
+            required: true
+            options:
+              values:
+                - {name: Monday, label: Lundi}
+                - {name: Tuesday, label: Mardi}
+                - {name: Wednesday, label: Mercredi}
+                - {name: Thursday, label: Jeudi}
+                - {name: Friday, label: Vendredi}
+                - {name: Saturday, label: Samedi}
+                - {name: Sunday, label: Dimanche}
+          - {name: closed, label: Fermé ce jour, type: boolean}
+          - name: opens
+            label: Ouverture
+            type: string
+            pattern:
+              regex: '^([01][0-9]|2[0-3]):[0-5][0-9]$'
+              message: "Utiliser le format 10:00."
+          - name: closes
+            label: Fermeture
+            type: string
+            pattern:
+              regex: '^([01][0-9]|2[0-3]):[0-5][0-9]$'
+              message: "Utiliser le format 22:30."
+      - {name: facebook, label: Lien Facebook, type: string, description: "Adresse complète https://… ; vide pour masquer."}
+      - {name: instagram, label: Lien Instagram, type: string, description: "Adresse complète https://… ; vide pour masquer."}
+
+  - name: menu
+    label: Carte — plats, boissons et prix
+    type: file
+    path: data/menu.json
+    format: json
+    fields:
+      - {name: label, label: Surtitre, type: string}
+      - {name: title, label: Titre de la carte, type: string, required: true}
+      - {name: notice, label: Information en haut de la carte, type: text}
+      - name: categories
+        label: Catégories de la carte
+        type: object
+        list:
+          min: 1
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: id
+            label: Repère de la catégorie
+            type: string
+            required: true
+            description: "Un nom unique sans espace ni accent, par exemple petites-faims."
+            pattern: '^[a-z0-9]+(?:-[a-z0-9]+)*$'
+          - {name: title, label: Nom de la catégorie, type: string, required: true}
+          - {name: notes, label: Informations de la catégorie, type: text, list: true}
+          - name: groups
+            label: Groupes de plats ou boissons
+            type: object
+            list:
+              min: 1
+              collapsible:
+                summary: "{title} — groupe {index}"
+            fields:
+              - {name: title, label: Sous-titre du groupe, type: string}
+              - {name: notes, label: Informations sous ce groupe, type: text, list: true}
+              - name: layout
+                label: Présentation
+                type: select
+                required: true
+                options:
+                  values:
+                    - {name: cards, label: Fiches de plats}
+                    - {name: list, label: Liste de boissons ou articles}
+              - name: items
+                label: Plats et boissons
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{name} — {price}"
+                fields:
+                  - {name: name, label: Nom du plat ou de la boisson, type: string, required: true}
+                  - {name: price, label: Prix, type: string, description: "Exemple : 19.50 CHF. Pour plusieurs tailles, utiliser les portions ci-dessous."}
+                  - {name: description, label: Description ou ingrédients, type: text}
+                  - {name: image, label: Photo facultative, type: image}
+                  - name: portions
+                    label: Portions ou tailles
+                    type: object
+                    list:
+                      collapsible:
+                        summary: "{label} — {price}"
+                    fields:
+                      - {name: label, label: Taille, type: string, required: true}
+                      - {name: price, label: Prix de cette taille, type: string, required: true}

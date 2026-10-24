@@ -1,0 +1,31 @@
+{
+  "heroTitle": "Restaurant-buvette au cœur du club de tennis",
+  "heroText": "Cuisine maison, viandes grillées et salades fraîches à deux pas des courts, à Reconvilier.",
+  "heroButton": "Découvrir le menu",
+  "welcomeLabel": "Bienvenue chez nous",
+  "presentationTitle": "L'esprit club, dans l'assiette",
+  "presentationText": "Chez O'Tennis, on mise sur une cuisine maison simple et généreuse : viandes grillées, salades fraîches et produits de saison préparés avec soin. Idéalement situé entre les terrains de tennis et de paddle de Reconvilier, notre restaurant-buvette est l'endroit parfait pour se retrouver en famille ou entre amis, avant ou après le match, dans une ambiance conviviale.",
+  "highlights": [
+    {
+      "emoji": "🍖",
+      "text": "Cuisine maison"
+    },
+    {
+      "emoji": "🥗",
+      "text": "Salades fraîches"
+    },
+    {
+      "emoji": "🎾",
+      "text": "Au bord des courts"
+    }
+  ],
+  "photo": "/image/terrasse.jpg",
+  "photoAlt": "Terrasse du restaurant O’Tennis",
+  "menuLabel": "À table",
+  "menuTitle": "Notre Menu",
+  "menuText": "Plats maison, pâtes, petites faims, sandwichs, salades et suggestions de saison, ainsi que notre carte des vins et des boissons : retrouvez tout notre menu sur une page dédiée.",
+  "menuButton": "Voir le menu complet",
+  "contactLabel": "On vous attend",
+  "contactTitle": "Horaires & Contact",
+  "announcement": ""
+}

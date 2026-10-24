@@ -1,0 +1,66 @@
+{
+  "name": "O'Tennis",
+  "tagline": "Restaurant - Buvette chez Kryste",
+  "logo": "/image/logo.jpeg",
+  "street": "Vie des Crêts 49",
+  "postalCode": "2732",
+  "city": "Reconvilier",
+  "country": "Suisse",
+  "phone": "032 481 48 31",
+  "email": "Krystebitz@hotmail.com",
+  "reservation": "Par téléphone ou directement sur place",
+  "mapAddress": "Vie des Crêts 49, 2732 Reconvilier, Suisse",
+  "hours": [
+    {
+      "day": "Lundi",
+      "schemaDay": "Monday",
+      "closed": true,
+      "opens": "10:00",
+      "closes": "22:00"
+    },
+    {
+      "day": "Mardi",
+      "schemaDay": "Tuesday",
+      "closed": false,
+      "opens": "10:00",
+      "closes": "22:00"
+    },
+    {
+      "day": "Mercredi",
+      "schemaDay": "Wednesday",
+      "closed": false,
+      "opens": "10:00",
+      "closes": "22:00"
+    },
+    {
+      "day": "Jeudi",
+      "schemaDay": "Thursday",
+      "closed": false,
+      "opens": "10:00",
+      "closes": "22:00"
+    },
+    {
+      "day": "Vendredi",
+      "schemaDay": "Friday",
+      "closed": false,
+      "opens": "10:00",
+      "closes": "22:30"
+    },
+    {
+      "day": "Samedi",
+      "schemaDay": "Saturday",
+      "closed": false,
+      "opens": "10:00",
+      "closes": "22:30"
+    },
+    {
+      "day": "Dimanche",
+      "schemaDay": "Sunday",
+      "closed": false,
+      "opens": "10:00",
+      "closes": "22:00"
+    }
+  ],
+  "facebook": "",
+  "instagram": ""
+}

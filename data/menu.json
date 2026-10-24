@@ -1,0 +1,910 @@
+{
+  "label": "À table",
+  "title": "Notre Menu",
+  "notice": "Un plat du jour est également proposé, renseignez-vous au comptoir.",
+  "categories": [
+    {
+      "id": "aperitifs",
+      "title": "Apéritifs",
+      "notes": [],
+      "groups": [
+        {
+          "title": "",
+          "layout": "list",
+          "notes": [],
+          "items": [
+            {
+              "name": "Blanc Cassis",
+              "price": "7.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Apérol",
+              "price": "10.- CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "San Bitter (10cl)",
+              "price": "4.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            }
+          ]
+        },
+        {
+          "title": "Martini et digestifs (2cl / 4cl)",
+          "layout": "list",
+          "notes": [],
+          "items": [
+            {
+              "name": "Martini Blanc",
+              "price": "4cl : 8.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Ricard",
+              "price": "2cl : 4.50 CHF / 4cl : 9.- CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Appenzells",
+              "price": "4cl : 5.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "La Chaindon (Suze et Grapefruit)",
+              "price": "4cl : 6.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boissons",
+      "title": "Carte des Boissons",
+      "notes": [],
+      "groups": [
+        {
+          "title": "Boissons chaudes",
+          "layout": "list",
+          "notes": [],
+          "items": [
+            {
+              "name": "Café",
+              "price": "3.80 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Expresso / Ristretto",
+              "price": "3.80 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Renverser",
+              "price": "4.20 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Cappuccino",
+              "price": "4.30 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Café O'Tennis (abricotine ou williamine, crème chantilly)",
+              "price": "6.- CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Chocolat chaud",
+              "price": "4.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Ovomaltine",
+              "price": "4.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            }
+          ]
+        },
+        {
+          "title": "Thé et infusion",
+          "layout": "list",
+          "notes": [
+            "3.60 CHF, quel que soit le parfum"
+          ],
+          "items": [
+            {
+              "name": "Noir",
+              "price": "",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Thé vert",
+              "price": "",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Menthe",
+              "price": "",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Fruits rouges",
+              "price": "",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Herbes des Alpes",
+              "price": "",
+              "description": "",
+              "image": "",
+              "portions": []
+            }
+          ]
+        },
+        {
+          "title": "Boissons froides (2dl / 3dl / 5dl / 1L / 1,5L)",
+          "layout": "list",
+          "notes": [],
+          "items": [
+            {
+              "name": "Coca",
+              "price": "3.- / 3.80 / 5.40 / — / 10.80 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Thé froid (pêche ou citron)",
+              "price": "3.- / 3.80 / 5.40 / — / 10.80 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Romanette (limonade citron)",
+              "price": "3.- / 3.80 / 5.40 / — / 10.80 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Grapefruit",
+              "price": "3.- / 3.80 / 5.40 / — / 10.80 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Rivella rouge",
+              "price": "3.- / 3.80 / 5.40 / 9.20 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Eau minérale (plate, mini bulle)",
+              "price": "2.90 / 3.70 / 4.- / 9.20 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Jus de pomme",
+              "price": "3.- / 3.80 / 5.40 / 9.20 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            }
+          ]
+        },
+        {
+          "title": "",
+          "layout": "list",
+          "notes": [],
+          "items": [
+            {
+              "name": "Coca Zéro 33cl",
+              "price": "5.80 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Rivella bleu 33cl",
+              "price": "5.70 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Sinalco 33cl",
+              "price": "5.70 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Schweppes Tonic (20cl)",
+              "price": "5.40 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Red Bull",
+              "price": "5.20 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Focus",
+              "price": "5.- CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            }
+          ]
+        },
+        {
+          "title": "Bières (2dl / 3dl / 5dl)",
+          "layout": "list",
+          "notes": [],
+          "items": [
+            {
+              "name": "Bière pression",
+              "price": "3.20 / 4.20 / 6.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Panachée",
+              "price": "3.20 / 4.20 / 6.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Panachée O'Tennis",
+              "price": "3.20 / 4.20 / 6.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Bière sans alcool 33cl",
+              "price": "4.20 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vins",
+      "title": "Carte des Vins",
+      "notes": [],
+      "groups": [
+        {
+          "title": "Vin ouvert (1dl / 2dl / 3dl / 5dl)",
+          "layout": "list",
+          "notes": [],
+          "items": [
+            {
+              "name": "Rouge — Pinot Noir du Valais",
+              "price": "5.80 / 11.60 / 17.40 / 28.60 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Rouge — Merlot Delea (Tessin)",
+              "price": "5.10 / 10.20 / 15.30 / 25.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Rosé — Œil de Perdrix (Valais)",
+              "price": "5.20 / 10.40 / 15.60 / 26.- CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Rosé — Pinoron (Cortaillod)",
+              "price": "3.60 / 7.20 / 10.80 / 17.80 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Blanc — Chasselas sur le chemin (Cortaillod)",
+              "price": "4.80 / 9.60 / 14.40 / 23.80 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Blanc — Johannisberg (Valais)",
+              "price": "5.50 / 11.- / 16.50 / 27.40 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jus",
+      "title": "Jus et Nectar",
+      "notes": [],
+      "groups": [
+        {
+          "title": "",
+          "layout": "list",
+          "notes": [
+            "Verre de 20cl : 5.20 CHF"
+          ],
+          "items": [
+            {
+              "name": "Ananas",
+              "price": "",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Orange",
+              "price": "",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Poire",
+              "price": "",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Multifruit",
+              "price": "",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Abricot",
+              "price": "",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Tomate",
+              "price": "",
+              "description": "",
+              "image": "",
+              "portions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "petites-faims",
+      "title": "Les Petites Faims",
+      "notes": [],
+      "groups": [
+        {
+          "title": "",
+          "layout": "cards",
+          "notes": [],
+          "items": [
+            {
+              "name": "Salade Verte",
+              "price": "",
+              "description": "",
+              "image": "",
+              "portions": [
+                {
+                  "label": "Petite",
+                  "price": "7.50 CHF"
+                },
+                {
+                  "label": "Grande",
+                  "price": "10.50 CHF"
+                }
+              ]
+            },
+            {
+              "name": "Salades Mêlée",
+              "price": "",
+              "description": "",
+              "image": "",
+              "portions": [
+                {
+                  "label": "Petite",
+                  "price": "8.50 CHF"
+                },
+                {
+                  "label": "Grande",
+                  "price": "13.50 CHF"
+                }
+              ]
+            },
+            {
+              "name": "Salade Buffet",
+              "price": "9.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Crêpe au sucre",
+              "price": "4.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Crêpe sucre Grand Marnier",
+              "price": "9.80 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Crêpe Nutella",
+              "price": "6.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Crêpe jambon",
+              "price": "7.- CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Crêpes jambon-fromage",
+              "price": "8.- CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Croque fromage",
+              "price": "10.- CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Hot Dog",
+              "price": "7.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Hamburger",
+              "price": "10.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Cheeseburger",
+              "price": "14.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Portion de frites",
+              "price": "",
+              "description": "",
+              "image": "",
+              "portions": [
+                {
+                  "label": "Petite",
+                  "price": "6.- CHF"
+                },
+                {
+                  "label": "Grande",
+                  "price": "10.- CHF"
+                }
+              ]
+            },
+            {
+              "name": "Assiette O'Tennis",
+              "price": "26.- CHF",
+              "description": "Assortiment de charcuterie et fromages, 200g",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Croque monsieur",
+              "price": "12.- CHF",
+              "description": "Jambon, fromage",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Croque O'Tennis",
+              "price": "14.- CHF",
+              "description": "Jambon, fromage, œufs",
+              "image": "",
+              "portions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pates",
+      "title": "Nos Pâtes",
+      "notes": [],
+      "groups": [
+        {
+          "title": "",
+          "layout": "cards",
+          "notes": [],
+          "items": [
+            {
+              "name": "Penne Alfredo",
+              "price": "19.- CHF",
+              "description": "Jambon, oignon, ail, crème, persil",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Tortellini à la crème",
+              "price": "19.50 CHF",
+              "description": "Oignon, ail, parmesan",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Tagliatelle au Saumon",
+              "price": "22.50 CHF",
+              "description": "Oignon, ail, crème",
+              "image": "",
+              "portions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plats",
+      "title": "Nos Plats",
+      "notes": [
+        "Nos plats sont servis avec une salade verte au buffet.",
+        "Accompagnement : légume, frites, pâtes ou riz."
+      ],
+      "groups": [
+        {
+          "title": "",
+          "layout": "cards",
+          "notes": [],
+          "items": [
+            {
+              "name": "Rumsteck de Bœuf",
+              "price": "",
+              "description": "Sauce café de Paris",
+              "image": "",
+              "portions": [
+                {
+                  "label": "150g",
+                  "price": "29.- CHF"
+                },
+                {
+                  "label": "200g",
+                  "price": "36.50 CHF"
+                }
+              ]
+            },
+            {
+              "name": "Entrecôte de Cheval",
+              "price": "",
+              "description": "Sauce café de Paris",
+              "image": "",
+              "portions": [
+                {
+                  "label": "150g",
+                  "price": "30.- CHF"
+                },
+                {
+                  "label": "200g",
+                  "price": "37.50 CHF"
+                }
+              ]
+            },
+            {
+              "name": "Tranche de Porc",
+              "price": "25.50 CHF",
+              "description": "Nature ou à la crème",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Blanc de Poulet",
+              "price": "26.- CHF",
+              "description": "Nature ou à la crème",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Filet de Saumon",
+              "price": "30.- CHF",
+              "description": "Nature ou sauce hollandaise",
+              "image": "",
+              "portions": []
+            }
+          ]
+        },
+        {
+          "title": "Sur demande 24h à l'avance",
+          "layout": "cards",
+          "notes": [],
+          "items": [
+            {
+              "name": "Tartare de Bœuf (Boucherie Carnata)",
+              "price": "180g : 43.- CHF",
+              "description": "Toast, beurre, frites ou salade",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Cordon Bleu de Poulet",
+              "price": "27.- CHF",
+              "description": "Fromage à raclette, jambon, servi avec frites ou légume",
+              "image": "",
+              "portions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "suggestion-chef",
+      "title": "Suggestion du Chef",
+      "notes": [],
+      "groups": [
+        {
+          "title": "",
+          "layout": "cards",
+          "notes": [],
+          "items": [
+            {
+              "name": "Tagliata de Bœuf",
+              "price": "",
+              "description": "Rumsteak de bœuf, roquette, copeaux de parmesan, vinaigre balsamique, huile d'olive, gros sel. Servi avec frites",
+              "image": "",
+              "portions": [
+                {
+                  "label": "150g",
+                  "price": "32.- CHF"
+                },
+                {
+                  "label": "200g",
+                  "price": "39.50 CHF"
+                }
+              ]
+            },
+            {
+              "name": "Crêpes O'Tennis",
+              "price": "21.50 CHF",
+              "description": "Jambon, lard, fromage raclette, oignon, œuf",
+              "image": "",
+              "portions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sandwichs",
+      "title": "Nos Sandwichs",
+      "notes": [],
+      "groups": [
+        {
+          "title": "",
+          "layout": "list",
+          "notes": [],
+          "items": [
+            {
+              "name": "Jambon",
+              "price": "7.- CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Jambon-Fromage",
+              "price": "8.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Thon",
+              "price": "6.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sirop",
+      "title": "Sirop (Nos Sirop Morand)",
+      "notes": [],
+      "groups": [
+        {
+          "title": "",
+          "layout": "list",
+          "notes": [
+            "2.80 CHF / 3.50 CHF / 4.90 CHF selon la taille du verre"
+          ],
+          "items": [
+            {
+              "name": "Grenadine",
+              "price": "",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Menthe",
+              "price": "",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Citron",
+              "price": "",
+              "description": "",
+              "image": "",
+              "portions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spiritueux",
+      "title": "Spiritueux, Liqueur et Eau de vie",
+      "notes": [],
+      "groups": [
+        {
+          "title": "Spiritueux et liqueurs (4cl)",
+          "layout": "list",
+          "notes": [],
+          "items": [
+            {
+              "name": "Vodka Blanc",
+              "price": "7.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Rhum (Blanc Bacardi)",
+              "price": "8.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Amaretto",
+              "price": "7.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Grand Marnier",
+              "price": "10.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Limoncello",
+              "price": "6.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            }
+          ]
+        },
+        {
+          "title": "Eau de vie",
+          "layout": "list",
+          "notes": [],
+          "items": [
+            {
+              "name": "Williamine",
+              "price": "8.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Abricotine",
+              "price": "8.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Pomme",
+              "price": "5.50 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            },
+            {
+              "name": "Grappa",
+              "price": "8.20 CHF",
+              "description": "",
+              "image": "",
+              "portions": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

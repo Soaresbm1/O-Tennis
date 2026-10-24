@@ -27,10 +27,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const photoTerrasse = document.getElementById('photo-terrasse');
   if (photoTerrasse) {
     photoTerrasse.addEventListener('error', function () {
-      this.src = '';
+      this.removeAttribute('src');
       this.alt = 'Photo du lieu à venir';
       this.classList.add('photo-manquante');
-    });
+    }, { once: true });
   }
 
   // Email reconstruit en JS pour limiter le scraping automatise par les bots

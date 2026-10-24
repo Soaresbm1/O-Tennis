@@ -375,6 +375,20 @@ section.alt {
   margin-bottom: 6px;
 }
 
+.menu-group-title { color: var(--color-bleu-marine); margin-top: 24px; }
+.menu-notice { text-align: center; }
+.liste-simple .menu-list-content { min-width: 0; flex: 1; }
+.liste-simple .plat-entete { flex-wrap: wrap; }
+.liste-simple .plat-prix { color: var(--color-texte); white-space: normal; }
+.menu-item-name { overflow-wrap: anywhere; }
+.plat-photo[hidden], .article-photo[hidden] { display: none; }
+.restaurant-announcement { background: var(--color-jaune-balle); padding: 18px 0; color: var(--color-bleu-marine); }
+.restaurant-announcement p { white-space: pre-line; margin-block: 0; font-weight: 500; }
+.presentation-texte > p:not(.section-soustitre), .plat-description { white-space: pre-line; }
+.manager-link { display: inline-block; margin-left: 16px; text-decoration: underline; text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--color-vert-tennis); outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
 .categorie-note {
   font-style: italic;
   color: var(--color-vert-tennis);
