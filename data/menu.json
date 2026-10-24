@@ -354,7 +354,13 @@
             {
               "name": "Assiette O'Tennis",
               "price": "26.- CHF",
-              "description": "Assortiment de charcuterie et fromages, 200g"
+              "description": "Assortiment de charcuterie et fromages, 200g",
+              "portions": [
+                {
+                  "label": "150g",
+                  "price": "17.50"
+                }
+              ]
             },
             {
               "name": "Croque monsieur",
