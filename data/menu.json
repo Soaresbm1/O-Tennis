@@ -148,15 +148,15 @@
           "layout": "list",
           "items": [
             {
-              "name": "Coca Zéro 33cl",
+              "name": "Coca Zéro 33cl BT",
               "price": "5.80 CHF"
             },
             {
-              "name": "Rivella bleu 33cl",
+              "name": "Rivella bleu 33cl BT",
               "price": "5.70 CHF"
             },
             {
-              "name": "Sinalco 33cl",
+              "name": "Sinalco 33cl BT",
               "price": "5.70 CHF"
             },
             {
@@ -192,6 +192,10 @@
             {
               "name": "Bière sans alcool 33cl",
               "price": "4.20 CHF"
+            },
+            {
+              "name": "Bière Blanche 1664",
+              "price": "3.40/5.10/8.50"
             }
           ]
         }
@@ -260,7 +264,8 @@
             },
             {
               "name": "Tomate"
-            }
+            },
+            {}
           ]
         }
       ]
