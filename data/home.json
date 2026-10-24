@@ -19,13 +19,12 @@
       "text": "Au bord des courts"
     }
   ],
-  "photo": "/image/terrasse.jpg",
+  "photo": "/image/1000131834.jpg",
   "photoAlt": "Terrasse du restaurant O’Tennis",
   "menuLabel": "À table",
   "menuTitle": "Notre Menu",
   "menuText": "Plats maison, pâtes, petites faims, sandwichs, salades et suggestions de saison, ainsi que notre carte des vins et des boissons : retrouvez tout notre menu sur une page dédiée.",
   "menuButton": "Voir le menu complet",
   "contactLabel": "On vous attend",
-  "contactTitle": "Horaires & Contact",
-  "announcement": ""
+  "contactTitle": "Horaires & Contact"
 }
