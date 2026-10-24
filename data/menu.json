@@ -588,6 +588,10 @@
             {
               "name": "Grappa",
               "price": "8.20 CHF"
+            },
+            {
+              "name": "Vieille Prune",
+              "price": "7.50"
             }
           ]
         }
