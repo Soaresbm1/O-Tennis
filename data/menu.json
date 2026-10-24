@@ -273,32 +273,6 @@
           "layout": "cards",
           "items": [
             {
-              "name": "Salade Verte",
-              "portions": [
-                {
-                  "label": "Petite",
-                  "price": "7.50 CHF"
-                },
-                {
-                  "label": "Grande",
-                  "price": "10.50 CHF"
-                }
-              ]
-            },
-            {
-              "name": "Salades Mêlée",
-              "portions": [
-                {
-                  "label": "Petite",
-                  "price": "8.50 CHF"
-                },
-                {
-                  "label": "Grande",
-                  "price": "13.50 CHF"
-                }
-              ]
-            },
-            {
               "name": "Salade Buffet",
               "price": "9.50 CHF"
             },
