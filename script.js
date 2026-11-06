@@ -1,5 +1,5 @@
 // O'Tennis - Restaurant Buvette chez Kryste
-// Menu mobile + annee automatique dans le footer
+// Menu mobile, contacts et animations au defilement
 
 document.addEventListener('DOMContentLoaded', function () {
   const toggle = document.querySelector('.nav-toggle');
@@ -39,4 +39,49 @@ document.addEventListener('DOMContentLoaded', function () {
     el.href = 'mailto:' + adresse;
     el.textContent = adresse;
   });
+
+  // Le contenu reste visible sans animation ou sans IntersectionObserver.
+  if (!window.IntersectionObserver || !window.matchMedia) return;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const revealed = new WeakSet();
+  let scrollObserver;
+  const scrollTargets = [
+    '.presentation-texte', '.presentation-image',
+    'section:not(#presentation) .section-soustitre',
+    'section:not(#presentation) .section-titre',
+    '#menu > .container > p:not(.section-soustitre)',
+    '#menu > .container > div:not(.categorie-menu)',
+    '.menu-nav', '.categorie-menu', '.contact-grille > div', '.footer-col'
+  ].join(', ');
+
+  function prepareScrollAnimations() {
+    if (scrollObserver) scrollObserver.disconnect();
+    if (reducedMotion.matches) return;
+    scrollObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        revealed.add(entry.target);
+        if (!entry.target.contains(document.activeElement)) {
+          entry.target.classList.add('scroll-reveal');
+        }
+        scrollObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -32px 0px' });
+    document.querySelectorAll(scrollTargets).forEach(function (element) {
+      if (!revealed.has(element)) scrollObserver.observe(element);
+    });
+  }
+
+  document.addEventListener('animationend', function (event) {
+    if (event.animationName === 'scroll-reveal') event.target.classList.remove('scroll-reveal');
+  });
+  // Le gestionnaire remplace les blocs de la carte apres leur chargement.
+  document.addEventListener('otennis:content-ready', prepareScrollAnimations);
+  reducedMotion.addEventListener('change', function () {
+    document.querySelectorAll('.scroll-reveal').forEach(function (element) {
+      element.classList.remove('scroll-reveal');
+    });
+    prepareScrollAnimations();
+  });
+  prepareScrollAnimations();
 });
