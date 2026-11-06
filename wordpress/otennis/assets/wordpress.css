@@ -1,0 +1,57 @@
+/* Adapt the original visual identity to native WordPress blocks. */
+.wp-site-blocks > * { margin-block-start: 0; }
+.wp-block-group.container { width: 100%; }
+.wp-block-group > p:first-child { margin-top: 0; }
+.wp-block-image { margin: 0; }
+.wp-block-image img { height: auto; }
+.wp-block-buttons { justify-content: center; }
+.wp-block-button__link {
+  display: inline-block; background: var(--color-jaune-balle); color: var(--color-bleu-marine);
+  font-family: var(--font-texte); font-weight: 700; padding: 14px 32px;
+  border-radius: 50px; box-shadow: var(--ombre); text-decoration: none;
+}
+.wp-block-button__link:hover { background: var(--color-vert-tennis); color: white; }
+.menu-nav p { margin: 0; }
+.menu-nav a { display: inline-block; }
+.plat-entete .wp-block-heading { font-family: var(--font-texte); }
+.plat-entete .plat-prix, .atout p, .ligne-info p, .plat-tailles p { margin: 0; }
+.plat-tailles p { display: flex; flex-wrap: wrap; gap: 14px; }
+.plat .wp-block-image { margin-bottom: 12px; }
+.plat .wp-block-image img { width: 100%; max-height: 180px; object-fit: contain; border-radius: 8px; }
+.wp-block-table.horaires { margin: 10px 0 0; border-radius: var(--rayon); box-shadow: var(--ombre); overflow-x: auto; }
+.wp-block-table.horaires table { width: 100%; border-collapse: collapse; }
+.wp-block-table.horaires td { padding: 10px 16px; border: 0; border-bottom: 1px solid rgba(27,42,74,.08); }
+.wp-block-table.horaires td:first-child { font-weight: 600; color: var(--color-bleu-marine); }
+.wp-block-table.horaires tr:last-child td { border-bottom: 0; }
+.header-inner .wp-block-site-title { margin: 0; font-size: 1.8rem; line-height: 1; }
+.logo-texte .wp-block-site-tagline { margin: 0; font-size: .85rem; color: var(--color-vert-tennis); }
+.header-inner .wp-block-image img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; }
+.header-inner .logo-bloc { gap: 14px; }
+.wp-block-navigation a:hover { color: var(--color-vert-tennis); }
+.wp-block-navigation .current-menu-item > a { border-bottom: 3px solid var(--color-vert-tennis); }
+.wp-block-navigation__responsive-container.is-menu-open { padding: 24px; }
+.wp-block-navigation__responsive-container-close, .wp-block-navigation__responsive-container-open { min-height: 44px; min-width: 44px; }
+.footer-logo .wp-block-site-title { font-family: var(--font-texte); font-size: 1rem; color: var(--color-creme); }
+.footer-logo .wp-block-site-tagline { margin-top: 0; }
+.footer-inner { padding-top: 0; padding-bottom: 0; }
+.site-footer .wp-block-heading { color: var(--color-jaune-balle); }
+.footer-bas p { margin: 0; }
+body.admin-bar .site-header { top: 32px; }
+.not-found { padding-block: 80px; min-height: 50vh; }
+.page-title { padding-top: 40px; }
+.otennis-map-editor { padding: 24px; background: #FAF6EC; border: 1px solid #7FB069; }
+a:focus-visible, button:focus-visible { outline: 3px solid #7FB069; outline-offset: 4px; }
+[id] { scroll-margin-top: 120px; }
+@media (max-width: 782px) { body.admin-bar .site-header { top: 46px; } }
+@media (max-width: 600px) {
+  body.admin-bar .site-header { top: 0; }
+  .header-inner { flex-wrap: nowrap; }
+  .header-inner .wp-block-site-title { font-size: 1.6rem; }
+  .logo-texte .wp-block-site-tagline { font-size: .65rem; max-width: 190px; }
+  .header-inner .wp-block-image img { width: 48px; height: 48px; }
+  .liste-simple { grid-template-columns: 1fr; }
+  .liste-simple li { flex-wrap: wrap; overflow-wrap: anywhere; }
+  .plat-entete { flex-wrap: wrap; }
+  .presentation-texte, .presentation-image { flex-basis: auto; width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

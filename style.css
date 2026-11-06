@@ -515,6 +515,35 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--color-vert-tenn
   font-size: 1.4rem;
 }
 
+.contact-reseaux {
+  margin-bottom: 18px;
+}
+
+.instagram-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+
+.instagram-link img {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+
+.instagram-link:hover {
+  background-color: rgba(27, 42, 74, 0.08);
+}
+
+.instagram-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
 table.horaires {
   width: 100%;
   border-collapse: collapse;
@@ -610,6 +639,19 @@ footer.site-footer {
   align-items: center;
   justify-content: center;
   font-size: 0.9rem;
+}
+
+.footer-reseaux .instagram-link {
+  width: 44px;
+  height: 44px;
+}
+
+.footer-reseaux .instagram-link img {
+  filter: brightness(0) invert(1);
+}
+
+.footer-reseaux .instagram-link:hover {
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
 .footer-bas {

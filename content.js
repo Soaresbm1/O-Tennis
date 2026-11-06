@@ -37,6 +37,26 @@
     element.href = href;
     return element;
   }
+  function socialLink(key, label, shortLabel, value) {
+    try {
+      const url = new URL(text(value));
+      if (url.protocol !== 'https:') return null;
+      const social = link(key === 'instagram' ? '' : shortLabel, url.href);
+      social.setAttribute('aria-label', label + ' (nouvel onglet)');
+      social.title = label;
+      social.target = '_blank';
+      social.rel = 'noopener noreferrer';
+      if (key === 'instagram') {
+        social.className = 'instagram-link';
+        const icon = node('img');
+        icon.src = new URL('image/instagram.svg', siteBase).href;
+        icon.alt = '';
+        icon.width = icon.height = 22;
+        social.append(icon);
+      }
+      return social;
+    } catch (_) { return null; }
+  }
   function time(value) { return /^([01]\d|2[0-3]):[0-5]\d$/.test(value) ? value : ''; }
   function phone(value) {
     const digits = text(value).replace(/[^+\d]/g, '');
@@ -68,6 +88,11 @@
       info[2].replaceChildren(node('strong', '', 'Email'), node('br'), link(data.email, 'mailto:' + text(data.email).replace(/[\r\n?]/g, '')));
       info[3].replaceChildren(node('strong', '', 'Réservation'), node('br'), document.createTextNode(text(data.reservation)));
     }
+    document.querySelectorAll('.contact-reseaux').forEach(element => {
+      const instagram = socialLink('instagram', 'Instagram', '', data.instagram);
+      element.replaceChildren(...(instagram ? [instagram] : []));
+      element.hidden = !instagram;
+    });
     document.querySelectorAll('.site-footer .footer-col').forEach(column => {
       const heading = column.querySelector('h4');
       if (!heading) return;
@@ -86,14 +111,8 @@
       if (heading.textContent === 'Réseaux sociaux') {
         const socials = node('div', 'footer-reseaux');
         for (const [key, label, shortLabel] of [['facebook', 'Facebook', 'f'], ['instagram', 'Instagram', 'i']]) {
-          try {
-            const url = new URL(text(data[key]));
-            if (url.protocol !== 'https:') continue;
-            const social = link(shortLabel, url.href);
-            social.setAttribute('aria-label', label);
-            social.rel = 'noopener noreferrer';
-            socials.append(social);
-          } catch (_) { /* An empty social link stays hidden. */ }
+          const social = socialLink(key, label, shortLabel, data[key]);
+          if (social) socials.append(social);
         }
         column.replaceChildren(heading, socials);
         column.hidden = socials.children.length === 0;

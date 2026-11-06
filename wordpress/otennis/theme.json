@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schemas.wp.org/wp/6.6/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "layout": {"contentSize": "1100px", "wideSize": "1320px"},
+    "color": {"palette": [
+      {"slug":"creme","color":"#FAF6EC","name":"Crème"},
+      {"slug":"marine","color":"#1B2A4A","name":"Bleu marine"},
+      {"slug":"tennis","color":"#7FB069","name":"Vert tennis"},
+      {"slug":"balle","color":"#D4D94A","name":"Jaune balle"},
+      {"slug":"blanc","color":"#FFFFFF","name":"Blanc"}
+    ]},
+    "typography": {"fontFamilies": [
+      {"slug":"poppins","name":"Poppins","fontFamily":"Poppins, sans-serif"},
+      {"slug":"caveat","name":"Caveat","fontFamily":"Caveat, cursive"}
+    ]}
+  },
+  "styles": {
+    "color": {"background":"#FAF6EC","text":"#2B2B2B"},
+    "spacing": {"blockGap":"0px"},
+    "typography": {"fontFamily":"var:preset|font-family|poppins","lineHeight":"1.6"},
+    "elements": {
+      "heading": {"color":{"text":"#1B2A4A"},"typography":{"fontFamily":"var:preset|font-family|caveat"}},
+      "link": {"color":{"text":"inherit"},"typography":{"textDecoration":"none"}}
+    }
+  },
+  "templateParts": [
+    {"name":"header","title":"En-tête","area":"header"},
+    {"name":"footer","title":"Pied de page","area":"footer"}
+  ]
+}
