@@ -4,49 +4,247 @@
   "notice": "Un plat du jour est également proposé, renseignez-vous au comptoir.",
   "categories": [
     {
-      "id": "aperitifs",
-      "title": "Apéritifs",
+      "id": "plats",
+      "title": "Nos Plats",
+      "notes": [
+        "Nos plats sont servis avec une salade verte au buffet.",
+        "Accompagnement : légume, frites, pâtes ou riz."
+      ],
+      "groups": [
+        {
+          "layout": "cards",
+          "items": [
+            {
+              "name": "Rumsteck de Bœuf",
+              "description": "Sauce café de Paris",
+              "portions": [
+                {
+                  "label": "150g",
+                  "price": "29.- CHF"
+                },
+                {
+                  "label": "200g",
+                  "price": "36.50 CHF"
+                }
+              ]
+            },
+            {
+              "name": "Entrecôte de Cheval",
+              "description": "Sauce café de Paris",
+              "portions": [
+                {
+                  "label": "150g",
+                  "price": "30.- CHF"
+                },
+                {
+                  "label": "200g",
+                  "price": "37.50 CHF"
+                }
+              ]
+            },
+            {
+              "name": "Tranche de Porc",
+              "price": "25.50 CHF",
+              "description": "Nature ou à la crème"
+            },
+            {
+              "name": "Blanc de Poulet",
+              "price": "26.- CHF",
+              "description": "Nature ou à la crème"
+            },
+            {
+              "name": "Filet de Saumon",
+              "price": "30.- CHF",
+              "description": "Nature ou sauce hollandaise"
+            }
+          ]
+        },
+        {
+          "title": "Sur demande 24h à l'avance",
+          "layout": "cards",
+          "items": [
+            {
+              "name": "Tartare de Bœuf (Boucherie Carnata)",
+              "price": "180g : 43.- CHF",
+              "description": "Toast, beurre, frites ou salade"
+            },
+            {
+              "name": "Cordon Bleu de Poulet",
+              "price": "27.- CHF",
+              "description": "Fromage à raclette, jambon, servi avec frites ou légume"
+            }
+          ]
+        }
+      ],
+      "navLabel": "Plats"
+    },
+    {
+      "id": "suggestion-chef",
+      "title": "Suggestion du Chef",
+      "groups": [
+        {
+          "layout": "cards",
+          "items": [
+            {
+              "name": "Tagliata de Bœuf",
+              "description": "Rumsteak de bœuf, roquette, copeaux de parmesan, vinaigre balsamique, huile d'olive, gros sel. Servi avec frites",
+              "portions": [
+                {
+                  "label": "150g",
+                  "price": "32.- CHF"
+                },
+                {
+                  "label": "200g",
+                  "price": "39.50 CHF"
+                }
+              ]
+            },
+            {
+              "name": "Crêpes O'Tennis",
+              "price": "21.50 CHF",
+              "description": "Jambon, lard, fromage raclette, oignon, œuf"
+            }
+          ]
+        }
+      ],
+      "navLabel": "Suggestions"
+    },
+    {
+      "id": "petites-faims",
+      "title": "Les Petites Faims",
+      "groups": [
+        {
+          "layout": "cards",
+          "items": [
+            {
+              "name": "Salade du Buffet",
+              "price": "9.50 CHF"
+            },
+            {
+              "name": "Crêpe au sucre",
+              "price": "4.50 CHF"
+            },
+            {
+              "name": "Crêpe sucre Grand Marnier",
+              "price": "9.80 CHF"
+            },
+            {
+              "name": "Crêpe Nutella",
+              "price": "6.50 CHF"
+            },
+            {
+              "name": "Crêpe jambon",
+              "price": "7.- CHF"
+            },
+            {
+              "name": "Crêpes jambon-fromage",
+              "price": "8.- CHF"
+            },
+            {
+              "name": "Croque fromage",
+              "price": "7.50.- CHF"
+            },
+            {
+              "name": "Hot Dog",
+              "price": "7.50 CHF"
+            },
+            {
+              "name": "Hamburger",
+              "price": "10.50 CHF"
+            },
+            {
+              "name": "Cheeseburger",
+              "price": "14.50 CHF"
+            },
+            {
+              "name": "Portion de frites",
+              "portions": [
+                {
+                  "label": "Petite",
+                  "price": "6.- CHF"
+                },
+                {
+                  "label": "Grande",
+                  "price": "10.- CHF"
+                }
+              ]
+            },
+            {
+              "name": "Assiette O'Tennis",
+              "price": "26.- CHF",
+              "description": "Assortiment de charcuterie et fromages, 200g",
+              "portions": [
+                {
+                  "label": "150g",
+                  "price": "17.50"
+                }
+              ]
+            },
+            {
+              "name": "Croque monsieur",
+              "price": "9.60.- CHF",
+              "description": "Jambon, fromage"
+            },
+            {
+              "name": "Croque O'Tennis",
+              "price": "12.00.- CHF",
+              "description": "Jambon, fromage, œufs"
+            }
+          ]
+        }
+      ],
+      "navLabel": "Petites faims"
+    },
+    {
+      "id": "pates",
+      "title": "Nos Pâtes",
+      "groups": [
+        {
+          "layout": "cards",
+          "items": [
+            {
+              "name": "Penne Alfredo",
+              "price": "19.- CHF",
+              "description": "Jambon, oignon, ail, crème, persil"
+            },
+            {
+              "name": "Tortellini à la crème",
+              "price": "19.50 CHF",
+              "description": "Oignon, ail, parmesan"
+            },
+            {
+              "name": "Tagliatelle au Saumon",
+              "price": "22.50 CHF",
+              "description": "Oignon, ail, crème"
+            }
+          ]
+        }
+      ],
+      "navLabel": "Pâtes"
+    },
+    {
+      "id": "sandwichs",
+      "title": "Nos Sandwichs",
       "groups": [
         {
           "layout": "list",
           "items": [
             {
-              "name": "Blanc Cassis",
-              "price": "7.50 CHF"
+              "name": "Jambon",
+              "price": "7.- CHF"
             },
             {
-              "name": "Apérol",
-              "price": "10.- CHF"
+              "name": "Jambon-Fromage",
+              "price": "8.50 CHF"
             },
             {
-              "name": "San Bitter (10cl)",
-              "price": "4.50 CHF"
-            }
-          ]
-        },
-        {
-          "title": "Martini et digestifs (2cl / 4cl)",
-          "layout": "list",
-          "items": [
-            {
-              "name": "Martini Blanc",
-              "price": "4cl : 8.50 CHF"
-            },
-            {
-              "name": "Ricard",
-              "price": "2cl : 4.50 CHF / 4cl : 9.- CHF"
-            },
-            {
-              "name": "Appenzells",
-              "price": "4cl : 5.50 CHF"
-            },
-            {
-              "name": "La Chaindon (Suze et Grapefruit)",
-              "price": "4cl : 6.50 CHF"
+              "name": "Thon",
+              "price": "6.50 CHF"
             }
           ]
         }
-      ]
+      ],
+      "navLabel": "Sandwichs"
     },
     {
       "id": "boissons",
@@ -199,7 +397,8 @@
             }
           ]
         }
-      ]
+      ],
+      "navLabel": "Boissons"
     },
     {
       "id": "vins",
@@ -243,7 +442,54 @@
             }
           ]
         }
-      ]
+      ],
+      "navLabel": "Vins"
+    },
+    {
+      "id": "aperitifs",
+      "title": "Apéritifs",
+      "groups": [
+        {
+          "layout": "list",
+          "items": [
+            {
+              "name": "Blanc Cassis",
+              "price": "7.50 CHF"
+            },
+            {
+              "name": "Apérol",
+              "price": "10.- CHF"
+            },
+            {
+              "name": "San Bitter (10cl)",
+              "price": "4.50 CHF"
+            }
+          ]
+        },
+        {
+          "title": "Martini et digestifs (2cl / 4cl)",
+          "layout": "list",
+          "items": [
+            {
+              "name": "Martini Blanc",
+              "price": "4cl : 8.50 CHF"
+            },
+            {
+              "name": "Ricard",
+              "price": "2cl : 4.50 CHF / 4cl : 9.- CHF"
+            },
+            {
+              "name": "Appenzells",
+              "price": "4cl : 5.50 CHF"
+            },
+            {
+              "name": "La Chaindon (Suze et Grapefruit)",
+              "price": "4cl : 6.50 CHF"
+            }
+          ]
+        }
+      ],
+      "navLabel": "Apéritifs"
     },
     {
       "id": "jus",
@@ -276,245 +522,8 @@
             {}
           ]
         }
-      ]
-    },
-    {
-      "id": "petites-faims",
-      "title": "Les Petites Faims",
-      "groups": [
-        {
-          "layout": "cards",
-          "items": [
-            {
-              "name": "Salade du Buffet",
-              "price": "9.50 CHF"
-            },
-            {
-              "name": "Crêpe au sucre",
-              "price": "4.50 CHF"
-            },
-            {
-              "name": "Crêpe sucre Grand Marnier",
-              "price": "9.80 CHF"
-            },
-            {
-              "name": "Crêpe Nutella",
-              "price": "6.50 CHF"
-            },
-            {
-              "name": "Crêpe jambon",
-              "price": "7.- CHF"
-            },
-            {
-              "name": "Crêpes jambon-fromage",
-              "price": "8.- CHF"
-            },
-            {
-              "name": "Croque fromage",
-              "price": "7.50.- CHF"
-            },
-            {
-              "name": "Hot Dog",
-              "price": "7.50 CHF"
-            },
-            {
-              "name": "Hamburger",
-              "price": "10.50 CHF"
-            },
-            {
-              "name": "Cheeseburger",
-              "price": "14.50 CHF"
-            },
-            {
-              "name": "Portion de frites",
-              "portions": [
-                {
-                  "label": "Petite",
-                  "price": "6.- CHF"
-                },
-                {
-                  "label": "Grande",
-                  "price": "10.- CHF"
-                }
-              ]
-            },
-            {
-              "name": "Assiette O'Tennis",
-              "price": "26.- CHF",
-              "description": "Assortiment de charcuterie et fromages, 200g",
-              "portions": [
-                {
-                  "label": "150g",
-                  "price": "17.50"
-                }
-              ]
-            },
-            {
-              "name": "Croque monsieur",
-              "price": "9.60.- CHF",
-              "description": "Jambon, fromage"
-            },
-            {
-              "name": "Croque O'Tennis",
-              "price": "12.00.- CHF",
-              "description": "Jambon, fromage, œufs"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "pates",
-      "title": "Nos Pâtes",
-      "groups": [
-        {
-          "layout": "cards",
-          "items": [
-            {
-              "name": "Penne Alfredo",
-              "price": "19.- CHF",
-              "description": "Jambon, oignon, ail, crème, persil"
-            },
-            {
-              "name": "Tortellini à la crème",
-              "price": "19.50 CHF",
-              "description": "Oignon, ail, parmesan"
-            },
-            {
-              "name": "Tagliatelle au Saumon",
-              "price": "22.50 CHF",
-              "description": "Oignon, ail, crème"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "plats",
-      "title": "Nos Plats",
-      "notes": [
-        "Nos plats sont servis avec une salade verte au buffet.",
-        "Accompagnement : légume, frites, pâtes ou riz."
       ],
-      "groups": [
-        {
-          "layout": "cards",
-          "items": [
-            {
-              "name": "Rumsteck de Bœuf",
-              "description": "Sauce café de Paris",
-              "portions": [
-                {
-                  "label": "150g",
-                  "price": "29.- CHF"
-                },
-                {
-                  "label": "200g",
-                  "price": "36.50 CHF"
-                }
-              ]
-            },
-            {
-              "name": "Entrecôte de Cheval",
-              "description": "Sauce café de Paris",
-              "portions": [
-                {
-                  "label": "150g",
-                  "price": "30.- CHF"
-                },
-                {
-                  "label": "200g",
-                  "price": "37.50 CHF"
-                }
-              ]
-            },
-            {
-              "name": "Tranche de Porc",
-              "price": "25.50 CHF",
-              "description": "Nature ou à la crème"
-            },
-            {
-              "name": "Blanc de Poulet",
-              "price": "26.- CHF",
-              "description": "Nature ou à la crème"
-            },
-            {
-              "name": "Filet de Saumon",
-              "price": "30.- CHF",
-              "description": "Nature ou sauce hollandaise"
-            }
-          ]
-        },
-        {
-          "title": "Sur demande 24h à l'avance",
-          "layout": "cards",
-          "items": [
-            {
-              "name": "Tartare de Bœuf (Boucherie Carnata)",
-              "price": "180g : 43.- CHF",
-              "description": "Toast, beurre, frites ou salade"
-            },
-            {
-              "name": "Cordon Bleu de Poulet",
-              "price": "27.- CHF",
-              "description": "Fromage à raclette, jambon, servi avec frites ou légume"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "suggestion-chef",
-      "title": "Suggestion du Chef",
-      "groups": [
-        {
-          "layout": "cards",
-          "items": [
-            {
-              "name": "Tagliata de Bœuf",
-              "description": "Rumsteak de bœuf, roquette, copeaux de parmesan, vinaigre balsamique, huile d'olive, gros sel. Servi avec frites",
-              "portions": [
-                {
-                  "label": "150g",
-                  "price": "32.- CHF"
-                },
-                {
-                  "label": "200g",
-                  "price": "39.50 CHF"
-                }
-              ]
-            },
-            {
-              "name": "Crêpes O'Tennis",
-              "price": "21.50 CHF",
-              "description": "Jambon, lard, fromage raclette, oignon, œuf"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "sandwichs",
-      "title": "Nos Sandwichs",
-      "groups": [
-        {
-          "layout": "list",
-          "items": [
-            {
-              "name": "Jambon",
-              "price": "7.- CHF"
-            },
-            {
-              "name": "Jambon-Fromage",
-              "price": "8.50 CHF"
-            },
-            {
-              "name": "Thon",
-              "price": "6.50 CHF"
-            }
-          ]
-        }
-      ]
+      "navLabel": "Jus"
     },
     {
       "id": "sirop",
@@ -537,7 +546,8 @@
             }
           ]
         }
-      ]
+      ],
+      "navLabel": "Sirops"
     },
     {
       "id": "spiritueux",
@@ -595,7 +605,8 @@
             }
           ]
         }
-      ]
+      ],
+      "navLabel": "Spiritueux"
     }
   ]
 }

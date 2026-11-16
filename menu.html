@@ -57,15 +57,27 @@
         </div>
       </a>
 
-      <button class="nav-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false">&#9776;</button>
+      <a class="header-call" data-call href="tel:+41324814831">Réserver / Appeler</a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
 
-      <nav class="main-nav">
+      <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
         <a href="index.html#accueil">Accueil</a>
         <a href="menu.html" class="actif">Menu</a>
+        <a href="index.html#galerie">Photos</a>
         <a href="index.html#contact">Contact</a>
       </nav>
     </div>
   </header>
+
+  <div class="visit-bar">
+    <div class="container visit-bar-inner">
+      <div class="visit-hours">
+        <p class="opening-status" data-opening-status role="status" aria-live="polite">Consultez nos horaires</p>
+        <p data-today-hours>Du mardi au dimanche dès 10h00</p>
+      </div>
+      <a class="directions-link" data-directions href="https://www.google.com/maps/dir/?api=1&amp;destination=Vie+des+Cr%C3%AAts+49%2C+2732+Reconvilier">Venir au restaurant · Itinéraire ↗</a>
+    </div>
+  </div>
 
   <section id="menu-du-jour" class="daily-menu" aria-labelledby="daily-menu-title" hidden></section>
 
@@ -76,123 +88,112 @@
       <h2 class="section-titre">Notre Menu</h2>
       <p class="categorie-note" style="text-align:center;">Un plat du jour est également proposé, renseignez-vous au comptoir.</p>
 
-      <nav class="menu-nav">
+      <nav class="menu-nav" aria-label="Catégories de la carte">
+        <a href="#plats">Plats</a>
+        <a href="#suggestion-chef">Suggestions</a>
+        <a href="#petites-faims">Petites faims</a>
+        <a href="#pates">Pâtes</a>
+        <a href="#sandwichs">Sandwichs</a>
+        <a href="#boissons">Boissons</a>
+        <a href="#vins">Vins</a>
         <a href="#aperitifs">Apéritifs</a>
-        <a href="#boissons">Carte des Boissons</a>
-        <a href="#vins">Carte des Vins</a>
-        <a href="#jus">Jus et Nectar</a>
-        <a href="#petites-faims">Les Petites Faims</a>
-        <a href="#pates">Nos Pâtes</a>
-        <a href="#plats">Nos Plats</a>
-        <a href="#sandwichs">Nos Sandwichs</a>
-        <a href="#sirop">Sirop</a>
-        <a href="#spiritueux">Spiritueux, Liqueur et Eau de vie</a>
-        <a href="#suggestion-chef">Suggestion du Chef</a>
+        <a href="#jus">Jus</a>
+        <a href="#sirop">Sirops</a>
+        <a href="#spiritueux">Spiritueux</a>
       </nav>
 
       <!-- APERITIFS : photos dans image/articles/aperitifs/ -->
-      <div class="categorie-menu" id="aperitifs">
-        <h3>Apéritifs</h3>
-        <ul class="liste-simple">
-          <li>Blanc Cassis <strong>7.50 CHF</strong></li>
-          <li>Apérol <strong>10.- CHF</strong></li>
-          <li>San Bitter (10cl) <strong>4.50 CHF</strong></li>
-        </ul>
+      <div class="categorie-menu" id="plats">
+        <h3>Nos Plats</h3>
+        <p class="categorie-note">Nos plats sont servis avec une salade verte au buffet.</p>
+        <p class="categorie-note">Accompagnement : légume, frites, pâtes ou riz.</p>
+        <div class="plats">
+          <div class="plat">
+            <div class="plat-entete">
+              <h4>Rumsteck de Bœuf</h4>
+            </div>
+            <div class="plat-tailles">
+              <span>150g : <strong>29.- CHF</strong></span>
+              <span>200g : <strong>36.50 CHF</strong></span>
+            </div>
+            <p class="plat-description">Sauce café de Paris</p>
+          </div>
+          <div class="plat">
+            <div class="plat-entete">
+              <h4>Entrecôte de Cheval</h4>
+            </div>
+            <div class="plat-tailles">
+              <span>150g : <strong>30.- CHF</strong></span>
+              <span>200g : <strong>37.50 CHF</strong></span>
+            </div>
+            <p class="plat-description">Sauce café de Paris</p>
+          </div>
+          <div class="plat">
+            <div class="plat-entete">
+              <h4>Tranche de Porc</h4>
+              <span class="plat-prix">25.50 CHF</span>
+            </div>
+            <p class="plat-description">Nature ou à la crème</p>
+          </div>
+          <div class="plat">
+            <div class="plat-entete">
+              <h4>Blanc de Poulet</h4>
+              <span class="plat-prix">26.- CHF</span>
+            </div>
+            <p class="plat-description">Nature ou à la crème</p>
+          </div>
+          <div class="plat">
+            <div class="plat-entete">
+              <h4>Filet de Saumon</h4>
+              <span class="plat-prix">30.- CHF</span>
+            </div>
+            <p class="plat-description">Nature ou sauce hollandaise</p>
+          </div>
+        </div>
 
-        <h4 style="color:var(--color-bleu-marine); margin-top:24px;">Martini et digestifs (2cl / 4cl)</h4>
-        <ul class="liste-simple">
-          <li>Martini Blanc <strong>4cl : 8.50 CHF</strong></li>
-          <li>Ricard <strong>2cl : 4.50 CHF / 4cl : 9.- CHF</strong></li>
-          <li>Appenzells <strong>4cl : 5.50 CHF</strong></li>
-          <li>La Chaindon (Suze et Grapefruit) <strong>4cl : 6.50 CHF</strong></li>
-        </ul>
+        <h4 style="color:var(--color-bleu-marine); margin-top:24px;">Sur demande 24h à l'avance</h4>
+        <div class="plats">
+          <div class="plat">
+            <div class="plat-entete">
+              <h4>Tartare de Bœuf (Boucherie Carnata)</h4>
+              <span class="plat-prix">180g : 43.- CHF</span>
+            </div>
+            <p class="plat-description">Toast, beurre, frites ou salade</p>
+          </div>
+          <div class="plat">
+            <div class="plat-entete">
+              <h4>Cordon Bleu de Poulet</h4>
+              <span class="plat-prix">27.- CHF</span>
+            </div>
+            <p class="plat-description">Fromage à raclette, jambon, servi avec frites ou légume</p>
+          </div>
+        </div>
       </div>
 
-      <!-- CARTE DES BOISSONS : photos dans image/articles/boissons/ -->
-      <div class="categorie-menu" id="boissons">
-        <h3>Carte des Boissons</h3>
-
-        <h4 style="color:var(--color-bleu-marine); margin-top:24px;">Boissons chaudes</h4>
-        <ul class="liste-simple">
-          <li>Café <strong>3.80 CHF</strong></li>
-          <li>Expresso / Ristretto <strong>3.80 CHF</strong></li>
-          <li>Renverser <strong>4.20 CHF</strong></li>
-          <li>Cappuccino <strong>4.30 CHF</strong></li>
-          <li>Café O'Tennis (abricotine ou williamine, crème chantilly) <strong>6.- CHF</strong></li>
-          <li>Chocolat chaud <strong>4.50 CHF</strong></li>
-          <li>Ovomaltine <strong>4.50 CHF</strong></li>
-        </ul>
-
-        <h4 style="color:var(--color-bleu-marine); margin-top:24px;">Thé et infusion</h4>
-        <ul class="liste-simple">
-          <li>Noir</li>
-          <li>Thé vert</li>
-          <li>Menthe</li>
-          <li>Fruits rouges</li>
-          <li>Herbes des Alpes</li>
-        </ul>
-        <p class="categorie-note">3.60 CHF, quel que soit le parfum</p>
-
-        <h4 style="color:var(--color-bleu-marine); margin-top:24px;">Boissons froides (2dl / 3dl / 5dl / 1L / 1,5L)</h4>
-        <ul class="liste-simple">
-          <li>Coca <strong>3.- / 3.80 / 5.40 / — / 10.80 CHF</strong></li>
-          <li>Thé froid (pêche ou citron) <strong>3.- / 3.80 / 5.40 / — / 10.80 CHF</strong></li>
-          <li>Romanette (limonade citron) <strong>3.- / 3.80 / 5.40 / — / 10.80 CHF</strong></li>
-          <li>Grapefruit <strong>3.- / 3.80 / 5.40 / — / 10.80 CHF</strong></li>
-          <li>Rivella rouge <strong>3.- / 3.80 / 5.40 / 9.20 CHF</strong></li>
-          <li>Eau minérale (plate, mini bulle) <strong>2.90 / 3.70 / 4.- / 9.20 CHF</strong></li>
-          <li>Jus de pomme <strong>3.- / 3.80 / 5.40 / 9.20 CHF</strong></li>
-        </ul>
-
-        <ul class="liste-simple">
-          <li>Coca Zéro 33cl <strong>5.80 CHF</strong></li>
-          <li>Rivella bleu 33cl <strong>5.70 CHF</strong></li>
-          <li>Sinalco 33cl <strong>5.70 CHF</strong></li>
-          <li>Schweppes Tonic (20cl) <strong>5.40 CHF</strong></li>
-          <li>Red Bull <strong>5.20 CHF</strong></li>
-          <li>Focus <strong>5.- CHF</strong></li>
-        </ul>
-
-        <h4 style="color:var(--color-bleu-marine); margin-top:24px;">Bières (2dl / 3dl / 5dl)</h4>
-        <ul class="liste-simple">
-          <li>Bière pression <strong>3.20 / 4.20 / 6.50 CHF</strong></li>
-          <li>Panachée <strong>3.20 / 4.20 / 6.50 CHF</strong></li>
-          <li>Panachée O'Tennis <strong>3.20 / 4.20 / 6.50 CHF</strong></li>
-          <li>Bière sans alcool 33cl <strong>4.20 CHF</strong></li>
-        </ul>
+      <div class="categorie-menu" id="suggestion-chef">
+        <h3>Suggestion du Chef</h3>
+        <div class="plats">
+          <div class="plat">
+            <div class="plat-entete">
+              <h4>Tagliata de Bœuf</h4>
+            </div>
+            <div class="plat-tailles">
+              <span>150g : <strong>32.- CHF</strong></span>
+              <span>200g : <strong>39.50 CHF</strong></span>
+            </div>
+            <p class="plat-description">Rumsteak de bœuf, roquette, copeaux de parmesan, vinaigre balsamique, huile
+              d'olive, gros sel. Servi avec frites</p>
+          </div>
+          <div class="plat">
+            <div class="plat-entete">
+              <h4>Crêpes O'Tennis</h4>
+              <span class="plat-prix">21.50 CHF</span>
+            </div>
+            <p class="plat-description">Jambon, lard, fromage raclette, oignon, œuf</p>
+          </div>
+        </div>
       </div>
 
-      <!-- CARTE DES VINS : photos dans image/articles/vins/ -->
-      <div class="categorie-menu" id="vins">
-        <h3>Carte des Vins</h3>
-
-        <h4 style="color:var(--color-bleu-marine); margin-top:24px;">Vin ouvert (1dl / 2dl / 3dl / 5dl)</h4>
-        <ul class="liste-simple">
-          <li>Rouge — Pinot Noir du Valais <strong>5.80 / 11.60 / 17.40 / 28.60 CHF</strong></li>
-          <li>Rouge — Merlot Delea (Tessin) <strong>5.10 / 10.20 / 15.30 / 25.50 CHF</strong></li>
-          <li>Rosé — Œil de Perdrix (Valais) <strong>5.20 / 10.40 / 15.60 / 26.- CHF</strong></li>
-          <li>Rosé — Pinoron (Cortaillod) <strong>3.60 / 7.20 / 10.80 / 17.80 CHF</strong></li>
-          <li>Blanc — Chasselas sur le chemin (Cortaillod) <strong>4.80 / 9.60 / 14.40 / 23.80 CHF</strong></li>
-          <li>Blanc — Johannisberg (Valais) <strong>5.50 / 11.- / 16.50 / 27.40 CHF</strong></li>
-        </ul>
-
-      </div>
-
-      <!-- JUS ET NECTAR : photos dans image/articles/jus/ -->
-      <div class="categorie-menu" id="jus">
-        <h3>Jus et Nectar</h3>
-        <ul class="liste-simple">
-          <li>Ananas</li>
-          <li>Orange</li>
-          <li>Poire</li>
-          <li>Multifruit</li>
-          <li>Abricot</li>
-          <li>Tomate</li>
-        </ul>
-        <p class="categorie-note">Verre de 20cl : 5.20 CHF</p>
-      </div>
-
-      <!-- PETITES FAIMS : photos dans image/articles/petites-faims/ -->
       <div class="categorie-menu" id="petites-faims">
         <h3>Les Petites Faims</h3>
         <div class="plats">
@@ -307,7 +308,6 @@
         </div>
       </div>
 
-      <!-- NOS PATES : photos dans image/articles/pates/ -->
       <div class="categorie-menu" id="pates">
         <h3>Nos Pâtes</h3>
         <div class="plats">
@@ -335,100 +335,6 @@
         </div>
       </div>
 
-      <!-- NOS PLATS : photos dans image/articles/plats/ -->
-      <div class="categorie-menu" id="plats">
-        <h3>Nos Plats</h3>
-        <p class="categorie-note">Nos plats sont servis avec une salade verte au buffet.</p>
-        <p class="categorie-note">Accompagnement : légume, frites, pâtes ou riz.</p>
-        <div class="plats">
-          <div class="plat">
-            <div class="plat-entete">
-              <h4>Rumsteck de Bœuf</h4>
-            </div>
-            <div class="plat-tailles">
-              <span>150g : <strong>29.- CHF</strong></span>
-              <span>200g : <strong>36.50 CHF</strong></span>
-            </div>
-            <p class="plat-description">Sauce café de Paris</p>
-          </div>
-          <div class="plat">
-            <div class="plat-entete">
-              <h4>Entrecôte de Cheval</h4>
-            </div>
-            <div class="plat-tailles">
-              <span>150g : <strong>30.- CHF</strong></span>
-              <span>200g : <strong>37.50 CHF</strong></span>
-            </div>
-            <p class="plat-description">Sauce café de Paris</p>
-          </div>
-          <div class="plat">
-            <div class="plat-entete">
-              <h4>Tranche de Porc</h4>
-              <span class="plat-prix">25.50 CHF</span>
-            </div>
-            <p class="plat-description">Nature ou à la crème</p>
-          </div>
-          <div class="plat">
-            <div class="plat-entete">
-              <h4>Blanc de Poulet</h4>
-              <span class="plat-prix">26.- CHF</span>
-            </div>
-            <p class="plat-description">Nature ou à la crème</p>
-          </div>
-          <div class="plat">
-            <div class="plat-entete">
-              <h4>Filet de Saumon</h4>
-              <span class="plat-prix">30.- CHF</span>
-            </div>
-            <p class="plat-description">Nature ou sauce hollandaise</p>
-          </div>
-        </div>
-
-        <h4 style="color:var(--color-bleu-marine); margin-top:24px;">Sur demande 24h à l'avance</h4>
-        <div class="plats">
-          <div class="plat">
-            <div class="plat-entete">
-              <h4>Tartare de Bœuf (Boucherie Carnata)</h4>
-              <span class="plat-prix">180g : 43.- CHF</span>
-            </div>
-            <p class="plat-description">Toast, beurre, frites ou salade</p>
-          </div>
-          <div class="plat">
-            <div class="plat-entete">
-              <h4>Cordon Bleu de Poulet</h4>
-              <span class="plat-prix">27.- CHF</span>
-            </div>
-            <p class="plat-description">Fromage à raclette, jambon, servi avec frites ou légume</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- SUGGESTION DU CHEF : photos dans image/articles/suggestion-chef/ -->
-      <div class="categorie-menu" id="suggestion-chef">
-        <h3>Suggestion du Chef</h3>
-        <div class="plats">
-          <div class="plat">
-            <div class="plat-entete">
-              <h4>Tagliata de Bœuf</h4>
-            </div>
-            <div class="plat-tailles">
-              <span>150g : <strong>32.- CHF</strong></span>
-              <span>200g : <strong>39.50 CHF</strong></span>
-            </div>
-            <p class="plat-description">Rumsteak de bœuf, roquette, copeaux de parmesan, vinaigre balsamique, huile
-              d'olive, gros sel. Servi avec frites</p>
-          </div>
-          <div class="plat">
-            <div class="plat-entete">
-              <h4>Crêpes O'Tennis</h4>
-              <span class="plat-prix">21.50 CHF</span>
-            </div>
-            <p class="plat-description">Jambon, lard, fromage raclette, oignon, œuf</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- SANDWICHS : photos dans image/articles/sandwichs/ -->
       <div class="categorie-menu" id="sandwichs">
         <h3>Nos Sandwichs</h3>
         <ul class="liste-simple">
@@ -438,8 +344,104 @@
         </ul>
       </div>
 
+      <div class="categorie-menu" id="boissons">
+        <h3>Carte des Boissons</h3>
 
-      <!-- SIROP : photos dans image/articles/sirop/ -->
+        <h4 style="color:var(--color-bleu-marine); margin-top:24px;">Boissons chaudes</h4>
+        <ul class="liste-simple">
+          <li>Café <strong>3.80 CHF</strong></li>
+          <li>Expresso / Ristretto <strong>3.80 CHF</strong></li>
+          <li>Renverser <strong>4.20 CHF</strong></li>
+          <li>Cappuccino <strong>4.30 CHF</strong></li>
+          <li>Café O'Tennis (abricotine ou williamine, crème chantilly) <strong>6.- CHF</strong></li>
+          <li>Chocolat chaud <strong>4.50 CHF</strong></li>
+          <li>Ovomaltine <strong>4.50 CHF</strong></li>
+        </ul>
+
+        <h4 style="color:var(--color-bleu-marine); margin-top:24px;">Thé et infusion</h4>
+        <ul class="liste-simple">
+          <li>Noir</li>
+          <li>Thé vert</li>
+          <li>Menthe</li>
+          <li>Fruits rouges</li>
+          <li>Herbes des Alpes</li>
+        </ul>
+        <p class="categorie-note">3.60 CHF, quel que soit le parfum</p>
+
+        <h4 style="color:var(--color-bleu-marine); margin-top:24px;">Boissons froides (2dl / 3dl / 5dl / 1L / 1,5L)</h4>
+        <ul class="liste-simple">
+          <li>Coca <strong>3.- / 3.80 / 5.40 / — / 10.80 CHF</strong></li>
+          <li>Thé froid (pêche ou citron) <strong>3.- / 3.80 / 5.40 / — / 10.80 CHF</strong></li>
+          <li>Romanette (limonade citron) <strong>3.- / 3.80 / 5.40 / — / 10.80 CHF</strong></li>
+          <li>Grapefruit <strong>3.- / 3.80 / 5.40 / — / 10.80 CHF</strong></li>
+          <li>Rivella rouge <strong>3.- / 3.80 / 5.40 / 9.20 CHF</strong></li>
+          <li>Eau minérale (plate, mini bulle) <strong>2.90 / 3.70 / 4.- / 9.20 CHF</strong></li>
+          <li>Jus de pomme <strong>3.- / 3.80 / 5.40 / 9.20 CHF</strong></li>
+        </ul>
+
+        <ul class="liste-simple">
+          <li>Coca Zéro 33cl <strong>5.80 CHF</strong></li>
+          <li>Rivella bleu 33cl <strong>5.70 CHF</strong></li>
+          <li>Sinalco 33cl <strong>5.70 CHF</strong></li>
+          <li>Schweppes Tonic (20cl) <strong>5.40 CHF</strong></li>
+          <li>Red Bull <strong>5.20 CHF</strong></li>
+          <li>Focus <strong>5.- CHF</strong></li>
+        </ul>
+
+        <h4 style="color:var(--color-bleu-marine); margin-top:24px;">Bières (2dl / 3dl / 5dl)</h4>
+        <ul class="liste-simple">
+          <li>Bière pression <strong>3.20 / 4.20 / 6.50 CHF</strong></li>
+          <li>Panachée <strong>3.20 / 4.20 / 6.50 CHF</strong></li>
+          <li>Panachée O'Tennis <strong>3.20 / 4.20 / 6.50 CHF</strong></li>
+          <li>Bière sans alcool 33cl <strong>4.20 CHF</strong></li>
+        </ul>
+      </div>
+
+      <div class="categorie-menu" id="vins">
+        <h3>Carte des Vins</h3>
+
+        <h4 style="color:var(--color-bleu-marine); margin-top:24px;">Vin ouvert (1dl / 2dl / 3dl / 5dl)</h4>
+        <ul class="liste-simple">
+          <li>Rouge — Pinot Noir du Valais <strong>5.80 / 11.60 / 17.40 / 28.60 CHF</strong></li>
+          <li>Rouge — Merlot Delea (Tessin) <strong>5.10 / 10.20 / 15.30 / 25.50 CHF</strong></li>
+          <li>Rosé — Œil de Perdrix (Valais) <strong>5.20 / 10.40 / 15.60 / 26.- CHF</strong></li>
+          <li>Rosé — Pinoron (Cortaillod) <strong>3.60 / 7.20 / 10.80 / 17.80 CHF</strong></li>
+          <li>Blanc — Chasselas sur le chemin (Cortaillod) <strong>4.80 / 9.60 / 14.40 / 23.80 CHF</strong></li>
+          <li>Blanc — Johannisberg (Valais) <strong>5.50 / 11.- / 16.50 / 27.40 CHF</strong></li>
+        </ul>
+
+      </div>
+
+      <div class="categorie-menu" id="aperitifs">
+        <h3>Apéritifs</h3>
+        <ul class="liste-simple">
+          <li>Blanc Cassis <strong>7.50 CHF</strong></li>
+          <li>Apérol <strong>10.- CHF</strong></li>
+          <li>San Bitter (10cl) <strong>4.50 CHF</strong></li>
+        </ul>
+
+        <h4 style="color:var(--color-bleu-marine); margin-top:24px;">Martini et digestifs (2cl / 4cl)</h4>
+        <ul class="liste-simple">
+          <li>Martini Blanc <strong>4cl : 8.50 CHF</strong></li>
+          <li>Ricard <strong>2cl : 4.50 CHF / 4cl : 9.- CHF</strong></li>
+          <li>Appenzells <strong>4cl : 5.50 CHF</strong></li>
+          <li>La Chaindon (Suze et Grapefruit) <strong>4cl : 6.50 CHF</strong></li>
+        </ul>
+      </div>
+
+      <div class="categorie-menu" id="jus">
+        <h3>Jus et Nectar</h3>
+        <ul class="liste-simple">
+          <li>Ananas</li>
+          <li>Orange</li>
+          <li>Poire</li>
+          <li>Multifruit</li>
+          <li>Abricot</li>
+          <li>Tomate</li>
+        </ul>
+        <p class="categorie-note">Verre de 20cl : 5.20 CHF</p>
+      </div>
+
       <div class="categorie-menu" id="sirop">
         <h3>Sirop (Nos Sirop Morand)</h3>
         <ul class="liste-simple">
@@ -450,7 +452,6 @@
         <p class="categorie-note">2.80 CHF / 3.50 CHF / 4.90 CHF selon la taille du verre</p>
       </div>
 
-      <!-- SPIRITUEUX, LIQUEUR ET EAU DE VIE : photos dans image/articles/spiritueux/ -->
       <div class="categorie-menu" id="spiritueux">
         <h3>Spiritueux, Liqueur et Eau de vie</h3>
 
@@ -474,6 +475,23 @@
         </ul>
       </div>
 
+    </div>
+  </section>
+
+  <section id="reserver" class="reservation-section" aria-labelledby="reservation-title">
+    <div class="container">
+      <div class="reservation-card">
+        <div>
+          <p class="reservation-eyebrow">On vous garde une place ?</p>
+          <h2 id="reservation-title">Réserver une table</h2>
+          <p data-group-reservation>Vous venez à plusieurs ? Pensez à réserver par téléphone ou à nous prévenir sur place.</p>
+          <p class="reservation-note" data-preorder-note>Tartare de bœuf et cordon bleu de poulet sur demande, 24 h à l’avance.</p>
+        </div>
+        <div class="reservation-actions">
+          <a class="btn" data-call href="tel:+41324814831"><span data-phone-number>032 481 48 31</span><small>Réserver par téléphone</small></a>
+          <a class="directions-link" data-directions href="https://www.google.com/maps/dir/?api=1&amp;destination=Vie+des+Cr%C3%AAts+49%2C+2732+Reconvilier">Calculer mon itinéraire ↗</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -518,6 +536,8 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="opening-hours.js"></script>
+  <script src="menu-tabs.js"></script>
   <script src="content.js"></script>
 </body>
 

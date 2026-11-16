@@ -31,6 +31,7 @@
 
   <!-- Polices : Caveat (titres) et Poppins (texte courant), hebergees localement dans fonts/ -->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="gallery.css">
 
   <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="image/favicon-192.png">
@@ -87,11 +88,13 @@
         </div>
       </a>
 
-      <button class="nav-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false">&#9776;</button>
+      <a class="header-call" data-call href="tel:+41324814831">Réserver / Appeler</a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
 
-      <nav class="main-nav">
+      <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
         <a href="#accueil" class="actif">Accueil</a>
         <a href="menu.html">Menu</a>
+        <a href="#galerie">Photos</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -103,9 +106,22 @@
       <h2>Restaurant-buvette au cœur du club de tennis</h2>
       <p class="accroche">Cuisine maison, viandes grillées et salades fraîches à deux pas des courts, à Reconvilier.</p>
 
-      <a href="menu.html" class="btn">Découvrir le menu</a>
+      <div class="hero-actions">
+        <a href="menu.html" class="btn" data-menu-button>Découvrir le menu</a>
+        <a href="tel:+41324814831" class="btn btn-secondaire" data-call>Réserver par téléphone</a>
+      </div>
     </div>
   </section>
+
+  <div class="visit-bar">
+    <div class="container visit-bar-inner">
+      <div class="visit-hours">
+        <p class="opening-status" data-opening-status role="status" aria-live="polite">Consultez nos horaires</p>
+        <p data-today-hours>Du mardi au dimanche dès 10h00</p>
+      </div>
+      <a class="directions-link" data-directions href="https://www.google.com/maps/dir/?api=1&amp;destination=Vie+des+Cr%C3%AAts+49%2C+2732+Reconvilier">Venir au restaurant · Itinéraire ↗</a>
+    </div>
+  </div>
 
   <section id="menu-du-jour" class="daily-menu" aria-labelledby="daily-menu-title" hidden></section>
 
@@ -146,6 +162,22 @@
     </div>
   </section>
 
+  <section id="galerie" aria-labelledby="gallery-title">
+    <div class="container">
+      <p class="section-soustitre">Un avant-goût de chez nous</p>
+      <h2 id="gallery-title" class="section-titre">Le restaurant en images</h2>
+      <p class="gallery-intro">La salle, la terrasse et nos assiettes. Sélectionnez une photo pour l’agrandir.</p>
+      <div id="gallery-grid" class="gallery-grid">
+        <figure class="gallery-card"><a class="gallery-photo-link" href="image/gallery/salle.jpg"><img src="image/gallery/salle.jpg" alt="La salle du restaurant" loading="lazy" width="800" height="600"></a><figcaption><h3>La salle du restaurant</h3></figcaption></figure>
+        <figure class="gallery-card"><a class="gallery-photo-link" href="image/gallery/terrasse.webp"><img src="image/gallery/terrasse.webp" alt="La terrasse du restaurant" loading="lazy" width="800" height="600"></a><figcaption><h3>La terrasse</h3></figcaption></figure>
+        <figure class="gallery-card"><a class="gallery-photo-link" href="image/gallery/plat-assiette.jpg"><img src="image/gallery/plat-assiette.jpg" alt="Assortiment de charcuterie et de fromages" loading="lazy" width="800" height="600"></a><figcaption><h3>Assiette O’Tennis</h3></figcaption></figure>
+        <figure class="gallery-card"><a class="gallery-photo-link" href="image/gallery/plat-tagliata.jpg"><img src="image/gallery/plat-tagliata.jpg" alt="Tagliata de bœuf sur roquette avec parmesan et frites" loading="lazy" width="800" height="600"></a><figcaption><h3>Tagliata de bœuf</h3></figcaption></figure>
+        <figure class="gallery-card"><a class="gallery-photo-link" href="image/gallery/plat-poulet.jpg"><img src="image/gallery/plat-poulet.jpg" alt="Blanc de poulet à la crème avec frites et tomate provençale" loading="lazy" width="800" height="600"></a><figcaption><h3>Blanc de poulet à la crème</h3></figcaption></figure>
+        <figure class="gallery-card"><a class="gallery-photo-link" href="image/gallery/plat-tartare.jpg"><img src="image/gallery/plat-tartare.jpg" alt="Tartare de bœuf avec toasts, frites et condiments" loading="lazy" width="800" height="600"></a><figcaption><h3>Tartare de bœuf</h3></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== MENU (apercu) ===================== -->
   <section id="menu">
     <div class="container">
@@ -161,11 +193,29 @@
     </div>
   </section>
 
+  <section id="reserver" class="reservation-section" aria-labelledby="reservation-title">
+    <div class="container">
+      <div class="reservation-card">
+        <div>
+          <p class="reservation-eyebrow">On vous garde une place ?</p>
+          <h2 id="reservation-title">Réserver une table</h2>
+          <p data-group-reservation>Vous venez à plusieurs ? Pensez à réserver par téléphone ou à nous prévenir sur place.</p>
+          <p class="reservation-note" data-preorder-note>Tartare de bœuf et cordon bleu de poulet sur demande, 24 h à l’avance.</p>
+        </div>
+        <div class="reservation-actions">
+          <a class="btn" data-call href="tel:+41324814831"><span data-phone-number>032 481 48 31</span><small>Réserver par téléphone</small></a>
+          <a class="directions-link" data-directions href="https://www.google.com/maps/dir/?api=1&amp;destination=Vie+des+Cr%C3%AAts+49%2C+2732+Reconvilier">Calculer mon itinéraire ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== HORAIRES & CONTACT ===================== -->
   <section class="alt" id="contact">
     <div class="container">
       <p class="section-soustitre">On vous attend</p>
       <h2 class="section-titre">Horaires &amp; Contact</h2>
+      <p class="contact-status opening-status" data-opening-status role="status" aria-live="polite">Consultez nos horaires</p>
 
       <div class="contact-grille">
         <div class="bloc-infos">
@@ -293,6 +343,8 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="opening-hours.js"></script>
+  <script src="gallery.js"></script>
   <script src="content.js"></script>
 </body>
 

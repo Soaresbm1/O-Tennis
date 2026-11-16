@@ -73,6 +73,9 @@ async function page(filename, data = initial, failed = []) {
   edited.restaurant.hours[0].closed = false;
   edited.restaurant.email = 'contact@example.com';
   edited.restaurant.facebook = 'https://www.facebook.com/otennis';
+  edited.restaurant.groupReservation = 'Pour votre repas de groupe, appelez-nous.';
+  edited.restaurant.preorderNote = 'Plats sur commande : contactez-nous la veille.';
+  edited.restaurant.mapAddress = 'Rue de test 12, 2732 Reconvilier';
   edited.menu.categories[0].groups[0].items[0].price = '8.50 CHF';
   edited.menu.categories[0].groups[0].items[0].image = '/image/logo.jpeg';
   edited.menu.categories[0].groups[0].items.push({ name: 'Nouvelle boisson', price: '4.- CHF', description: 'Maison', image: '', portions: [] });
@@ -85,6 +88,14 @@ async function page(filename, data = initial, failed = []) {
   assert.ok([...home.document.querySelectorAll('a[href="tel:+41324810000"]')].length >= 2);
   assert.ok([...home.document.querySelectorAll('a[href="mailto:contact@example.com"]')].length >= 2);
   assert.ok(home.document.querySelector('.manager-link'));
+  assert.equal(home.document.querySelector('.header-call').getAttribute('href'), 'tel:+41324810000');
+  assert.equal(home.document.querySelector('.hero [data-call]').textContent, 'Réserver par téléphone', 'Editing the menu button must not relabel the reservation button');
+  assert.equal(home.document.querySelector('[data-group-reservation]').textContent, edited.restaurant.groupReservation);
+  assert.equal(home.document.querySelector('[data-preorder-note]').textContent, edited.restaurant.preorderNote);
+  home.document.querySelectorAll('[data-directions]').forEach(link => {
+    assert.equal(new URL(link.href).searchParams.get('destination'), edited.restaurant.mapAddress);
+    assert.equal(new URL(link.href).hostname, 'www.google.com');
+  });
   const structured = JSON.parse(home.document.querySelector('script[type="application/ld+json"]').textContent);
   assert.ok(structured.openingHoursSpecification.some(day => day.dayOfWeek === 'Friday' && day.closes === '23:00'));
   assert.ok(structured.openingHoursSpecification.some(day => day.dayOfWeek === 'Monday'));
@@ -93,7 +104,7 @@ async function page(filename, data = initial, failed = []) {
   const updatedMenu = await page('menu.html', edited);
   assert.equal(updatedMenu.document.querySelector('.plat-prix').textContent, '8.50 CHF');
   assert.equal(updatedMenu.document.querySelectorAll('.menu-item-name').length, savedItems.length + 1);
-  assert.ok(updatedMenu.document.querySelector('.article-photo'));
+  assert.ok(updatedMenu.document.querySelector('.article-photo, .plat-photo'));
   assert.ok(updatedMenu.calls.every(call => call.options.cache === 'no-cache' && call.options.credentials === 'omit'));
 
   edited.menu.categories[0].groups[0].items[0].name = '<img src=x onerror=alert(1)>';

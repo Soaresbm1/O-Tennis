@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "image": "/image/gallery/salle.jpg",
+      "alt": "La salle du restaurant avec ses tables en bois, ses chaises noires et ses grandes fenêtres",
+      "caption": "La salle du restaurant"
+    },
+    {
+      "image": "/image/gallery/terrasse.webp",
+      "alt": "La terrasse avec ses fauteuils turquoise devant le restaurant et les collines de Reconvilier",
+      "caption": "La terrasse"
+    },
+    {
+      "image": "/image/gallery/plat-assiette.jpg",
+      "alt": "Assortiment de charcuterie et de fromages avec cornichons, raisin et noix",
+      "caption": "Assiette O’Tennis"
+    },
+    {
+      "image": "/image/gallery/plat-tagliata.jpg",
+      "alt": "Tagliata de bœuf sur roquette, avec copeaux de parmesan et un panier de frites",
+      "caption": "Tagliata de bœuf"
+    },
+    {
+      "image": "/image/gallery/plat-poulet.jpg",
+      "alt": "Blanc de poulet à la crème servi avec des frites et une tomate provençale",
+      "caption": "Blanc de poulet à la crème"
+    },
+    {
+      "image": "/image/gallery/plat-tartare.jpg",
+      "alt": "Tartare de bœuf accompagné de toasts, de frites et de condiments",
+      "caption": "Tartare de bœuf"
+    }
+  ]
+}

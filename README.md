@@ -11,14 +11,38 @@ Le site reste hébergé sur **GitHub Pages**, avec son domaine géré chez Infom
 - `.pages.yml` définit les formulaires de gestion.
 - **Menu du jour** permet de choisir une date, saisir le plat et le prix, puis ajouter une entrée, un dessert et une photo facultatifs. Plusieurs jours peuvent être préparés à l’avance.
 - `data/home.json` contient l’accueil, la photo, les points forts et une annonce temporaire.
-- `data/restaurant.json` contient les coordonnées, le logo, les horaires et les réseaux sociaux, partagés entre l’accueil et le pied de page.
-- `data/menu.json` contient les 11 catégories initiales et les 91 plats et boissons, avec descriptions, prix, portions et photos facultatives.
+- `data/restaurant.json` contient les coordonnées, le logo, les horaires, les fermetures exceptionnelles, les consignes de réservation et les réseaux sociaux. Le téléphone et l’adresse alimentent aussi les boutons d’appel et d’itinéraire.
+- `data/menu.json` contient la carte, avec descriptions, prix, portions et photos facultatives. Les catégories présentent d’abord les plats, puis les boissons ; leur ordre et le nom court de chaque onglet (`navLabel`, facultatif) sont modifiables dans le gestionnaire.
+- **Photos du restaurant et des plats** gère `data/gallery.json` : photo, description et légende, avec prix facultatif. La liste vide masque la galerie.
 - `data/daily-menu.json` contient la liste des menus par date. Seul le menu de la date courante en **Europe/Zurich** est affiché sur l’accueil et la page de la carte ; les dates passées ou futures restent masquées. La liste vide initiale masque ce bloc. Prévoir un seul menu par date ; en cas de doublon, le premier de cette date est utilisé.
 - `content.js` charge les données depuis le site avec revalidation du cache et les affiche avec des nœuds texte, sans interpréter de HTML fourni par les champs.
 
 L’activation nécessite une autorisation de l’application Pages CMS pour **ce seul dépôt**, puis une invitation email du gérant depuis ce service. Le propriétaire effectue ces étapes dans son compte ; aucune invitation n’est envoyée automatiquement. Les sauvegardes du gestionnaire sont de vrais commits GitHub et déclenchent la publication GitHub Pages habituelle.
 
-Pour vérifier localement le contenu et sa mise à jour : installer les outils de test avec `npm install --prefix .cms-qa jsdom@26.1.0 yaml@2.8.1`, puis exécuter `node tools/test-content.cjs` et `node tools/test-daily-menu.cjs`. Ces outils ne sont pas chargés par le site. Pour un aperçu manuel : `python -m http.server 8090 --bind 127.0.0.1`, puis ouvrir `http://127.0.0.1:8090/` et `/admin/`.
+## Accès rapides et présentation
+
+- Boutons **Réserver / Appeler** dans l’en-tête, l’accueil et les blocs de réservation.
+- Indicateur ouvert/fermé, horaires du jour et jour courant mis en évidence dans la semaine. `opening-hours.js` utilise l’heure **Europe/Zurich**, les horaires enregistrés et les congés (`closures`, dates `start` et `end` incluses, motif `reason`). Un horaire incohérent affiche « Horaires à confirmer ».
+- Galerie de la salle, de la terrasse et des plats, avec agrandissement des photos.
+- Carte par onglets, navigation au clavier et liens directs vers les catégories ; les plats précèdent les boissons dans le contenu initial.
+- Boutons **Itinéraire** ouvrant le trajet Google Maps vers l’adresse du restaurant.
+- Consignes pour les groupes (`groupReservation`) et les commandes anticipées (`preorderNote`), modifiables dans **Coordonnées et horaires**.
+
+## Vérification locale
+
+Installer les outils avec `npm install --prefix .cms-qa jsdom@26.1.0 yaml@2.8.1`, puis exécuter :
+
+```text
+node tools/test-content.cjs
+node tools/test-daily-menu.cjs
+node tools/test-opening-hours.cjs
+node tools/test-menu-tabs.cjs
+node tools/test-gallery.cjs
+```
+
+Ces outils ne sont pas chargés par le site. Pour un aperçu manuel : `python -m http.server 8090 --bind 127.0.0.1`, puis ouvrir `http://127.0.0.1:8090/`, `/menu.html` et `/admin/`.
+
+Avec cet aperçu en cours, `node tools/test-visitor-flow.cjs` vérifie aussi le chargement réel des pages, scripts, données et photos, les onglets, le menu mobile, l’appel et l’itinéraire.
 
 `tools/import-cms-content.py` a servi à la migration initiale. Il refuse de réécrire les fichiers JSON existants pour préserver les modifications du gérant.
 

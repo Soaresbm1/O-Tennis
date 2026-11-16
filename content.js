@@ -88,6 +88,21 @@
       info[2].replaceChildren(node('strong', '', 'Email'), node('br'), link(data.email, 'mailto:' + text(data.email).replace(/[\r\n?]/g, '')));
       info[3].replaceChildren(node('strong', '', 'Réservation'), node('br'), document.createTextNode(text(data.reservation)));
     }
+    document.querySelectorAll('[data-call]').forEach(element => {
+      const number = phone(data.phone);
+      element.href = number ? 'tel:' + number : new URL('index.html#contact', siteBase).href;
+      element.setAttribute('aria-label', 'Appeler le restaurant au ' + text(data.phone));
+    });
+    setText('[data-phone-number]', data.phone);
+    setText('[data-group-reservation]', data.groupReservation);
+    setText('[data-preorder-note]', data.preorderNote);
+    document.querySelectorAll('[data-group-reservation], [data-preorder-note]').forEach(element => {
+      element.hidden = !element.textContent.trim();
+    });
+    const directions = new URL('https://www.google.com/maps/dir/');
+    directions.searchParams.set('api', '1');
+    directions.searchParams.set('destination', text(data.mapAddress) || address.join(', '));
+    document.querySelectorAll('[data-directions]').forEach(element => { element.href = directions.href; });
     document.querySelectorAll('.contact-reseaux').forEach(element => {
       const instagram = socialLink('instagram', 'Instagram', '', data.instagram);
       element.replaceChildren(...(instagram ? [instagram] : []));
@@ -123,6 +138,7 @@
       const body = node('tbody');
       data.hours.forEach(day => {
         const row = node('tr');
+        row.dataset.weekday = text(day.schemaDay);
         const opening = time(day.opens), closing = time(day.closes);
         row.append(node('td', '', day.day), node('td', '', day.closed ? 'Fermé' : opening && closing ? opening.replace(':', 'h') + ' - ' + closing.replace(':', 'h') : 'Nous contacter'));
         body.append(row);
@@ -157,12 +173,13 @@
     }
     const pageLabel = document.body.dataset.page === 'menu' ? 'Menu — ' : document.body.dataset.page === 'not-found' ? 'Page introuvable — ' : '';
     document.title = pageLabel + data.name + ' — ' + text(data.tagline) + ' | ' + text(data.city);
+    document.dispatchEvent(new CustomEvent('otennis:restaurant-ready', { detail: data }));
   }
 
   function renderHome(data) {
     if (!data || !text(data.heroTitle)) throw new Error('Invalid home content');
     for (const [selector, key] of [
-      ['.hero h2', 'heroTitle'], ['.hero .accroche', 'heroText'], ['.hero .btn', 'heroButton'],
+      ['.hero h2', 'heroTitle'], ['.hero .accroche', 'heroText'], ['.hero [data-menu-button]', 'heroButton'],
       ['.presentation-texte .section-soustitre', 'welcomeLabel'], ['.presentation-texte h2', 'presentationTitle'],
       ['.presentation-texte > p:not(.section-soustitre)', 'presentationText'],
       ['#menu .section-soustitre', 'menuLabel'], ['#menu .section-titre', 'menuTitle'],
@@ -242,7 +259,7 @@
       let id = /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(category.id) ? category.id : 'categorie-' + (i + 1);
       while (seen.has(id)) id += '-2';
       seen.add(id);
-      nav.append(link(category.title, '#' + id));
+      nav.append(link(text(category.navLabel) || category.title, '#' + id));
       const section = node('div', 'categorie-menu');
       section.id = id;
       section.append(node('h3', '', category.title));

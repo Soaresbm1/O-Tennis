@@ -41,6 +41,26 @@ content:
           - {name: price, label: Prix du menu, type: string, required: true, description: "Exemple : 21.50 CHF."}
           - {name: photo, label: Photo facultative, type: image}
 
+  - name: gallery
+    label: Photos du restaurant et des plats
+    type: file
+    path: data/gallery.json
+    format: json
+    fields:
+      - name: items
+        label: Photos de la galerie
+        type: object
+        description: "Les photos s’affichent sur l’accueil et s’agrandissent au clic. Vider la liste pour masquer la galerie."
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{caption}"
+        fields:
+          - {name: image, label: Photo, type: image, required: true}
+          - {name: alt, label: Description de la photo, type: string, required: true}
+          - {name: caption, label: Légende, type: string, required: true}
+          - {name: price, label: Prix facultatif, type: string, description: "Exemple : dès 17.50 CHF. Vérifier sa cohérence avec la carte."}
+
   - name: home
     label: Accueil et présentation
     type: file
@@ -88,6 +108,8 @@ content:
       - {name: phone, label: Téléphone, type: string, required: true, description: "Exemple : 032 481 48 31 ou +41 32 481 48 31"}
       - {name: email, label: Email, type: string, required: true}
       - {name: reservation, label: Comment réserver, type: text}
+      - {name: groupReservation, label: Consigne pour les groupes, type: text}
+      - {name: preorderNote, label: Plats à commander à l’avance, type: text}
       - {name: mapAddress, label: Adresse sur Google Maps, type: string, required: true}
       - name: hours
         label: Horaires d’ouverture
@@ -126,6 +148,28 @@ content:
             pattern:
               regex: '^([01][0-9]|2[0-3]):[0-5][0-9]$'
               message: "Utiliser le format 22:30."
+      - name: closures
+        label: Congés et fermetures exceptionnelles
+        type: object
+        description: "Fermetures sur des journées entières, dates de début et de fin comprises. Le statut ouvert/fermé en tient compte."
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{start} au {end} — {reason}"
+        fields:
+          - name: start
+            label: Premier jour fermé
+            type: date
+            required: true
+            default: ""
+            options: {time: false, format: yyyy-MM-dd}
+          - name: end
+            label: Dernier jour fermé
+            type: date
+            required: true
+            default: ""
+            options: {time: false, format: yyyy-MM-dd}
+          - {name: reason, label: Motif affiché, type: string, description: "Exemple : Congés annuels."}
       - {name: facebook, label: Lien Facebook, type: string, description: "Adresse complète https://… ; vide pour masquer."}
       - {name: instagram, label: Lien Instagram, type: string, description: "Adresse complète https://… ; vide pour masquer."}
 
@@ -154,6 +198,7 @@ content:
             description: "Un nom unique sans espace ni accent, par exemple petites-faims."
             pattern: '^[a-z0-9]+(?:-[a-z0-9]+)*$'
           - {name: title, label: Nom de la catégorie, type: string, required: true}
+          - {name: navLabel, label: Nom court de l’onglet, type: string, description: "Facultatif. Exemple : Petites faims."}
           - {name: notes, label: Informations de la catégorie, type: text, list: true}
           - name: groups
             label: Groupes de plats ou boissons

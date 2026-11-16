@@ -9,6 +9,8 @@
   "phone": "032 481 48 31",
   "email": "Krystebitz@hotmail.com",
   "reservation": "Par téléphone ou directement sur place",
+  "groupReservation": "Vous venez à plusieurs ? Pensez à réserver par téléphone ou à nous prévenir sur place.",
+  "preorderNote": "Tartare de bœuf et cordon bleu de poulet sur demande, 24 h à l’avance.",
   "mapAddress": "Vie des Crêts 49, 2732 Reconvilier, Suisse",
   "hours": [
     {
@@ -61,6 +63,7 @@
       "closes": "22:00"
     }
   ],
+  "closures": [],
   "facebook": "",
   "instagram": "https://www.instagram.com/otennis_chez_kryste/"
 }

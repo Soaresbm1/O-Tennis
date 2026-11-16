@@ -1,0 +1,36 @@
+/* Photo gallery and native lightbox, using the restaurant's existing palette. */
+#galerie[hidden], .gallery-view-photo[hidden], .gallery-view-error[hidden], .gallery-view-price[hidden] { display: none; }
+.gallery-intro { max-width: 650px; margin: 0 auto 30px; text-align: center; }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.gallery-card { min-width: 0; margin: 0; overflow: hidden; background: var(--color-blanc); border-radius: var(--rayon); box-shadow: var(--ombre); }
+.gallery-photo-link { display: block; position: relative; background: var(--color-bleu-marine); }
+.gallery-photo-link img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.gallery-enlarge { position: absolute; right: 12px; bottom: 12px; padding: 5px 10px; border-radius: 30px; background: var(--color-creme); color: var(--color-bleu-marine); font-size: 0.75rem; font-weight: 600; }
+.gallery-card figcaption { padding: 14px 18px 18px; }
+.gallery-card h3 { margin: 0; font-size: 1.6rem; line-height: 1.2; overflow-wrap: anywhere; }
+.gallery-card-price { margin: 6px 0 0; color: var(--color-bleu-marine); font-weight: 600; }
+.gallery-photo-link:focus-visible { outline-offset: -4px; }
+.gallery-viewing { overflow: hidden; }
+.gallery-lightbox { width: min(940px, calc(100% - 32px)); max-height: calc(100dvh - 32px); margin: auto; padding: 0; overflow: auto; border: 0; border-radius: var(--rayon); background: var(--color-creme); color: var(--color-texte); box-shadow: 0 20px 80px rgba(0, 0, 0, 0.35); }
+.gallery-lightbox::backdrop { background: rgba(10, 19, 37, 0.84); }
+.gallery-lightbox:not([open]) { display: none; }
+.gallery-lightbox-content { padding: 18px; }
+.gallery-lightbox-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 14px; }
+.gallery-view-count { margin: 0; font-size: 0.85rem; }
+.gallery-lightbox button { min-height: 44px; padding: 10px 18px; border: 1px solid var(--color-bleu-marine); border-radius: 30px; font: 600 0.9rem var(--font-texte); background: var(--color-blanc); color: var(--color-bleu-marine); cursor: pointer; }
+.gallery-lightbox button:hover, .gallery-lightbox button:focus-visible { background: var(--color-jaune-balle); }
+.gallery-lightbox button:disabled { opacity: 0.45; cursor: default; }
+.gallery-view-figure { margin: 0; }
+.gallery-view-photo { width: 100%; max-height: 65dvh; height: auto; object-fit: contain; background: var(--color-bleu-marine); border-radius: 6px; }
+.gallery-view-figure figcaption { padding: 14px 0; }
+.gallery-view-figure h3 { margin: 0; font-size: 1.7rem; }
+.gallery-view-price { margin: 4px 0 0; font-weight: 600; }
+.gallery-view-error { padding: 35px 15px; text-align: center; }
+.gallery-view-controls { display: flex; justify-content: space-between; gap: 12px; }
+@media (max-width: 800px) { .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; } }
+@media (max-width: 480px) {
+  .gallery-grid { grid-template-columns: minmax(0, 1fr); }
+  .gallery-lightbox { width: calc(100% - 20px); max-height: calc(100dvh - 20px); }
+  .gallery-lightbox-content { padding: 12px; }
+  .gallery-lightbox button { padding-inline: 12px; font-size: 0.8rem; }
+}
