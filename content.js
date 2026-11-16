@@ -267,6 +267,67 @@
     }
   }
 
+  let dailyMenus = [];
+  let dailyMenuDay = '';
+
+  function swissDay() {
+    const parts = new Intl.DateTimeFormat('en-GB', {
+      timeZone: 'Europe/Zurich', year: 'numeric', month: '2-digit', day: '2-digit'
+    }).formatToParts(new Date());
+    const value = type => parts.find(part => part.type === type).value;
+    return value('year') + '-' + value('month') + '-' + value('day');
+  }
+
+  function renderDailyMenu() {
+    const section = document.getElementById('menu-du-jour');
+    if (!section) return;
+    dailyMenuDay = swissDay();
+    // Matching a real Swiss calendar day also rejects timestamps and invalid dates.
+    const menu = dailyMenus.find(item => item && item.date === dailyMenuDay && text(item.main).trim() && text(item.price).trim());
+    if (!menu) {
+      section.hidden = true;
+      section.replaceChildren();
+      return;
+    }
+
+    const container = node('div', 'container');
+    const card = node('div', 'daily-menu-card');
+    const content = node('div', 'daily-menu-content');
+    const heading = node('div', 'daily-menu-heading');
+    const titleBlock = node('div');
+    titleBlock.append(node('p', 'daily-menu-eyebrow', 'Aujourd’hui à table'));
+    const title = node('h2', '', 'Menu du jour');
+    title.id = 'daily-menu-title';
+    const date = node('time', 'daily-menu-date', new Intl.DateTimeFormat('fr-CH', {
+      timeZone: 'Europe/Zurich', weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+    }).format(new Date(menu.date + 'T12:00:00Z')));
+    date.dateTime = menu.date;
+    titleBlock.append(title, date);
+    const price = node('p', 'daily-menu-price', menu.price);
+    heading.append(titleBlock, price);
+    content.append(heading);
+
+    const courses = node('dl', 'daily-menu-courses');
+    for (const [key, label] of [['starter', 'Entrée'], ['main', 'Plat principal'], ['dessert', 'Dessert']]) {
+      if (!text(menu[key]).trim()) continue;
+      const course = node('div', 'daily-menu-course');
+      course.append(node('dt', '', label), node('dd', '', menu[key]));
+      courses.append(course);
+    }
+    content.append(courses);
+    card.append(content);
+    const photo = image(menu.photo, 'Menu du jour : ' + menu.main, 'daily-menu-photo');
+    if (photo) card.append(photo);
+    container.append(card);
+    section.replaceChildren(container);
+    section.hidden = false;
+  }
+
+  function setDailyMenus(data) {
+    dailyMenus = list(data && data.menus);
+    renderDailyMenu();
+  }
+
   async function load(name) {
     const response = await fetch(new URL('data/' + name + '.json', siteBase), { cache: 'no-cache', credentials: 'omit' });
     if (!response.ok) throw new Error('Content unavailable');
@@ -275,19 +336,26 @@
 
   async function refresh() {
     const page = document.body.dataset.page;
-    const requests = [load('restaurant')];
-    if (page === 'home' || page === 'menu') requests.push(load(page));
-    const results = await Promise.allSettled(requests);
+    const requests = [['restaurant', renderRestaurant]];
+    if (page === 'home' || page === 'menu') {
+      requests.push([page, page === 'menu' ? renderMenu : renderHome], ['daily-menu', setDailyMenus]);
+    }
+    const results = await Promise.allSettled(requests.map(([name]) => load(name)));
     for (let i = 0; i < results.length; i++) {
       try {
         if (results[i].status !== 'fulfilled') throw results[i].reason;
-        if (i === 0) renderRestaurant(results[i].value);
-        else if (page === 'menu') renderMenu(results[i].value);
-        else renderHome(results[i].value);
+        requests[i][1](results[i].value);
       } catch (_) {
         // Keep the original content if an individual data file cannot be read.
         document.documentElement.dataset.contentStatus = 'fallback';
       }
+    }
+    if (page === 'home' || page === 'menu') {
+      // Recheck sleeping/background tabs too; visitors' own timezone is irrelevant.
+      const checkDay = () => { if (dailyMenuDay !== swissDay()) renderDailyMenu(); };
+      window.setInterval(checkDay, 30000);
+      document.addEventListener('visibilitychange', checkDay);
+      window.addEventListener('pageshow', checkDay);
     }
     document.dispatchEvent(new CustomEvent('otennis:content-ready'));
   }

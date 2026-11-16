@@ -11,13 +11,43 @@ settings:
     identity: app
 
 content:
+  - name: daily-menu
+    label: Menu du jour
+    type: file
+    path: data/daily-menu.json
+    format: json
+    fields:
+      - name: menus
+        label: Menus par date
+        type: object
+        description: "Un seul menu par date. Vous pouvez préparer les prochains jours : seul le menu d’aujourd’hui s’affiche, selon l’heure suisse. Vider la liste pour tout masquer."
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{date} — {main}"
+        fields:
+          - name: date
+            label: Date du menu
+            type: date
+            required: true
+            default: ""
+            description: "Choisir le jour de service. Le menu disparaît automatiquement une fois cette date passée."
+            options:
+              time: false
+              format: yyyy-MM-dd
+          - {name: starter, label: Entrée, type: text}
+          - {name: main, label: Plat principal et accompagnement, type: text, required: true}
+          - {name: dessert, label: Dessert, type: text}
+          - {name: price, label: Prix du menu, type: string, required: true, description: "Exemple : 21.50 CHF."}
+          - {name: photo, label: Photo facultative, type: image}
+
   - name: home
     label: Accueil et présentation
     type: file
     path: data/home.json
     format: json
     fields:
-      - {name: announcement, label: Annonce temporaire, type: text, description: "Congés, événement ou plat du jour. Laisser vide pour masquer."}
+      - {name: announcement, label: Annonce temporaire, type: text, description: "Congés ou événement. Pour les plats du jour, utiliser le formulaire Menu du jour. Laisser vide pour masquer."}
       - {name: heroTitle, label: Grand titre, type: string, required: true}
       - {name: heroText, label: Texte sous le grand titre, type: text, required: true}
       - {name: heroButton, label: Bouton vers le menu, type: string, required: true}
