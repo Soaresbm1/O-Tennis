@@ -1,7 +1,6 @@
 {
   "label": "À table",
-  "title": "Notre Menu",
-  "notice": "Menu du jour \nÉmincé de bœuf \nPetits pois carottes \nPâtes \n19.50",
+  "title": "Notre carte",
   "categories": [
     {
       "id": "plats",
