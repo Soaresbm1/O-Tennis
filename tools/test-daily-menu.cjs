@@ -19,7 +19,6 @@ const standardMenu = {
   main: 'Poulet rôti, pommes de terre et légumes',
   dessert: 'Tarte aux pommes',
   price: '22.50 CHF',
-  // Older saved menus may still contain a photo; the approved layout ignores it.
   photo: '/image/logo.jpeg'
 };
 
@@ -86,7 +85,6 @@ function displayed(test) {
   for (const key of ['date', 'main', 'price']) {
     assert.ok(menuFields.fields.find(field => field.name === key && field.required), key + ' must be required in the manager form');
   }
-  assert.ok(!menuFields.fields.some(field => field.name === 'photo'), 'The text-only daily menu form must not ask for a photo');
   assert.ok(Array.isArray(initial['daily-menu'].menus), 'Daily menus must be stored as an editable list');
 
   for (const filename of ['index.html', 'menu.html']) {
@@ -96,7 +94,7 @@ function displayed(test) {
     for (const key of ['starter', 'main', 'dessert', 'price']) assert.ok(block.textContent.includes(standardMenu[key]), key + ' must be visible');
     assert.equal(block.querySelector('time').dateTime, standardMenu.date);
     assert.match(block.textContent, /16 novembre 2026/);
-    assert.equal(block.querySelector('img'), null, 'Daily menus must stay text-only even when older saved data contains a photo');
+    assert.match(block.querySelector('img').src, /\/image\/logo\.jpeg$/);
     assert.ok(test.calls.some(call => call.name === 'daily-menu'));
     assert.ok(test.calls.every(call => call.options.cache === 'no-cache' && call.options.credentials === 'omit'));
   }
@@ -136,6 +134,11 @@ function displayed(test) {
   assert.ok(displayed(hostile).textContent.includes(attack));
   assert.equal(displayed(hostile).querySelector('img'), null);
   assert.equal(hostile.document.querySelectorAll('[onerror], img[src^="javascript:"], a[href^="javascript:"]').length, 0);
+  const brokenPhoto = await page('index.html', [standardMenu]);
+  const photo = displayed(brokenPhoto).querySelector('img');
+  photo.dispatchEvent(new brokenPhoto.window.Event('error'));
+  assert.ok(photo.hidden);
+  assert.ok(displayed(brokenPhoto).textContent.includes(standardMenu.main));
 
   // At these instants UTC is still the previous day; Zurich has passed midnight.
   for (const [now, date] of [
@@ -174,7 +177,7 @@ function displayed(test) {
   assert.equal(displayed(notFound), null);
   assert.ok(!notFound.calls.some(call => call.name === 'daily-menu'));
 
-  console.log('PASS: text-only daily-menu form and legacy-photo compatibility, today on both pages, empty/past/future/invalid menus hidden, optional courses, safe text/URLs, Zurich summer/winter midnight, open-tab expiry and prepared menus, independent fetch failures.');
+  console.log('PASS: daily-menu form, today on both pages, empty/past/future/invalid menus hidden, optional fields/photo, safe text/URLs, Zurich summer/winter midnight, open-tab expiry and prepared menus, independent fetch failures.');
 })().then(() => {
   for (const dom of opened) dom.window.close();
   process.exit(0);

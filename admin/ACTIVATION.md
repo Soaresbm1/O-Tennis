@@ -35,7 +35,7 @@ Les changements sont enregistrés dans GitHub, partagés avec tous les visiteurs
 1. Ouvrir l’espace de gestion, puis le formulaire **Menu du jour**.
 2. Ajouter un menu dans **Menus par date**, ou ouvrir le menu de la date souhaitée pour le corriger.
 3. Choisir la **Date du menu**, saisir le **Plat principal et accompagnement** et le **Prix du menu**, par exemple `21.50 CHF`.
-4. Ajouter, si souhaité, l’**Entrée** et le **Dessert**. Les rubriques laissées vides ne s’affichent pas. Le menu du jour est présenté sans photo.
+4. Ajouter, si souhaité, l’**Entrée**, le **Dessert** et une **Photo facultative**. Les rubriques laissées vides ne s’affichent pas.
 5. Cliquer sur **Save / Enregistrer**, attendre quelques minutes puis vérifier l’accueil ou la page de la carte.
 
 Un seul menu est affiché par jour, sur l’accueil et sur la page de la carte. Utiliser **une seule entrée par date** ; en cas de doublon, le premier menu de cette date dans la liste est utilisé. Pour corriger un menu, modifier son entrée existante.

@@ -9,7 +9,7 @@ Le site reste hébergé sur **GitHub Pages**, avec son domaine géré chez Infom
 - Entrée du gérant : `https://restaurant-buvette-otennis.ch/admin/`.
 - [Activation par le propriétaire et guide du gérant](admin/ACTIVATION.md).
 - `.pages.yml` définit les formulaires de gestion.
-- **Menu du jour** permet de choisir une date, saisir le plat et le prix, puis ajouter une entrée et un dessert facultatifs. Son affichage est sans photo. Plusieurs jours peuvent être préparés à l’avance.
+- **Menu du jour** permet de choisir une date, saisir le plat et le prix, puis ajouter une entrée, un dessert et une photo facultatifs. Plusieurs jours peuvent être préparés à l’avance.
 - `data/home.json` contient l’accueil, la photo, les points forts et une annonce temporaire.
 - `data/restaurant.json` contient les coordonnées, le logo, les horaires, les fermetures exceptionnelles, les consignes de réservation et les réseaux sociaux. Le téléphone et l’adresse alimentent aussi les boutons d’appel et d’itinéraire.
 - `data/menu.json` contient la carte, avec descriptions, prix, portions et photos facultatives. Les catégories présentent d’abord les plats, puis les boissons ; leur ordre et le nom court de chaque onglet (`navLabel`, facultatif) sont modifiables dans le gestionnaire.

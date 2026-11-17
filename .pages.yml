@@ -39,6 +39,7 @@ content:
           - {name: main, label: Plat principal et accompagnement, type: text, required: true}
           - {name: dessert, label: Dessert, type: text}
           - {name: price, label: Prix du menu, type: string, required: true, description: "Exemple : 21.50 CHF."}
+          - {name: photo, label: Photo facultative, type: image}
 
   - name: gallery
     label: Photos du restaurant et des plats

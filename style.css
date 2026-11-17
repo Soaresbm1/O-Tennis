@@ -334,7 +334,7 @@ section.alt {
 
 /* ===================== MENU DU JOUR ===================== */
 
-.daily-menu[hidden] { display: none; }
+.daily-menu[hidden], .daily-menu-photo[hidden] { display: none; }
 
 .daily-menu {
   padding: 40px 0;
@@ -342,6 +342,8 @@ section.alt {
 }
 
 .daily-menu-card {
+  display: flex;
+  flex-wrap: wrap;
   overflow: hidden;
   background: var(--color-blanc);
   border: 1px solid rgba(27, 42, 74, 0.12);
@@ -350,7 +352,7 @@ section.alt {
   box-shadow: var(--ombre);
 }
 
-.daily-menu-content { padding: 30px 36px; min-width: 0; }
+.daily-menu-content { flex: 1 1 440px; padding: 30px 36px; min-width: 0; }
 .daily-menu-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
 .daily-menu-eyebrow { margin: 0 0 4px; color: var(--color-bleu-marine); font-size: 0.78rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
 .daily-menu h2 { margin: 0; font-size: 2.6rem; line-height: 1.1; }
@@ -361,10 +363,12 @@ section.alt {
 .daily-menu-course dt { font-size: 0.75rem; color: #555; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; }
 .daily-menu-course dd { margin: 3px 0 0; white-space: pre-line; }
 .daily-menu-content, .daily-menu-price { overflow-wrap: anywhere; }
+.daily-menu-photo { flex: 1 1 260px; width: 32%; max-height: 400px; object-fit: cover; }
 
 @media (max-width: 600px) {
   .daily-menu { padding: 24px 0; }
   .daily-menu-content { padding: 24px; }
+  .daily-menu-photo { width: 100%; flex-basis: 100%; max-height: 240px; }
 }
 
 /* ===================== PRESENTATION ===================== */

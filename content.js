@@ -333,6 +333,8 @@
     }
     content.append(courses);
     card.append(content);
+    const photo = image(menu.photo, 'Menu du jour : ' + menu.main, 'daily-menu-photo');
+    if (photo) card.append(photo);
     container.append(card);
     section.replaceChildren(container);
     section.hidden = false;
