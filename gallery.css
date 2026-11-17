@@ -10,8 +10,25 @@
 .gallery-carousel-controls button:hover:not(:disabled) { background: var(--color-jaune-balle); }
 .gallery-carousel-controls button:disabled { opacity: 0.4; cursor: default; }
 .gallery-carousel-status { margin: 0; color: var(--color-bleu-marine); font-size: 0.85rem; text-align: center; }
-.gallery-photo-link { display: block; position: relative; background: var(--color-bleu-marine); }
+.gallery-photo-link { display: block; position: relative; overflow: hidden; background: var(--color-bleu-marine); }
 .gallery-photo-link img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.gallery-photo-link::after { content: ''; position: absolute; inset: 0; z-index: 1; border: 3px solid transparent; pointer-events: none; }
+.gallery-card:focus-within { box-shadow: 0 8px 22px rgba(27, 42, 74, 0.22); }
+.gallery-card:focus-within .gallery-photo-link::after { border-color: var(--color-jaune-balle); }
+
+@media (hover: hover) and (pointer: fine) {
+  .gallery-card:hover { box-shadow: 0 8px 22px rgba(27, 42, 74, 0.22); }
+  .gallery-card:hover .gallery-photo-link::after { border-color: var(--color-jaune-balle); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .gallery-card { transition: box-shadow 200ms ease; }
+  .gallery-photo-link img { transition: transform 250ms ease; }
+  .gallery-photo-link::after { transition: border-color 200ms ease; }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .gallery-card:hover .gallery-photo-link img,
+  .gallery-card:focus-within .gallery-photo-link img { transform: scale(1.045); }
+}
 .gallery-enlarge { position: absolute; right: 12px; bottom: 12px; padding: 5px 10px; border-radius: 30px; background: var(--color-creme); color: var(--color-bleu-marine); font-size: 0.75rem; font-weight: 600; }
 .gallery-card figcaption { padding: 14px 18px 18px; }
 .gallery-card h3 { margin: 0; font-size: 1.6rem; line-height: 1.2; overflow-wrap: anywhere; }
