@@ -23,7 +23,7 @@ L’activation nécessite une autorisation de l’application Pages CMS pour **c
 
 - Boutons **Réserver / Appeler** dans l’en-tête, l’accueil et les blocs de réservation.
 - Indicateur ouvert/fermé, horaires du jour et jour courant mis en évidence dans la semaine. `opening-hours.js` utilise l’heure **Europe/Zurich**, les horaires enregistrés et les congés (`closures`, dates `start` et `end` incluses, motif `reason`). Un horaire incohérent affiche « Horaires à confirmer ».
-- Galerie de la salle, de la terrasse et des plats, avec agrandissement des photos.
+- Galerie de la salle, de la terrasse et des plats en carrousel : défilement au doigt, flèches et navigation au clavier, avec agrandissement des photos. Trois photos sont visibles sur ordinateur, deux sur tablette et une sur téléphone.
 - Carte par onglets, navigation au clavier et liens directs vers les catégories ; les plats précèdent les boissons dans le contenu initial.
 - Boutons **Itinéraire** ouvrant le trajet Google Maps vers l’adresse du restaurant.
 - Consignes pour les groupes (`groupReservation`) et les commandes anticipées (`preorderNote`), modifiables dans **Coordonnées et horaires**.
@@ -38,6 +38,7 @@ node tools/test-daily-menu.cjs
 node tools/test-opening-hours.cjs
 node tools/test-menu-tabs.cjs
 node tools/test-gallery.cjs
+node tools/test-gallery-carousel.cjs
 ```
 
 Ces outils ne sont pas chargés par le site. Pour un aperçu manuel : `python -m http.server 8090 --bind 127.0.0.1`, puis ouvrir `http://127.0.0.1:8090/`, `/menu.html` et `/admin/`.

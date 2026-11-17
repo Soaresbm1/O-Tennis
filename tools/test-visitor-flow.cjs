@@ -55,6 +55,8 @@ async function visit(file, gallery = false) {
     if (gallery) {
       assert.equal(document.querySelector('.hero [data-call]').textContent, 'Réserver par téléphone');
       assert.equal(document.querySelectorAll('#gallery-grid .gallery-card').length, saved.gallery.items.length);
+      assert.equal(document.querySelector('#gallery-grid').getAttribute('aria-roledescription'), 'carrousel');
+      assert.equal(document.querySelectorAll('.gallery-carousel-controls').length, 1, 'The carousel should initialize once across fallback and editable photos');
       assert.ok(document.querySelector('.horaires .is-today'));
       for (const photo of document.querySelectorAll('#gallery-grid img')) {
         const response = await fetch(photo.src);

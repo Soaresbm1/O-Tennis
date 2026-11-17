@@ -48,7 +48,7 @@ Pour retirer le menu d’aujourd’hui, supprimer son entrée et enregistrer. Po
 
 Ouvrir **Photos du restaurant et des plats**, puis ajouter ou modifier une entrée dans **Photos de la galerie**. Choisir la **Photo**, décrire ce qu’elle montre dans **Description de la photo**, puis saisir sa **Légende**. Le **Prix facultatif** peut rester vide ; lorsqu’il est renseigné, conserver le même prix que dans la carte. Enregistrer pour publier.
 
-Les photos s’affichent sur l’accueil et peuvent être agrandies au clic. L’ordre des entrées détermine celui de la galerie. Supprimer une entrée retire la photo de cette galerie ; vider la liste masque la section.
+Les photos s’affichent sur l’accueil dans un carrousel : les visiteurs peuvent les faire défiler au doigt ou avec les flèches, puis les agrandir au clic. L’ordre des entrées détermine celui du carrousel. Supprimer une entrée retire la photo de cette galerie ; vider la liste masque la section.
 
 ## Réservation, accès et fermetures
 
