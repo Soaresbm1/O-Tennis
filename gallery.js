@@ -120,7 +120,7 @@
           else dialog.close();
         }
       }, { once: true });
-      link.append(photo, node('span', 'gallery-enlarge', 'Agrandir ↗'));
+      link.append(photo);
       link.addEventListener('click', event => {
         if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
         if (!createViewer()) return;

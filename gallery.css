@@ -29,7 +29,6 @@
   .gallery-card:hover .gallery-photo-link img,
   .gallery-card:focus-within .gallery-photo-link img { transform: scale(1.045); }
 }
-.gallery-enlarge { position: absolute; right: 12px; bottom: 12px; padding: 5px 10px; border-radius: 30px; background: var(--color-creme); color: var(--color-bleu-marine); font-size: 0.75rem; font-weight: 600; }
 .gallery-card figcaption { padding: 14px 18px 18px; }
 .gallery-card h3 { margin: 0; font-size: 1.6rem; line-height: 1.2; overflow-wrap: anywhere; }
 .gallery-card-price { margin: 6px 0 0; color: var(--color-bleu-marine); font-weight: 600; }
