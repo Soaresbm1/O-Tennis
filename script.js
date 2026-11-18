@@ -6,16 +6,27 @@ document.addEventListener('DOMContentLoaded', function () {
   const nav = document.querySelector('.main-nav');
 
   if (toggle && nav) {
-    toggle.addEventListener('click', function () {
+    function closeNavigation() {
+      nav.classList.remove('ouvert');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Ouvrir le menu de navigation');
+    }
+
+    toggle.addEventListener('click', function (event) {
       const ouvert = nav.classList.toggle('ouvert');
       toggle.setAttribute('aria-expanded', ouvert);
+      toggle.setAttribute('aria-label', ouvert ? 'Fermer le menu de navigation' : 'Ouvrir le menu de navigation');
+      if (ouvert && event.detail === 0) nav.querySelector('a')?.focus();
     });
 
     nav.querySelectorAll('a').forEach(function (lien) {
-      lien.addEventListener('click', function () {
-        nav.classList.remove('ouvert');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
+      lien.addEventListener('click', closeNavigation);
+    });
+
+    toggle.closest('.site-header').addEventListener('keydown', function (event) {
+      if (event.key !== 'Escape' || !nav.classList.contains('ouvert')) return;
+      closeNavigation();
+      toggle.focus();
     });
   }
 

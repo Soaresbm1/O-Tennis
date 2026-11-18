@@ -1,15 +1,87 @@
-body { min-height: 100vh; display: grid; place-items: center; padding: 32px 20px; }
-.admin-card { width: 100%; max-width: 640px; background: white; padding: 40px; border: 1px solid #e6e5dc; border-radius: 24px; box-shadow: var(--ombre); }
-.admin-logo { border-radius: 50%; margin-bottom: 20px; object-fit: cover; }
-.admin-eyebrow { color: var(--color-vert-tennis); text-transform: uppercase; letter-spacing: .08em; font-size: .78rem; font-weight: 600; }
-h1 { font-size: clamp(2.4rem, 7vw, 3.5rem); line-height: 1.15; margin: 8px 0 14px; }
-.admin-features { padding: 8px 0; margin: 22px 0; list-style: none; }
-.admin-features li { display: flex; gap: 16px; padding: 14px 0; border-top: 1px solid #eeeee6; font-size: .92rem; }
-.admin-features li > span { font-size: 1.5rem; }
-.admin-features strong { color: var(--color-bleu-marine); }
-.admin-signin { display: block; text-align: center; }
-.admin-help { font-size: .82rem; color: #565e69; }
-.admin-back { display: inline-block; color: var(--color-bleu-marine); margin-top: 14px; font-size: .9rem; text-decoration: underline; text-underline-offset: 4px; }
-a:focus-visible { outline: 3px solid #1B2A4A; outline-offset: 5px; }
-@media (max-width: 480px) { .admin-card { padding: 24px; } }
-@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; transition: none !important; } }
+.admin-page {
+  --admin-ink: #182d26;
+  --admin-paper: #f8f5ee;
+  --admin-ball: #e3eb77;
+  --admin-clay: #a04d36;
+  min-height: 100vh;
+  background: var(--admin-paper);
+  color: var(--admin-ink);
+  padding: 28px 20px clamp(36px, 8vw, 100px);
+}
+
+.admin-shell { max-width: 1060px; margin-inline: auto; }
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+  margin-bottom: clamp(32px, 6vw, 66px);
+}
+
+.admin-brand { display: flex; align-items: center; gap: 14px; }
+.admin-logo { border-radius: 50%; object-fit: cover; border: 1px solid #cecac0; }
+.admin-brand strong { display: block; font: normal 1.5rem Georgia, serif; }
+.admin-brand small { display: block; margin-top: 2px; color: #526159; font-size: 0.75rem; }
+.admin-back { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 0.85rem; font-weight: 600; }
+.admin-back:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+.admin-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  border: 1px solid #ddd7ca;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #fffdf8;
+  box-shadow: 0 16px 45px rgb(24 45 38 / .08);
+}
+
+.admin-access {
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  padding: clamp(24px, 5vw, 62px);
+  background: var(--admin-ink);
+  color: var(--admin-paper);
+}
+
+.admin-access h1,
+.admin-content h2 { font-family: Georgia, serif; font-weight: 400; letter-spacing: -0.035em; }
+.admin-access h1 { color: inherit; font-size: clamp(2.25rem, 4.5vw, 4.25rem); line-height: 1.03; margin: 0 0 24px; }
+
+.admin-signin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 18px;
+  border-radius: 50px;
+  background: var(--admin-ball);
+  color: var(--admin-ink);
+  font-size: 0.85rem;
+  box-shadow: none;
+}
+
+.admin-signin:hover { background: #f1f5b4; color: var(--admin-ink); }
+.admin-help { max-width: 40ch; margin: 18px 0 0; font-size: 0.81rem; color: #e6e4d7; }
+.admin-content { padding: clamp(24px, 4.5vw, 56px); }
+.admin-content h2 { font-size: clamp(1.85rem, 3vw, 2.65rem); line-height: 1.1; color: var(--admin-ink); margin: 0 0 18px; }
+.admin-features { margin: 0; padding: 0; list-style: none; }
+.admin-features li { position: relative; border-top: 1px solid #e5dfd2; padding: 12px 0 12px 18px; }
+.admin-features li::before { content: ''; position: absolute; inset: 20px auto auto 0; width: 6px; height: 6px; border-radius: 50%; background: var(--admin-clay); }
+.admin-features strong { font-size: 0.92rem; }
+.admin-features p { margin: 3px 0 0; color: #535e56; font-size: 0.83rem; }
+.admin-page a:focus-visible { outline: 3px solid var(--admin-clay); outline-offset: 4px; }
+.admin-page .admin-signin:focus-visible { outline-color: var(--admin-ball); }
+
+@media (max-width: 690px) {
+  .admin-card { grid-template-columns: 1fr; }
+  .admin-header { margin-bottom: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-signin { transition: none; }
+  .admin-signin:hover { transform: none; }
+}

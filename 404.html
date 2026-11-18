@@ -7,11 +7,13 @@
   <meta http-equiv="Content-Security-Policy"
     content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; frame-src 'none'; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none';">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="theme-color" content="#1B2A4A">
+  <meta name="theme-color" content="#182d26">
   <meta name="robots" content="noindex">
   <title>Page introuvable - O'Tennis</title>
 
   <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/redesign.css">
+  <link rel="stylesheet" href="/404.css">
 
   <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/image/favicon-192.png">
@@ -19,36 +21,45 @@
 </head>
 
 <body data-page="not-found">
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
 
   <!-- ===================== HEADER ===================== -->
   <header class="site-header">
     <div class="header-inner">
       <a href="/index.html#accueil" class="logo-bloc">
-        <img src="/image/logo.jpeg" alt="Logo O'Tennis - Restaurant Buvette chez Kryste">
+        <img src="/image/logo.jpeg" alt="" width="54" height="54">
         <div class="logo-texte">
-          <h1>O'Tennis</h1>
+          <span class="logo-title">O'Tennis</span>
           <p>Restaurant - Buvette chez Kryste</p>
         </div>
       </a>
 
-      <nav class="main-nav">
+      <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
         <a href="/index.html#accueil">Accueil</a>
         <a href="/menu.html">Menu</a>
+        <a href="/index.html#galerie">Photos</a>
         <a href="/index.html#contact">Contact</a>
       </nav>
+      <a class="header-call" data-call href="tel:+41324814831">Réserver</a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
     </div>
   </header>
 
   <!-- ===================== 404 ===================== -->
-  <section class="hero" id="accueil">
-    <div class="container">
-      <h2>Page introuvable</h2>
-      <p class="accroche">Cette page n'existe pas ou plus. Direction l'accueil ou le menu ?</p>
-
-      <a href="/index.html" class="btn">Retour à l'accueil</a>
-      <a href="/menu.html" class="btn">Voir le menu</a>
+  <main class="missing-page" id="contenu" tabindex="-1">
+    <div class="container missing-layout">
+      <div class="missing-copy">
+        <p class="missing-code">Erreur 404</p>
+        <h1>Page introuvable</h1>
+        <p>Cette page a peut-être été déplacée. Retrouvez les horaires et les infos pratiques sur l’accueil, ou consultez la carte du restaurant.</p>
+        <div class="missing-actions">
+          <a href="/index.html" class="btn">Retour à l’accueil</a>
+          <a href="/menu.html" class="btn btn-secondaire">Voir le menu</a>
+        </div>
+      </div>
+      <img class="missing-photo" src="/image/gallery/terrasse.webp" alt="La terrasse d’O’Tennis à Reconvilier" width="2000" height="1500" fetchpriority="high">
     </div>
-  </section>
+  </main>
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="site-footer">

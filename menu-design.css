@@ -1,0 +1,281 @@
+/* Masthead and dishes on the menu page. */
+.menu-masthead {
+  background: var(--ink);
+  color: var(--white-paper);
+  padding-block: clamp(1.75rem, 4vw, 3.5rem);
+}
+
+.menu-masthead-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 5rem);
+}
+
+.menu-masthead-copy {
+  padding-block: 1.5rem;
+}
+
+.menu-masthead-copy .menu-masthead-location {
+  margin: 0 0 0.8rem;
+  color: var(--tennis);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+body[data-page="menu"] .menu-masthead h1 {
+  margin: 0;
+  color: inherit;
+  font-family: var(--font-titre);
+  font-size: clamp(3.6rem, 8.4vw, 7.5rem);
+  font-weight: 400;
+  letter-spacing: -0.065em;
+  line-height: 0.96;
+}
+
+.menu-masthead-copy > p:not(.menu-masthead-location) {
+  max-width: 29ch;
+  margin: 1.25rem 0 1.65rem;
+  color: #e1e6da;
+  font-size: clamp(0.92rem, 1.35vw, 1.08rem);
+}
+
+body[data-page="menu"] .menu-masthead-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  min-height: 44px;
+  padding: 0.7rem 1.1rem;
+  font-size: 0.85rem;
+}
+
+body[data-page="menu"] .menu-masthead-link:hover {
+  background: var(--white-paper);
+  color: var(--ink);
+}
+
+.menu-masthead-photo {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  border-radius: 4.5rem 0.75rem 0.75rem 0.75rem;
+  background: #223b30;
+  aspect-ratio: 1.42;
+}
+
+.menu-masthead-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 46%;
+}
+
+.menu-masthead-photo figcaption {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 2.25rem 1.1rem 0.85rem;
+  color: var(--white-paper);
+  background: linear-gradient(transparent, rgba(17, 30, 23, 0.84));
+  font-size: 0.76rem;
+  text-align: right;
+}
+
+[data-page="menu"] #menu {
+  padding-block: clamp(2.75rem, 6vw, 5rem) 0;
+  scroll-margin-top: 5.5rem;
+}
+
+[data-page="menu"] #menu > .container > .section-soustitre,
+[data-page="menu"] #menu > .container > .section-titre {
+  text-align: left;
+}
+
+[data-page="menu"] #menu > .container > .section-soustitre {
+  margin: 0 0 0.35rem;
+  color: var(--clay);
+}
+
+[data-page="menu"] #menu > .container > .section-titre {
+  margin: 0 0 1.35rem;
+}
+
+[data-page="menu"] #menu .menu-notice {
+  padding: 0.85rem 1rem;
+  border-left: 3px solid var(--clay);
+  background: #f1e9db;
+  text-align: left;
+}
+
+[data-page="menu"] #menu .menu-nav {
+  justify-content: flex-start;
+  gap: 0.5rem;
+  margin: 0 0 2rem;
+  padding: 0.85rem 0;
+  border-block: 1px solid var(--line);
+}
+
+[data-page="menu"] #menu .menu-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  background: var(--white-paper);
+  font-size: 0.82rem;
+  line-height: 1.2;
+  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
+  overflow-wrap: anywhere;
+}
+
+[data-page="menu"] #menu .menu-nav a:hover {
+  border-color: #758b75;
+  background: #edf0e7;
+}
+
+[data-page="menu"] #menu .menu-nav [aria-selected="true"],
+[data-page="menu"] #menu .menu-nav [aria-selected="true"]:hover {
+  border-color: var(--ink);
+  color: var(--white-paper);
+  background: var(--ink);
+}
+
+[data-page="menu"] #menu .categorie-menu {
+  margin-bottom: 2.5rem;
+  scroll-margin-top: 6rem;
+}
+
+[data-page="menu"] #menu .categorie-menu > h3 {
+  display: block;
+  margin: 0 0 1.1rem;
+  padding: 0 0 0.8rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  font-family: var(--font-titre);
+  font-size: clamp(1.85rem, 3.7vw, 3.1rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+[data-page="menu"] #menu .categorie-note {
+  margin: 0.25rem 0 0.8rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+[data-page="menu"] #menu .categorie-menu > h4 {
+  margin: 1.65rem 0 0.7rem;
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+[data-page="menu"] #menu .plats,
+[data-page="menu"] #menu .liste-simple {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 0.7rem 0.9rem;
+}
+
+[data-page="menu"] #menu .plat,
+[data-page="menu"] #menu .liste-simple li {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  padding: 0.85rem 1rem;
+  background: var(--white-paper);
+  box-shadow: none;
+}
+
+[data-page="menu"] #menu .plat-entete,
+[data-page="menu"] #menu .plat-tailles,
+[data-page="menu"] #menu .liste-simple li {
+  flex-wrap: wrap;
+  gap: 0.35rem 0.8rem;
+}
+
+[data-page="menu"] #menu .plat-entete h4,
+[data-page="menu"] #menu .menu-item-name {
+  color: var(--ink);
+  font-size: 0.97rem;
+  font-weight: 600;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+[data-page="menu"] #menu .plat-entete > .plat-prix {
+  margin-inline-start: auto;
+}
+
+[data-page="menu"] #menu .plat-prix,
+[data-page="menu"] #menu .plat-tailles strong,
+[data-page="menu"] #menu .liste-simple strong {
+  color: var(--clay);
+  font-size: 0.86rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+[data-page="menu"] #menu .plat-description {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+[data-page="menu"] #menu .plat-tailles {
+  margin-top: 0.55rem;
+  color: var(--muted);
+}
+
+[data-page="menu"] #menu .plat-photo {
+  height: auto;
+  max-height: 16rem;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+@media (max-width: 670px) {
+  .menu-masthead-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+  }
+
+  .menu-masthead-copy {
+    padding-block: 0.35rem 0;
+  }
+
+  .menu-masthead-photo {
+    max-height: 14rem;
+    border-top-left-radius: 2.5rem;
+    aspect-ratio: 2.4;
+  }
+
+  [data-page="menu"] #menu .plats,
+  [data-page="menu"] #menu .liste-simple {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  [data-page="menu"] #menu .menu-nav a {
+    padding-inline: 0.72rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-page="menu"] #menu .menu-nav a {
+    transition: none;
+  }
+}
+
+@media print {
+  .menu-masthead {
+    display: none;
+  }
+}

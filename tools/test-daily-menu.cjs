@@ -111,7 +111,7 @@ function displayed(test) {
   ]) {
     const test = await page('index.html', menus);
     assert.equal(displayed(test), null, 'No blank, stale, future or invalid menu may be shown');
-    assert.equal(test.document.querySelector('.hero h2').textContent, test.data.home.heroTitle);
+    assert.equal(test.document.querySelector('.hero-title').textContent, test.data.home.heroTitle);
   }
 
   const concise = await page('index.html', [{ date: standardMenu.date, main: standardMenu.main, price: standardMenu.price }]);
@@ -169,7 +169,7 @@ function displayed(test) {
 
   const failed = await page('index.html', [standardMenu], { failed: ['daily-menu'] });
   assert.equal(displayed(failed), null);
-  assert.equal(failed.document.querySelector('.hero h2').textContent, failed.data.home.heroTitle);
+  assert.equal(failed.document.querySelector('.hero-title').textContent, failed.data.home.heroTitle);
   assert.ok(failed.document.querySelector('a[href="tel:+41324810000"]'));
   const failedHome = await page('index.html', [standardMenu], { failed: ['home'] });
   assert.ok(displayed(failedHome), 'Daily menu must work independently of the home content');

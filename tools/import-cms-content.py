@@ -59,16 +59,17 @@ def migrate():
     menu = Parser((ROOT / 'menu.html').read_text(encoding='utf-8')).root
     hero = home.all(css='hero')[0]
     presentation = home.all(css='presentation-texte')[0]
+    presentation_photo = home.all(css='presentation-image')[0].all('img')[0]
     teaser = next(n for n in home.all('section') if n.attrs.get('id') == 'menu')
     home_data = {
-        'heroTitle': hero.all('h2')[0].value(),
-        'heroText': hero.all('p')[0].value(),
+        'heroTitle': hero.all(css='hero-title')[0].value(),
+        'heroText': hero.all(css='accroche')[0].value(),
         'heroButton': hero.all('a')[0].value(),
         'welcomeLabel': presentation.all('p')[0].value(),
         'presentationTitle': presentation.all('h2')[0].value(),
         'presentationText': presentation.all('p')[1].value(),
         'highlights': [{'emoji': n.all('span')[0].value(), 'text': text_without(n, 'span')} for n in presentation.all(css='atout')],
-        'photo': '/image/terrasse.jpg', 'photoAlt': 'Terrasse du restaurant O’Tennis',
+        'photo': '/' + presentation_photo.attrs['src'], 'photoAlt': presentation_photo.attrs['alt'],
         'menuLabel': teaser.all('p')[0].value(), 'menuTitle': teaser.all('h2')[0].value(),
         'menuText': teaser.all('p')[1].value(), 'menuButton': teaser.all('a')[0].value(),
         'contactLabel': 'On vous attend', 'contactTitle': 'Horaires & Contact',

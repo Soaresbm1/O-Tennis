@@ -7,7 +7,7 @@
   <meta http-equiv="Content-Security-Policy"
     content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; frame-src https://www.google.com; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none';">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="theme-color" content="#1B2A4A">
+  <meta name="theme-color" content="#182d26">
   <title>O'Tennis - Restaurant Buvette chez Kryste | Reconvilier</title>
   <meta name="description"
     content="Restaurant-buvette O'Tennis chez Kryste, au cœur du club de tennis et paddle de Reconvilier. Cuisine maison, viandes, salades fraîches, ambiance sportive et conviviale.">
@@ -20,17 +20,16 @@
   <meta property="og:description"
     content="Restaurant-buvette au cœur du club de tennis et paddle de Reconvilier. Cuisine maison, viandes grillées et salades fraîches.">
   <meta property="og:url" content="https://restaurant-buvette-otennis.ch/index.html">
-  <meta property="og:image" content="https://restaurant-buvette-otennis.ch/image/terrasse.jpg">
-  <meta property="og:image:width" content="1320">
-  <meta property="og:image:height" content="1218">
+  <meta property="og:image" content="https://restaurant-buvette-otennis.ch/image/gallery/terrasse.webp">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="O'Tennis - Restaurant Buvette chez Kryste | Reconvilier">
   <meta name="twitter:description"
     content="Restaurant-buvette au cœur du club de tennis et paddle de Reconvilier. Cuisine maison, viandes grillées et salades fraîches.">
-  <meta name="twitter:image" content="https://restaurant-buvette-otennis.ch/image/terrasse.jpg">
+  <meta name="twitter:image" content="https://restaurant-buvette-otennis.ch/image/gallery/terrasse.webp">
 
   <!-- Polices : Caveat (titres) et Poppins (texte courant), hebergees localement dans fonts/ -->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="redesign.css">
   <link rel="stylesheet" href="gallery.css">
 
   <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32.png">
@@ -43,7 +42,7 @@
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "O'Tennis - Restaurant Buvette chez Kryste",
-    "image": "https://restaurant-buvette-otennis.ch/image/terrasse.jpg",
+    "image": "https://restaurant-buvette-otennis.ch/image/gallery/terrasse.webp",
     "url": "https://restaurant-buvette-otennis.ch/",
     "telephone": "+41324814831",
     "servesCuisine": "Suisse",
@@ -75,6 +74,7 @@
 </head>
 
 <body data-page="home">
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
 
   <!-- ===================== HEADER ===================== -->
   <header class="site-header">
@@ -83,33 +83,38 @@
         <!-- Logo officiel du restaurant -->
         <img src="image/logo.jpeg" alt="Logo O'Tennis - Restaurant Buvette chez Kryste">
         <div class="logo-texte">
-          <h1>O'Tennis</h1>
+          <span class="logo-title">O'Tennis</span>
           <p>Restaurant - Buvette chez Kryste</p>
         </div>
       </a>
 
-      <a class="header-call" data-call href="tel:+41324814831">Réserver / Appeler</a>
-      <button class="nav-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
-
       <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
-        <a href="#accueil" class="actif">Accueil</a>
-        <a href="menu.html">Menu</a>
+        <a href="#accueil" class="actif" aria-current="page">Accueil</a>
+        <a href="menu.html">La carte</a>
         <a href="#galerie">Photos</a>
         <a href="#contact">Contact</a>
       </nav>
+      <a class="header-call" data-call href="tel:+41324814831">Réserver</a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
     </div>
   </header>
 
+  <main id="contenu" tabindex="-1">
   <!-- ===================== HERO / ACCUEIL ===================== -->
   <section class="hero" id="accueil">
-    <div class="container">
-      <h2>Restaurant-buvette au cœur du club de tennis</h2>
-      <p class="accroche">Cuisine maison, viandes grillées et salades fraîches à deux pas des courts, à Reconvilier.</p>
-
-      <div class="hero-actions">
-        <a href="menu.html" class="btn" data-menu-button>Découvrir le menu</a>
-        <a href="tel:+41324814831" class="btn btn-secondaire" data-call>Réserver par téléphone</a>
+    <div class="container hero-layout">
+      <div class="hero-copy">
+        <h1 class="hero-title">À table,
+chez Kryste.</h1>
+        <p class="accroche">Cuisine maison, viandes grillées et salades fraîches à deux pas des courts.</p>
+        <div class="hero-actions">
+          <a href="menu.html" class="btn" data-menu-button>Voir la carte</a>
+          <a href="tel:+41324814831" class="btn btn-secondaire" data-call>Réserver par téléphone</a>
+        </div>
       </div>
+      <figure class="hero-image">
+        <img src="image/gallery/terrasse.webp" alt="Terrasse du restaurant O’Tennis avec vue sur les collines de Reconvilier" width="2000" height="1500" fetchpriority="high">
+      </figure>
     </div>
   </section>
 
@@ -129,8 +134,8 @@
   <section class="alt" id="presentation">
     <div class="container presentation">
       <div class="presentation-texte">
-        <p class="section-soustitre" style="text-align:left;">Bienvenue chez nous</p>
-        <h2 style="text-align:left;">L'esprit club, dans l'assiette</h2>
+        <p class="section-soustitre">Le restaurant</p>
+        <h2>L’esprit club, dans l’assiette</h2>
         <p>
           Chez O'Tennis, on mise sur une cuisine maison simple et généreuse : viandes grillées, salades fraîches
           et produits de saison préparés avec soin. Idéalement situé entre les terrains de tennis et de paddle
@@ -155,9 +160,7 @@
       </div>
 
       <div class="presentation-image">
-        <!-- EMPLACEMENT : photo du lieu / terrasse -->
-        <!-- <img src="image/terrasse.jpg" alt="Terrasse du restaurant O'Tennis"> -->
-        <img id="photo-terrasse" src="image/terrasse.jpg" alt="Photo du restaurant O'Tennis (à ajouter)">
+        <img id="photo-terrasse" src="image/gallery/salle.jpg" alt="La salle du restaurant O’Tennis" width="1600" height="904" loading="lazy" decoding="async">
       </div>
     </div>
   </section>
@@ -166,7 +169,6 @@
     <div class="container">
       <p class="section-soustitre">Un avant-goût de chez nous</p>
       <h2 id="gallery-title" class="section-titre">Le restaurant en images</h2>
-      <p class="gallery-intro">La salle, la terrasse et nos assiettes. Faites défiler les photos, puis sélectionnez-en une pour l’agrandir.</p>
       <div id="gallery-grid" class="gallery-grid">
         <figure class="gallery-card"><a class="gallery-photo-link" href="image/gallery/salle.jpg"><img src="image/gallery/salle.jpg" alt="La salle du restaurant" loading="lazy" width="800" height="600"></a><figcaption><h3>La salle du restaurant</h3></figcaption></figure>
         <figure class="gallery-card"><a class="gallery-photo-link" href="image/gallery/terrasse.webp"><img src="image/gallery/terrasse.webp" alt="La terrasse du restaurant" loading="lazy" width="800" height="600"></a><figcaption><h3>La terrasse</h3></figcaption></figure>
@@ -179,16 +181,16 @@
   </section>
 
   <!-- ===================== MENU (apercu) ===================== -->
-  <section id="menu">
-    <div class="container">
-      <p class="section-soustitre">À table</p>
-      <h2 class="section-titre">Notre Menu</h2>
-      <p style="text-align:center; max-width:600px; margin:0 auto 30px;">
-        Plats maison, pâtes, petites faims, sandwichs, salades et suggestions de saison,
-        ainsi que notre carte des vins et des boissons : retrouvez tout notre menu sur une page dédiée.
-      </p>
-      <div style="text-align:center;">
-        <a href="menu.html" class="btn">Voir le menu complet</a>
+  <section id="menu" class="menu-teaser">
+    <div class="container menu-teaser-layout">
+      <div class="menu-teaser-photo">
+        <img src="image/gallery/plat-assiette.jpg" alt="L’assiette de charcuterie et de fromages d’O’Tennis" width="788" height="1050" loading="lazy" decoding="async">
+      </div>
+      <div class="menu-teaser-copy">
+        <p class="section-soustitre">À table</p>
+        <h2 class="section-titre">La carte</h2>
+        <p class="menu-teaser-description">Plats maison, suggestions de saison, petites faims et une carte des vins et des boissons.</p>
+        <a href="menu.html" class="btn">Voir la carte complète</a>
       </div>
     </div>
   </section>
@@ -219,6 +221,7 @@
 
       <div class="contact-grille">
         <div class="bloc-infos">
+          <h3 class="contact-panel-title">Infos pratiques</h3>
           <div class="ligne-info">
             <span class="emoji">📍</span>
             <div>
@@ -300,6 +303,7 @@
       </div>
     </div>
   </section>
+  </main>
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="site-footer">

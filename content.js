@@ -67,7 +67,7 @@
 
   function renderRestaurant(data) {
     if (!data || !text(data.name) || !Array.isArray(data.hours)) throw new Error('Invalid restaurant content');
-    setText('.logo-texte h1, .footer-logo strong', data.name);
+    setText('.logo-title, .logo-texte h1, .footer-logo strong', data.name);
     setText('.logo-texte p', data.tagline);
     document.querySelectorAll('.footer-logo > div').forEach(element => {
       element.replaceChildren(node('strong', '', data.name), node('br'), document.createTextNode(text(data.tagline)));
@@ -156,7 +156,7 @@
       const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
       schema.textContent = JSON.stringify({
         '@context': 'https://schema.org', '@type': 'Restaurant', name: data.name + ' — ' + text(data.tagline),
-        image: imagePath('/image/terrasse.jpg'), url: new URL('index.html', siteBase).href,
+        image: imagePath('/image/gallery/terrasse.webp'), url: new URL('index.html', siteBase).href,
         telephone: phone(data.phone), servesCuisine: 'Suisse', priceRange: 'CHF',
         address: {'@type': 'PostalAddress', streetAddress: data.street, postalCode: data.postalCode, addressLocality: data.city, addressCountry: 'CH'},
         menu: new URL('menu.html', siteBase).href,
@@ -179,18 +179,20 @@
   function renderHome(data) {
     if (!data || !text(data.heroTitle)) throw new Error('Invalid home content');
     for (const [selector, key] of [
-      ['.hero h2', 'heroTitle'], ['.hero .accroche', 'heroText'], ['.hero [data-menu-button]', 'heroButton'],
+      ['.hero-title', 'heroTitle'], ['.hero .accroche', 'heroText'], ['.hero [data-menu-button]', 'heroButton'],
       ['.presentation-texte .section-soustitre', 'welcomeLabel'], ['.presentation-texte h2', 'presentationTitle'],
       ['.presentation-texte > p:not(.section-soustitre)', 'presentationText'],
       ['#menu .section-soustitre', 'menuLabel'], ['#menu .section-titre', 'menuTitle'],
-      ['#menu .container > p:not(.section-soustitre)', 'menuText'], ['#menu .btn', 'menuButton'],
+      ['.menu-teaser-description', 'menuText'], ['#menu .btn', 'menuButton'],
       ['#contact .section-soustitre', 'contactLabel'], ['#contact .section-titre', 'contactTitle']
     ]) setText(selector, data[key]);
     const highlights = document.querySelector('.atouts');
     if (highlights && Array.isArray(data.highlights)) {
       highlights.replaceChildren(...data.highlights.map(item => {
         const element = node('div', 'atout');
-        element.append(node('span', 'emoji', item.emoji), document.createTextNode(text(item.text)));
+        const icon = node('span', 'emoji', item.emoji);
+        icon.setAttribute('aria-hidden', 'true');
+        element.append(icon, document.createTextNode(text(item.text)));
         return element;
       }));
     }
@@ -334,7 +336,10 @@
     content.append(courses);
     card.append(content);
     const photo = image(menu.photo, 'Menu du jour : ' + menu.main, 'daily-menu-photo');
-    if (photo) card.append(photo);
+    if (photo) {
+      card.classList.add('has-photo');
+      card.append(photo);
+    }
     container.append(card);
     section.replaceChildren(container);
     section.hidden = false;

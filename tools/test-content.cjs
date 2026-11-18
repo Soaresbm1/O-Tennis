@@ -81,7 +81,7 @@ async function page(filename, data = initial, failed = []) {
   edited.menu.categories[0].groups[0].items.push({ name: 'Nouvelle boisson', price: '4.- CHF', description: 'Maison', image: '', portions: [] });
   const home = await page('index.html', edited);
   assert.notEqual(home.document.documentElement.dataset.contentStatus, 'fallback');
-  assert.equal(home.document.querySelector('.hero h2').textContent, edited.home.heroTitle);
+  assert.equal(home.document.querySelector('.hero-title').textContent, edited.home.heroTitle);
   assert.match(home.document.querySelector('#photo-terrasse').src, /image\/logo\.jpeg$/);
   assert.equal(home.document.querySelector('#restaurant-announcement').textContent, edited.home.announcement);
   assert.match(home.document.querySelector('.horaires').textContent, /23h00/);
