@@ -288,6 +288,15 @@
 
   let dailyMenus = [];
   let dailyMenuDay = '';
+  // The manager's preview uses a sample without editing the real menu data.
+  const previewHost = ['localhost', '127.0.0.1', 'o-tennis-git-preview-gerante-soares-2.vercel.app'].includes(window.location.hostname)
+    || /^o-tennis-[a-z0-9]{9}-soares-2\.vercel\.app$/.test(window.location.hostname);
+  const previewDailyMenu = {
+    starter: 'Velouté de courge et ses croûtons',
+    main: 'Blanc de poulet à la crème\nFrites et légumes de saison',
+    dessert: 'Tarte aux pommes maison',
+    price: '22.50 CHF'
+  };
 
   function swissDay() {
     const parts = new Intl.DateTimeFormat('en-GB', {
@@ -302,7 +311,8 @@
     if (!section) return;
     dailyMenuDay = swissDay();
     // Matching a real Swiss calendar day also rejects timestamps and invalid dates.
-    const menu = dailyMenus.find(item => item && item.date === dailyMenuDay && text(item.main).trim() && text(item.price).trim());
+    const savedMenu = dailyMenus.find(item => item && item.date === dailyMenuDay && text(item.main).trim() && text(item.price).trim());
+    const menu = savedMenu || (previewHost ? { ...previewDailyMenu, date: dailyMenuDay } : null);
     if (!menu) {
       section.hidden = true;
       section.replaceChildren();
@@ -314,7 +324,7 @@
     const content = node('div', 'daily-menu-content');
     const heading = node('div', 'daily-menu-heading');
     const titleBlock = node('div');
-    titleBlock.append(node('p', 'daily-menu-eyebrow', 'Aujourd’hui à table'));
+    titleBlock.append(node('p', 'daily-menu-eyebrow', savedMenu ? 'Aujourd’hui à table' : 'Exemple pour l’aperçu'));
     const title = node('h2', '', 'Menu du jour');
     title.id = 'daily-menu-title';
     const date = node('time', 'daily-menu-date', new Intl.DateTimeFormat('fr-CH', {
