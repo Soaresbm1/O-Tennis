@@ -313,6 +313,15 @@
     // Matching a real Swiss calendar day also rejects timestamps and invalid dates.
     const savedMenu = dailyMenus.find(item => item && item.date === dailyMenuDay && text(item.main).trim() && text(item.price).trim());
     const menu = savedMenu || (previewHost ? { ...previewDailyMenu, date: dailyMenuDay } : null);
+    const highlight = document.querySelector('.hero-daily');
+    if (highlight) {
+      highlight.hidden = !menu;
+      if (menu) {
+        highlight.querySelector('[data-daily-label]').textContent = savedMenu ? 'Plat du jour' : 'Plat du jour · Exemple';
+        highlight.querySelector('[data-daily-dish]').textContent = menu.main.trim().split(/\r?\n/, 1)[0];
+        highlight.querySelector('[data-daily-price]').textContent = menu.price;
+      }
+    }
     if (!menu) {
       section.hidden = true;
       section.replaceChildren();
@@ -361,7 +370,9 @@
   }
 
   async function load(name) {
-    const response = await fetch(new URL('data/' + name + '.json', siteBase), { cache: 'no-cache', credentials: 'omit' });
+    // Vercel protects the preview's JSON requests with the same session as the page.
+    const credentials = previewHost ? 'same-origin' : 'omit';
+    const response = await fetch(new URL('data/' + name + '.json', siteBase), { cache: 'no-cache', credentials });
     if (!response.ok) throw new Error('Content unavailable');
     return response.json();
   }

@@ -59,6 +59,26 @@ body[data-page='home'] .hero { text-align: left; padding: 0; background: var(--i
 .hero-title { margin: 0; color: var(--white-paper); font: 400 clamp(3.75rem, 7.9vw, 7.6rem)/0.98 var(--font-titre); white-space: pre-line; overflow-wrap: anywhere; }
 body[data-page='home'] .hero .accroche { max-width: 34ch; margin: 26px 0 32px; color: #e6e9df; font-size: clamp(0.95rem, 1.25vw, 1.12rem); line-height: 1.65; }
 .hero-actions { justify-content: flex-start; gap: 12px; }
+.hero-daily {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 12px;
+  max-width: 36rem;
+  margin: 0 0 24px;
+  padding: 13px 15px;
+  border: 1px solid #ffffff3d;
+  border-left: 3px solid var(--tennis);
+  border-radius: 8px;
+  background: #ffffff0f;
+  color: var(--white-paper);
+}
+.hero-daily[hidden] { display: none; }
+.hero-daily:hover { background: #ffffff1c; border-color: var(--tennis); }
+.hero-daily-label { display: block; margin-bottom: 3px; color: var(--tennis); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+.hero-daily-copy strong { display: block; font-size: clamp(0.88rem, 1.4vw, 1.06rem); line-height: 1.35; overflow-wrap: anywhere; }
+.hero-daily-price { font-size: 0.84rem; font-weight: 600; }
+.hero-daily-arrow { color: var(--tennis); }
 body[data-page='home'] .hero .btn:hover { background: var(--white-paper); color: var(--ink); }
 body[data-page='home'] .hero .btn-secondaire { color: var(--white-paper); border-color: #9da99e; }
 .hero-image { display: grid; position: relative; overflow: hidden; min-width: 0; min-height: 440px; margin: 24px 0; border-radius: 5px; }
