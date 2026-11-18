@@ -7,7 +7,7 @@
   <meta http-equiv="Content-Security-Policy"
     content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; frame-src 'none'; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none';">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="theme-color" content="#1b2a4a">
+  <meta name="theme-color" content="#182D26">
   <title>Menu - O'Tennis - Restaurant Buvette chez Kryste | Reconvilier</title>
   <meta name="description"
     content="Découvrez le menu du restaurant-buvette O'Tennis chez Kryste à Reconvilier : plats maison, pâtes, petites faims, sandwichs, salades, carte des vins et des boissons.">
@@ -29,10 +29,9 @@
     content="Plats maison, pâtes, petites faims, sandwichs, salades, carte des vins et des boissons.">
   <meta name="twitter:image" content="https://restaurant-buvette-otennis.ch/image/gallery/terrasse.webp">
 
-  <!-- Polices : Newsreader (titres) et Figtree (texte courant), hebergees localement dans fonts/ -->
-  <link rel="preload" href="fonts/newsreader-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Polices : Caveat (titres) et Poppins (texte courant), hebergees localement dans fonts/ -->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="redesign.css">
   <link rel="stylesheet" href="menu-design.css">
 
   <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32.png">
@@ -63,11 +62,11 @@
 
       <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
         <a href="index.html#accueil">Accueil</a>
-        <a href="menu.html" class="actif" aria-current="page">La carte</a>
+        <a href="menu.html" class="actif" aria-current="page">Menu</a>
         <a href="index.html#galerie">Photos</a>
         <a href="index.html#contact">Contact</a>
       </nav>
-      <a class="header-call" data-call href="tel:+41324814831">Réserver<span class="header-call-number" data-phone-number>032 481 48 31</span></a>
+      <a class="header-call" data-call href="tel:+41324814831">Réserver</a>
       <button class="nav-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
     </div>
   </header>
@@ -79,7 +78,7 @@
         <p class="menu-masthead-location">Chez Kryste · Reconvilier</p>
         <h1 id="menu-masthead-title">La carte</h1>
         <p>Plats maison, petites faims, vins et boissons.</p>
-        <a class="btn menu-masthead-link" href="#menu">Parcourir la carte <svg class="icon" aria-hidden="true" viewBox="0 0 16 16"><path d="M8 3v10M4 9l4 4 4-4"/></svg></a>
+        <a class="btn menu-masthead-link" href="#menu">Parcourir la carte <span aria-hidden="true">↓</span></a>
       </div>
       <figure class="menu-masthead-photo">
         <img src="image/gallery/plat-tagliata.jpg" alt="Tagliata de bœuf sur roquette avec parmesan et frites"
@@ -95,7 +94,7 @@
         <p class="opening-status" data-opening-status role="status" aria-live="polite">Consultez nos horaires</p>
         <p data-today-hours>Du mardi au dimanche dès 10h00</p>
       </div>
-      <a class="directions-link" data-directions href="https://www.google.com/maps/dir/?api=1&amp;destination=Vie+des+Cr%C3%AAts+49%2C+2732+Reconvilier">Itinéraire <svg class="icon" aria-hidden="true" viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
+      <a class="directions-link" data-directions href="https://www.google.com/maps/dir/?api=1&amp;destination=Vie+des+Cr%C3%AAts+49%2C+2732+Reconvilier">Venir au restaurant · Itinéraire ↗</a>
     </div>
   </div>
 
@@ -171,7 +170,7 @@
           </div>
         </div>
 
-        <h4 class="menu-group-title">Sur demande 24h à l'avance</h4>
+        <h4 style="color:var(--color-bleu-marine); margin-top:24px;">Sur demande 24h à l'avance</h4>
         <div class="plats">
           <div class="plat">
             <div class="plat-entete">
@@ -367,7 +366,7 @@
       <div class="categorie-menu" id="boissons">
         <h3>Carte des Boissons</h3>
 
-        <h4 class="menu-group-title">Boissons chaudes</h4>
+        <h4 style="color:var(--color-bleu-marine); margin-top:24px;">Boissons chaudes</h4>
         <ul class="liste-simple">
           <li>Café <strong>3.80 CHF</strong></li>
           <li>Expresso / Ristretto <strong>3.80 CHF</strong></li>
@@ -378,7 +377,7 @@
           <li>Ovomaltine <strong>4.50 CHF</strong></li>
         </ul>
 
-        <h4 class="menu-group-title">Thé et infusion</h4>
+        <h4 style="color:var(--color-bleu-marine); margin-top:24px;">Thé et infusion</h4>
         <ul class="liste-simple">
           <li>Noir</li>
           <li>Thé vert</li>
@@ -388,7 +387,7 @@
         </ul>
         <p class="categorie-note">3.60 CHF, quel que soit le parfum</p>
 
-        <h4 class="menu-group-title">Boissons froides (2dl / 3dl / 5dl / 1L / 1,5L)</h4>
+        <h4 style="color:var(--color-bleu-marine); margin-top:24px;">Boissons froides (2dl / 3dl / 5dl / 1L / 1,5L)</h4>
         <ul class="liste-simple">
           <li>Coca <strong>3.- / 3.80 / 5.40 / — / 10.80 CHF</strong></li>
           <li>Thé froid (pêche ou citron) <strong>3.- / 3.80 / 5.40 / — / 10.80 CHF</strong></li>
@@ -408,7 +407,7 @@
           <li>Focus <strong>5.- CHF</strong></li>
         </ul>
 
-        <h4 class="menu-group-title">Bières (2dl / 3dl / 5dl)</h4>
+        <h4 style="color:var(--color-bleu-marine); margin-top:24px;">Bières (2dl / 3dl / 5dl)</h4>
         <ul class="liste-simple">
           <li>Bière pression <strong>3.20 / 4.20 / 6.50 CHF</strong></li>
           <li>Panachée <strong>3.20 / 4.20 / 6.50 CHF</strong></li>
@@ -420,7 +419,7 @@
       <div class="categorie-menu" id="vins">
         <h3>Carte des Vins</h3>
 
-        <h4 class="menu-group-title">Vin ouvert (1dl / 2dl / 3dl / 5dl)</h4>
+        <h4 style="color:var(--color-bleu-marine); margin-top:24px;">Vin ouvert (1dl / 2dl / 3dl / 5dl)</h4>
         <ul class="liste-simple">
           <li>Rouge — Pinot Noir du Valais <strong>5.80 / 11.60 / 17.40 / 28.60 CHF</strong></li>
           <li>Rouge — Merlot Delea (Tessin) <strong>5.10 / 10.20 / 15.30 / 25.50 CHF</strong></li>
@@ -440,7 +439,7 @@
           <li>San Bitter (10cl) <strong>4.50 CHF</strong></li>
         </ul>
 
-        <h4 class="menu-group-title">Martini et digestifs (2cl / 4cl)</h4>
+        <h4 style="color:var(--color-bleu-marine); margin-top:24px;">Martini et digestifs (2cl / 4cl)</h4>
         <ul class="liste-simple">
           <li>Martini Blanc <strong>4cl : 8.50 CHF</strong></li>
           <li>Ricard <strong>2cl : 4.50 CHF / 4cl : 9.- CHF</strong></li>
@@ -475,7 +474,7 @@
       <div class="categorie-menu" id="spiritueux">
         <h3>Spiritueux, Liqueur et Eau de vie</h3>
 
-        <h4 class="menu-group-title">Spiritueux et liqueurs (4cl)</h4>
+        <h4 style="color:var(--color-bleu-marine); margin-top:24px;">Spiritueux et liqueurs (4cl)</h4>
         <ul class="liste-simple">
           <li>Vodka Blanc <strong>7.50 CHF</strong></li>
           <li>Rhum (Blanc Bacardi) <strong>8.50 CHF</strong></li>
@@ -484,7 +483,7 @@
           <li>Limoncello <strong>6.50 CHF</strong></li>
         </ul>
 
-        <h4 class="menu-group-title">Eau de vie</h4>
+        <h4 style="color:var(--color-bleu-marine); margin-top:24px;">Eau de vie</h4>
         <ul class="liste-simple">
           <li>Williamine <strong>8.50 CHF</strong></li>
           <li>Abricotine <strong>8.50 CHF</strong></li>
@@ -509,7 +508,7 @@
         </div>
         <div class="reservation-actions">
           <a class="btn" data-call href="tel:+41324814831"><span data-phone-number>032 481 48 31</span><small>Réserver par téléphone</small></a>
-          <a class="directions-link" data-directions href="https://www.google.com/maps/dir/?api=1&amp;destination=Vie+des+Cr%C3%AAts+49%2C+2732+Reconvilier">Calculer mon itinéraire <svg class="icon" aria-hidden="true" viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
+          <a class="directions-link" data-directions href="https://www.google.com/maps/dir/?api=1&amp;destination=Vie+des+Cr%C3%AAts+49%2C+2732+Reconvilier">Calculer mon itinéraire ↗</a>
         </div>
       </div>
     </div>

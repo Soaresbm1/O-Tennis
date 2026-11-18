@@ -1,0 +1,202 @@
+/* The public pages share the colours and typography of the clubhouse. */
+body[data-page] {
+  --paper: #f8f5ee;
+  --white-paper: #fffdf8;
+  --ink: #182d26;
+  --muted: #4b5a50;
+  --tennis: #e3eb77;
+  --clay: #a04d36;
+  --line: #d9dbca;
+  --color-creme: var(--paper);
+  --color-bleu-marine: var(--ink);
+  --color-vert-tennis: #49644a;
+  --color-jaune-balle: var(--tennis);
+  --color-texte: var(--ink);
+  --font-titre: Georgia, 'Times New Roman', serif;
+  --rayon: 12px;
+  --ombre: 0 14px 32px rgba(24, 45, 38, 0.09);
+}
+
+.container, .header-inner { width: min(100% - 72px, 1240px); max-width: none; padding-inline: 0; }
+body[data-page] section { scroll-margin-top: 100px; }
+body[data-page] main:focus { outline: none; }
+body[data-page] h1, body[data-page] h2, body[data-page] h3 { letter-spacing: -0.035em; }
+.skip-link { position: fixed; inset: 8px auto auto 8px; z-index: 300; transform: translateY(-150%); padding: 12px 18px; background: var(--tennis); color: var(--ink); font-weight: 700; }
+.skip-link:focus { transform: none; }
+body[data-page] :is(a, button):focus-visible { outline: 3px solid var(--clay); outline-offset: 4px; }
+body[data-page] :is(.hero, .menu-masthead, .reservation-card, .site-footer) :is(a, button):focus-visible { outline-color: var(--tennis); }
+
+/* Masthead and shared actions */
+.site-header { background: var(--white-paper); border-bottom: 1px solid var(--line); box-shadow: none; }
+.header-inner { min-height: 80px; padding-block: 10px; column-gap: 20px; }
+.logo-bloc { gap: 10px; }
+.logo-bloc img { width: 50px; height: 50px; object-fit: cover; border: 1px solid var(--line); }
+.logo-title { display: block; color: var(--ink); font: 700 1.75rem/1 var(--font-titre); letter-spacing: -0.055em; }
+.logo-texte p { margin-top: 5px; color: var(--muted); font-size: 0.62rem; letter-spacing: 0.09em; }
+nav.main-nav { gap: clamp(16px, 2.5vw, 34px); }
+nav.main-nav a { position: relative; font-size: 0.88rem; border: 0; padding: 10px 0; }
+nav.main-nav a.actif, nav.main-nav a:hover { color: var(--ink); }
+nav.main-nav a.actif::after, nav.main-nav a:hover::after { content: ''; position: absolute; bottom: 3px; inset-inline: 0; height: 2px; background: var(--clay); }
+.header-call { padding-inline: 21px; border: 1px solid var(--ink); background: var(--ink); color: var(--white-paper); }
+.header-call:hover { border-color: var(--tennis); color: var(--ink); background: var(--tennis); }
+.nav-toggle { border-radius: 50%; color: var(--ink); }
+body[data-page] .btn { display: inline-flex; justify-content: center; align-items: center; min-height: 50px; gap: 8px; padding: 12px 24px; border: 1px solid transparent; box-shadow: none; color: var(--ink); background: var(--tennis); font-size: 0.875rem; line-height: 1.35; }
+body[data-page] .btn:hover { color: var(--white-paper); background: var(--ink); border-color: currentColor; }
+body[data-page] .btn-secondaire { background: transparent; border-color: currentColor; }
+.visit-bar { background: #eef0df; border-bottom: 1px solid var(--line); }
+.visit-bar-inner { padding-block: 14px; gap: 8px 24px; }
+.visit-hours { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 18px; }
+.visit-hours p { font-size: 0.82rem; }
+.visit-hours [data-today-hours] { font-size: 0.78rem; color: var(--muted); }
+.directions-link { font-size: 0.81rem; text-decoration-thickness: 1px; }
+.directions-link:hover { text-decoration-thickness: 2px; }
+.restaurant-announcement { padding-block: 14px; font-size: 0.875rem; }
+
+/* Accueil */
+body[data-page='home'] .hero { text-align: left; padding: 0; background: var(--ink); color: var(--white-paper); }
+.hero-layout { display: grid; grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr); align-items: stretch; gap: clamp(20px, 4vw, 64px); }
+.hero-copy { position: relative; align-self: center; padding-block: clamp(54px, 7vw, 108px); }
+.hero-title { margin: 0; color: var(--white-paper); font: 400 clamp(3.75rem, 7.9vw, 7.6rem)/0.98 var(--font-titre); white-space: pre-line; overflow-wrap: anywhere; }
+body[data-page='home'] .hero .accroche { max-width: 34ch; margin: 26px 0 32px; color: #e6e9df; font-size: clamp(0.95rem, 1.25vw, 1.12rem); line-height: 1.65; }
+.hero-actions { justify-content: flex-start; gap: 12px; }
+.hero-daily {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 12px;
+  max-width: 36rem;
+  margin: 0 0 24px;
+  padding: 13px 15px;
+  border: 1px solid #ffffff3d;
+  border-left: 3px solid var(--tennis);
+  border-radius: 8px;
+  background: #ffffff0f;
+  color: var(--white-paper);
+}
+.hero-daily[hidden] { display: none; }
+.hero-daily:hover { background: #ffffff1c; border-color: var(--tennis); }
+.hero-daily-label { display: block; margin-bottom: 3px; color: var(--tennis); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+.hero-daily-copy strong { display: block; font-size: clamp(0.88rem, 1.4vw, 1.06rem); line-height: 1.35; overflow-wrap: anywhere; }
+.hero-daily-price { font-size: 0.84rem; font-weight: 600; }
+.hero-daily-arrow { color: var(--tennis); }
+body[data-page='home'] .hero .btn:hover { background: var(--white-paper); color: var(--ink); }
+body[data-page='home'] .hero .btn-secondaire { color: var(--white-paper); border-color: #9da99e; }
+.hero-image { display: grid; position: relative; overflow: hidden; min-width: 0; min-height: 440px; margin: 24px 0; border-radius: 5px; }
+.hero-image img { position: absolute; width: 100%; height: 100%; inset: 0; object-fit: cover; object-position: 49% 52%; }
+.hero-image::after { content: ''; pointer-events: none; position: absolute; inset: 12px; border: 1px solid rgba(255, 253, 248, 0.6); border-radius: 2px; }
+
+body[data-page='home'] section:not(.hero, .daily-menu) { padding-block: clamp(52px, 7vw, 96px); }
+.section-soustitre { color: var(--clay); margin: 0 0 12px; font-size: 0.7rem; letter-spacing: 0.16em; }
+.section-titre, .presentation-texte h2 { margin: 0 0 20px; font: 400 clamp(2.5rem, 4.7vw, 4.6rem)/1.02 var(--font-titre); }
+body[data-page='home'] #presentation { background: var(--paper); }
+.presentation { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(30px, 6vw, 100px); align-items: center; }
+.presentation-texte .section-soustitre { text-align: left; }
+.presentation-texte > p:not(.section-soustitre) { max-width: 55ch; margin: 0; color: var(--muted); line-height: 1.8; }
+.presentation-image { position: relative; }
+.presentation-image img { aspect-ratio: 5 / 4; border-radius: 5px; box-shadow: none; }
+.presentation-image::after { content: ''; pointer-events: none; position: absolute; inset: 12px; border: 1px solid rgba(255, 253, 248, 0.7); border-radius: 2px; }
+.atouts { gap: 10px; margin-top: 28px; }
+.atouts .atout { display: flex; flex: 0 1 auto; align-items: center; gap: 7px; padding: 8px 12px; background: #e9eddb; color: var(--ink); border-radius: 50px; font-size: 0.75rem; font-weight: 600; }
+.atouts .atout .emoji { margin: 0; font-size: 1rem; }
+
+body[data-page='home'] #galerie { background: var(--white-paper); border-block: 1px solid var(--line); }
+.menu-teaser { background: #e9eddb; }
+.menu-teaser-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr); gap: clamp(30px, 7vw, 100px); align-items: center; }
+.menu-teaser-photo { overflow: hidden; border-radius: 5px; }
+.menu-teaser-photo img { width: 100%; height: auto; aspect-ratio: 5 / 3; object-fit: cover; object-position: center 52%; }
+.menu-teaser-copy :is(.section-soustitre, .section-titre) { text-align: left; }
+.menu-teaser-copy > .menu-teaser-description { max-width: 42ch; margin: 0 0 24px; color: var(--muted); }
+body[data-page] .menu-teaser .btn { background: var(--ink); color: var(--white-paper); }
+body[data-page] .menu-teaser .btn:hover { color: var(--ink); background: var(--tennis); }
+
+/* Daily specials, reservation and contact */
+.daily-menu { background: #eef0df; padding-block: clamp(26px, 4vw, 46px); }
+.daily-menu-card { display: block; border: 1px solid #ccd3bd; border-radius: var(--rayon); box-shadow: var(--ombre); background: var(--white-paper); }
+.daily-menu-card.has-photo:has(.daily-menu-photo:not([hidden])) { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.57fr); }
+.daily-menu-content { padding: clamp(22px, 4vw, 46px); }
+.daily-menu-eyebrow { color: var(--clay); letter-spacing: 0.15em; }
+.daily-menu h2 { font: 400 clamp(2.2rem, 3vw, 3.5rem)/1 var(--font-titre); }
+.daily-menu-date { color: var(--muted); }
+.daily-menu-course dt { color: var(--clay); }
+.daily-menu-photo { display: block; width: 100%; height: 100%; max-height: 470px; object-fit: cover; }
+.reservation-section { background: var(--paper); }
+.reservation-card { position: relative; isolation: isolate; overflow: hidden; gap: 30px; padding: clamp(26px, 5vw, 64px); border-radius: var(--rayon); }
+.reservation-card::before { content: ''; position: absolute; inset: 22% -7% -116% 58%; z-index: -1; border: 1px solid #84968550; box-shadow: 0 0 0 20px #84968520, 0 0 0 42px #84968515; transform: rotate(-18deg); pointer-events: none; }
+.reservation-card h2 { font: 400 clamp(2.3rem, 4vw, 4rem)/1.05 var(--font-titre); }
+.reservation-card p:not(.reservation-eyebrow) { color: #e6e9df; }
+.reservation-actions .btn { flex-direction: column; gap: 1px; white-space: nowrap; }
+.reservation-actions .btn span { font-size: 1.15rem; font-variant-numeric: tabular-nums; }
+.reservation-actions .btn:hover { border-color: var(--white-paper); }
+
+body[data-page='home'] #contact { background: var(--white-paper); border-top: 1px solid var(--line); }
+.contact-grille { gap: 24px; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); }
+.bloc-infos { padding: clamp(20px, 3.5vw, 40px); border: 1px solid var(--line); border-radius: var(--rayon); background: var(--paper); }
+.contact-panel-title { margin: 0 0 22px; font-size: 1.7rem; }
+.bloc-infos .ligne-info { gap: 13px; margin-bottom: 13px; font-size: 0.9rem; }
+.bloc-infos .ligne-info .emoji { font-size: 1.05rem; }
+.ligne-info > div { min-width: 0; overflow-wrap: anywhere; }
+.ligne-info a { text-decoration: underline; text-underline-offset: 3px; }
+table.horaires { box-shadow: none; border: 1px solid var(--line); font-size: 0.82rem; }
+table.horaires td { padding: 7px 10px; }
+.horaires tr.is-today { background: #e7ebc3; }
+.carte-embed { min-height: 370px; box-shadow: none; border: 1px solid var(--line); }
+.carte-embed iframe { display: block; }
+
+/* Footer */
+footer.site-footer { padding: 46px 0 20px; }
+.footer-inner { display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); gap: 25px; }
+.footer-logo { align-items: flex-start; gap: 12px; }
+.footer-logo img { width: 52px; height: 52px; object-fit: cover; }
+.footer-logo strong { color: var(--white-paper); font: 700 1.6rem/1.25 var(--font-titre); }
+.footer-logo > div { font-size: 0.76rem; color: #e2e7db; }
+.footer-col h4 { font-size: 0.7rem; letter-spacing: 0.12em; }
+.footer-col :is(a, p) { font-size: 0.82rem; overflow-wrap: anywhere; }
+.footer-col a:hover { text-decoration: underline; }
+.footer-bas { color: #e2e7db; opacity: 1; padding-inline: 16px; }
+.footer-bas .manager-link { margin-left: 12px; }
+
+@media (max-width: 900px) {
+  .container, .header-inner { width: min(100% - 44px, 1240px); }
+  .hero-image { min-height: 370px; }
+  .footer-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 768px) {
+  .header-inner { min-height: 66px; }
+  nav.main-nav { gap: 6px; background: var(--white-paper); border-bottom: 1px solid var(--line); }
+  nav.main-nav a { padding: 9px 0; }
+  nav.main-nav a.actif::after, nav.main-nav a:hover::after { width: 28px; }
+  .hero-layout { grid-template-columns: 1fr; gap: 0; }
+  .hero-copy { padding-block: 38px 26px; }
+  .hero-title { font-size: clamp(3.55rem, 12vw, 6rem); }
+  body[data-page='home'] .hero .accroche { margin-block: 20px 22px; }
+  .hero-image { min-height: 0; aspect-ratio: 16 / 9; margin: 0 0 22px; }
+  .hero-image::after { inset: 8px; }
+  .presentation, .menu-teaser-layout, .contact-grille { grid-template-columns: 1fr; }
+  .presentation-image img { aspect-ratio: 16 / 10; }
+  .menu-teaser-photo { order: 2; }
+  .visit-hours { display: block; }
+  .carte-embed { min-height: 310px; }
+}
+
+@media (max-width: 520px) {
+  .container, .header-inner { width: calc(100% - 32px); }
+  .header-inner { gap: 8px; }
+  .header-call { padding-inline: 13px; }
+  .logo-title { font-size: 1.5rem; }
+  .logo-bloc img { width: 40px; height: 40px; }
+  .hero-actions { flex-direction: row; align-items: stretch; }
+  body[data-page='home'] .hero-actions .btn { width: auto; padding-inline: 16px; }
+  .visit-bar-inner { padding-block: 12px; }
+  .visit-bar .directions-link { min-height: 34px; }
+  .daily-menu-card.has-photo:has(.daily-menu-photo:not([hidden])) { grid-template-columns: 1fr; }
+  .daily-menu-photo { max-height: 240px; aspect-ratio: 16 / 10; }
+  .reservation-card { gap: 15px; }
+  .footer-inner { column-gap: 14px; }
+  .footer-logo { grid-column: 1 / -1; }
+}
+
+@media print {
+  .skip-link { display: none; }
+  .container, .header-inner { width: 100%; }
+}
