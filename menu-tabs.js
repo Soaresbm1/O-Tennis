@@ -23,6 +23,11 @@
     });
     active.index = index;
     const entry = active.entries[index];
+    // Sur petit ecran le rail d'onglets defile : garde l'onglet actif visible.
+    const rail = active.nav;
+    if (rail.scrollWidth > rail.clientWidth && typeof rail.scrollTo === 'function') {
+      rail.scrollTo({ left: Math.max(0, entry.tab.offsetLeft - (rail.clientWidth - entry.tab.offsetWidth) / 2), behavior: 'auto' });
+    }
     if (settings.focus) entry.tab.focus();
     if (settings.updateHash && hashTarget() !== entry.panel) {
       const hash = '#' + encodeURIComponent(entry.panel.id);

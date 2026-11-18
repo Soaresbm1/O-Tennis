@@ -1,73 +1,53 @@
-/* Masthead and dishes on the menu page. */
+/* Page de la carte : bandeau d'entree, onglets et carte "imprimee". */
+
 .menu-masthead {
+  position: relative;
+  overflow: hidden;
   background: var(--ink);
-  color: var(--white-paper);
-  padding-block: clamp(1.75rem, 4vw, 3.5rem);
+  color: var(--on-ink);
 }
 
 .menu-masthead-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;
-  gap: clamp(2rem, 6vw, 5rem);
+  min-height: clamp(380px, 50vh, 480px);
 }
 
 .menu-masthead-copy {
-  padding-block: 1.5rem;
+  padding-block: clamp(48px, 7vw, 80px);
+  padding-right: 48px;
 }
 
-.menu-masthead-copy .menu-masthead-location {
-  margin: 0 0 0.8rem;
-  color: var(--tennis);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.menu-masthead-location {
+  margin: 0 0 12px;
+  color: var(--on-ink-3);
+  font-size: var(--text-sm);
+  font-weight: 500;
 }
 
-body[data-page="menu"] .menu-masthead h1 {
+.menu-masthead h1 {
   margin: 0;
-  color: inherit;
-  font-family: var(--font-titre);
-  font-size: clamp(3.6rem, 8.4vw, 7.5rem);
-  font-weight: 400;
-  letter-spacing: -0.065em;
-  line-height: 0.96;
+  color: var(--on-ink);
+  font: 400 clamp(3rem, 7vw, 5rem)/1.04 var(--font-display);
+  letter-spacing: -0.025em;
 }
 
 .menu-masthead-copy > p:not(.menu-masthead-location) {
-  max-width: 29ch;
-  margin: 1.25rem 0 1.65rem;
-  color: #e1e6da;
-  font-size: clamp(0.92rem, 1.35vw, 1.08rem);
-}
-
-body[data-page="menu"] .menu-masthead-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.65rem;
-  min-height: 44px;
-  padding: 0.7rem 1.1rem;
-  font-size: 0.85rem;
-}
-
-body[data-page="menu"] .menu-masthead-link:hover {
-  background: var(--white-paper);
-  color: var(--ink);
+  max-width: 32ch;
+  margin: 16px 0 32px;
+  color: var(--on-ink-2);
+  font-size: var(--text-lg);
 }
 
 .menu-masthead-photo {
-  position: relative;
-  overflow: hidden;
+  position: absolute;
+  inset: 0 0 0 50%;
   margin: 0;
-  border-radius: 4.5rem 0.75rem 0.75rem 0.75rem;
-  background: #223b30;
-  aspect-ratio: 1.42;
+  overflow: hidden;
 }
 
 .menu-masthead-photo img {
-  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -77,205 +57,246 @@ body[data-page="menu"] .menu-masthead-link:hover {
 .menu-masthead-photo figcaption {
   position: absolute;
   inset: auto 0 0;
-  padding: 2.25rem 1.1rem 0.85rem;
-  color: var(--white-paper);
-  background: linear-gradient(transparent, rgba(17, 30, 23, 0.84));
-  font-size: 0.76rem;
+  padding: 32px 24px 16px;
+  color: #fff;
+  background: linear-gradient(transparent, rgba(14, 22, 40, 0.7));
+  font-size: var(--text-sm);
   text-align: right;
 }
 
-[data-page="menu"] #menu {
-  padding-block: clamp(2.75rem, 6vw, 5rem) 0;
-  scroll-margin-top: 5.5rem;
-}
+/* ----- Corps de la carte ----- */
 
+[data-page="menu"] #menu { padding-block: 48px var(--section-y); }
+
+/* Le titre et son libelle restent dans la page (et dans le gestionnaire),
+   mais le bandeau dit deja "La carte" : on ne l'affiche pas deux fois. */
 [data-page="menu"] #menu > .container > .section-soustitre,
 [data-page="menu"] #menu > .container > .section-titre {
-  text-align: left;
-}
-
-[data-page="menu"] #menu > .container > .section-soustitre {
-  margin: 0 0 0.35rem;
-  color: var(--clay);
-}
-
-[data-page="menu"] #menu > .container > .section-titre {
-  margin: 0 0 1.35rem;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 [data-page="menu"] #menu .menu-notice {
-  padding: 0.85rem 1rem;
-  border-left: 3px solid var(--clay);
-  background: #f1e9db;
-  text-align: left;
+  margin: 0 0 32px;
+  padding: 16px 20px;
+  border-radius: var(--r-card);
+  background: var(--raised);
+  color: var(--text-2);
+  font-size: var(--text-md);
 }
 
+/* Onglets : une seule ligne, defilement horizontal sur petit ecran. */
 [data-page="menu"] #menu .menu-nav {
-  justify-content: flex-start;
-  gap: 0.5rem;
-  margin: 0 0 2rem;
-  padding: 0.85rem 0;
-  border-block: 1px solid var(--line);
+  position: relative;
+  display: flex;
+  gap: 4px;
+  margin: 0 0 40px;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--line);
+  scrollbar-width: none;
+  scroll-snap-type: x proximity;
 }
+
+[data-page="menu"] #menu .menu-nav::-webkit-scrollbar { display: none; }
 
 [data-page="menu"] #menu .menu-nav a {
+  flex: none;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--line);
+  min-height: 48px;
+  margin-bottom: -1px;
+  padding: 0 16px;
+  border-bottom: 2px solid transparent;
+  color: var(--text-3);
+  font-size: var(--text-md);
+  font-weight: 500;
+  white-space: nowrap;
+  scroll-snap-align: start;
+  transition: color 160ms var(--ease), border-color 160ms var(--ease);
+}
+
+[data-page="menu"] #menu .menu-nav a:hover { color: var(--ink); }
+
+[data-page="menu"] #menu .menu-nav [aria-selected="true"] {
+  border-bottom-color: var(--ink);
   color: var(--ink);
-  background: var(--white-paper);
-  font-size: 0.82rem;
-  line-height: 1.2;
-  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
-  overflow-wrap: anywhere;
 }
 
-[data-page="menu"] #menu .menu-nav a:hover {
-  border-color: #758b75;
-  background: #edf0e7;
-}
+[data-page="menu"] #menu .menu-nav a:focus-visible { outline-offset: -2px; }
 
-[data-page="menu"] #menu .menu-nav [aria-selected="true"],
-[data-page="menu"] #menu .menu-nav [aria-selected="true"]:hover {
-  border-color: var(--ink);
-  color: var(--white-paper);
-  background: var(--ink);
-}
+.categorie-menu[hidden] { display: none; }
+.categorie-menu[role="tabpanel"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 8px; }
 
-[data-page="menu"] #menu .categorie-menu {
-  margin-bottom: 2.5rem;
-  scroll-margin-top: 6rem;
-}
+[data-page="menu"] #menu .categorie-menu { scroll-margin-top: calc(var(--header-h) + 24px); }
 
 [data-page="menu"] #menu .categorie-menu > h3 {
-  display: block;
-  margin: 0 0 1.1rem;
-  padding: 0 0 0.8rem;
-  border-bottom: 1px solid var(--line);
-  color: var(--ink);
-  font-family: var(--font-titre);
-  font-size: clamp(1.85rem, 3.7vw, 3.1rem);
-  font-weight: 400;
-  line-height: 1.1;
+  margin: 0 0 16px;
+  font: 400 clamp(1.75rem, 3vw, 2.5rem)/1.1 var(--font-display);
+  letter-spacing: -0.02em;
 }
 
-[data-page="menu"] #menu .categorie-note {
-  margin: 0.25rem 0 0.8rem;
-  color: var(--muted);
-  line-height: 1.6;
+.categorie-note {
+  margin: 0 0 4px;
+  color: var(--text-2);
+  font-size: var(--text-md);
 }
 
-[data-page="menu"] #menu .categorie-menu > h4 {
-  margin: 1.65rem 0 0.7rem;
+.menu-group-title {
+  margin: 40px 0 8px;
   color: var(--ink);
-  font-size: 0.9rem;
+  font-size: var(--text-md);
   font-weight: 600;
 }
 
+/* Une ligne par plat : nom, pointilles, prix. */
 [data-page="menu"] #menu .plats,
 [data-page="menu"] #menu .liste-simple {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: stretch;
-  gap: 0.7rem 0.9rem;
+  column-gap: clamp(32px, 5vw, 72px);
+  row-gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 [data-page="menu"] #menu .plat,
 [data-page="menu"] #menu .liste-simple li {
   min-width: 0;
-  border: 1px solid var(--line);
-  border-radius: 0.7rem;
-  padding: 0.85rem 1rem;
-  background: var(--white-paper);
-  box-shadow: none;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
 }
 
-[data-page="menu"] #menu .plat-entete,
-[data-page="menu"] #menu .plat-tailles,
 [data-page="menu"] #menu .liste-simple li {
-  flex-wrap: wrap;
-  gap: 0.35rem 0.8rem;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  font-size: var(--text-base);
+  font-weight: 500;
+  overflow-wrap: anywhere;
 }
 
-[data-page="menu"] #menu .plat-entete h4,
-[data-page="menu"] #menu .menu-item-name {
+[data-page="menu"] #menu .liste-simple li.menu-list-item { align-items: center; }
+[data-page="menu"] #menu .liste-simple .menu-list-content { flex: 1; min-width: 0; }
+
+.plat-entete {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.plat-entete h4,
+.menu-item-name {
+  order: 1;
+  margin: 0;
   color: var(--ink);
-  font-size: 0.97rem;
+  font: 600 var(--text-base)/1.4 var(--font-text);
+  overflow-wrap: anywhere;
+}
+
+.plat-entete::before {
+  content: '';
+  order: 2;
+  flex: 1;
+  min-width: 24px;
+  border-bottom: 1px dotted rgba(27, 42, 74, 0.35);
+  transform: translateY(-4px);
+}
+
+.plat-entete:not(:has(.plat-prix))::before { display: none; }
+
+.plat-prix,
+.liste-simple strong {
+  order: 3;
+  color: var(--ink);
+  font-size: var(--text-base);
   font-weight: 600;
-  line-height: 1.45;
-  overflow-wrap: anywhere;
-}
-
-[data-page="menu"] #menu .plat-entete > .plat-prix {
-  margin-inline-start: auto;
-}
-
-[data-page="menu"] #menu .plat-prix,
-[data-page="menu"] #menu .plat-tailles strong,
-[data-page="menu"] #menu .liste-simple strong {
-  color: var(--clay);
-  font-size: 0.86rem;
-  font-weight: 700;
   font-variant-numeric: tabular-nums;
-  white-space: normal;
-  overflow-wrap: anywhere;
+  white-space: nowrap;
 }
 
-[data-page="menu"] #menu .plat-description {
-  margin: 0.35rem 0 0;
-  color: var(--muted);
-  font-size: 0.85rem;
+/* Liste simple (boissons) : nom, pointilles, prix, y compris le contenu de secours. */
+[data-page="menu"] #menu .liste-simple li:not(.menu-list-item)::after {
+  content: '';
+  order: 2;
+  flex: 1;
+  min-width: 24px;
+  border-bottom: 1px dotted rgba(27, 42, 74, 0.35);
+  transform: translateY(-4px);
 }
 
-[data-page="menu"] #menu .plat-tailles {
-  margin-top: 0.55rem;
-  color: var(--muted);
+[data-page="menu"] #menu .liste-simple li:not(.menu-list-item):not(:has(strong))::after { display: none; }
+[data-page="menu"] #menu .liste-simple li:not(.menu-list-item) strong { order: 3; }
+
+.plat-tailles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  margin-top: 4px;
+  color: var(--text-3);
+  font-size: var(--text-md);
 }
 
-[data-page="menu"] #menu .plat-photo {
+.plat-tailles strong { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.plat-description {
+  margin: 4px 0 0;
+  color: var(--text-2);
+  font-size: var(--text-md);
+  white-space: pre-line;
+}
+
+.plat-photo,
+.article-photo { display: block; }
+.plat-photo[hidden], .article-photo[hidden] { display: none; }
+
+.plat-photo {
+  width: 100%;
   height: auto;
   max-height: 16rem;
+  margin-bottom: 12px;
+  border-radius: 8px;
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 
-@media (max-width: 670px) {
-  .menu-masthead-inner {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1.25rem;
-  }
-
-  .menu-masthead-copy {
-    padding-block: 0.35rem 0;
-  }
-
-  .menu-masthead-photo {
-    max-height: 14rem;
-    border-top-left-radius: 2.5rem;
-    aspect-ratio: 2.4;
-  }
-
-  [data-page="menu"] #menu .plats,
-  [data-page="menu"] #menu .liste-simple {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  [data-page="menu"] #menu .menu-nav a {
-    padding-inline: 0.72rem;
-  }
+.article-photo {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  [data-page="menu"] #menu .menu-nav a {
-    transition: none;
+@media (max-width: 900px) {
+  .menu-masthead-inner { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+  .menu-masthead-copy { padding-block: 48px 40px; padding-right: 0; }
+  .menu-masthead-photo {
+    position: static;
+    margin-inline: calc(var(--gutter) * -1);
+    aspect-ratio: 16 / 10;
+  }
+  .menu-masthead h1 { font-size: clamp(2.75rem, 12vw, 4rem); }
+}
+
+@media (max-width: 670px) {
+  [data-page="menu"] #menu .plats,
+  [data-page="menu"] #menu .liste-simple { grid-template-columns: minmax(0, 1fr); }
+
+  /* Le rail d'onglets va jusqu'au bord de l'ecran. */
+  [data-page="menu"] #menu .menu-nav {
+    margin-inline: calc(var(--gutter) * -1);
+    padding-inline: calc(var(--gutter) - 16px);
   }
 }
 
 @media print {
-  .menu-masthead {
-    display: none;
-  }
+  .menu-masthead { display: none; }
 }
