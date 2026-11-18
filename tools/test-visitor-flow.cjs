@@ -40,8 +40,6 @@ async function visit(file, gallery = false) {
     assert.notEqual(document.documentElement.dataset.contentStatus, 'fallback');
     assert.match(document.querySelector('.header-call').href, /^tel:\+41/);
     assert.ok(['open', 'closed'].includes(document.querySelector('[data-opening-status]').dataset.state));
-    assert.equal(document.querySelector('[data-group-reservation]').textContent, saved.restaurant.groupReservation);
-    assert.equal(document.querySelector('[data-preorder-note]').textContent, saved.restaurant.preorderNote);
     document.querySelectorAll('[data-directions]').forEach(link => {
       const url = new URL(link.href);
       assert.equal(url.origin, 'https://www.google.com');
@@ -53,6 +51,7 @@ async function visit(file, gallery = false) {
     document.querySelector('.main-nav a').click();
     assert.equal(toggle.getAttribute('aria-expanded'), 'false');
     if (gallery) {
+      assert.equal(document.querySelector('.reservation-section'), null);
       assert.equal(document.querySelector('.hero [data-call]').textContent, 'Réserver par téléphone');
       assert.equal(document.querySelectorAll('#gallery-grid .gallery-card').length, saved.gallery.items.length);
       assert.equal(document.querySelector('#gallery-grid').getAttribute('aria-roledescription'), 'carrousel');
@@ -65,6 +64,8 @@ async function visit(file, gallery = false) {
         await response.arrayBuffer();
       }
     } else {
+      assert.equal(document.querySelector('[data-group-reservation]').textContent, saved.restaurant.groupReservation);
+      assert.equal(document.querySelector('[data-preorder-note]').textContent, saved.restaurant.preorderNote);
       const tabs = [...document.querySelectorAll('[role="tab"]')];
       assert.equal(tabs.length, saved.menu.categories.length);
       assert.equal(tabs[0].getAttribute('aria-controls'), saved.menu.categories[0].id);

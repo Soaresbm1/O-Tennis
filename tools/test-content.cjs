@@ -90,8 +90,7 @@ async function page(filename, data = initial, failed = []) {
   assert.ok(home.document.querySelector('.manager-link'));
   assert.equal(home.document.querySelector('.header-call').getAttribute('href'), 'tel:+41324810000');
   assert.equal(home.document.querySelector('.hero [data-call]').textContent, 'Réserver par téléphone', 'Editing the menu button must not relabel the reservation button');
-  assert.equal(home.document.querySelector('[data-group-reservation]').textContent, edited.restaurant.groupReservation);
-  assert.equal(home.document.querySelector('[data-preorder-note]').textContent, edited.restaurant.preorderNote);
+  assert.equal(home.document.querySelector('.reservation-section'), null);
   home.document.querySelectorAll('[data-directions]').forEach(link => {
     assert.equal(new URL(link.href).searchParams.get('destination'), edited.restaurant.mapAddress);
     assert.equal(new URL(link.href).hostname, 'www.google.com');
@@ -102,6 +101,8 @@ async function page(filename, data = initial, failed = []) {
   assert.equal(structured.telephone, '+41324810000');
   assert.match(structured.image, /image\/logo\.jpeg$/);
   const updatedMenu = await page('menu.html', edited);
+  assert.equal(updatedMenu.document.querySelector('[data-group-reservation]').textContent, edited.restaurant.groupReservation);
+  assert.equal(updatedMenu.document.querySelector('[data-preorder-note]').textContent, edited.restaurant.preorderNote);
   assert.equal(updatedMenu.document.querySelector('.plat-prix').textContent, '8.50 CHF');
   assert.equal(updatedMenu.document.querySelectorAll('.menu-item-name').length, savedItems.length + 1);
   assert.ok(updatedMenu.document.querySelector('.article-photo, .plat-photo'));
