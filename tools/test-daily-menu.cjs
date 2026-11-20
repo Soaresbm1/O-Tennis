@@ -24,7 +24,7 @@ const standardMenu = {
 
 async function page(filename, menus, options = {}) {
   const dom = new JSDOM(fs.readFileSync(path.join(root, filename), 'utf8'), {
-    url: 'https://restaurant-buvette-otennis.ch/' + filename,
+    url: new URL(filename, options.origin || 'https://restaurant-buvette-otennis.ch/').href,
     runScripts: 'outside-only'
   });
   opened.push(dom);
@@ -97,6 +97,14 @@ function displayed(test) {
     assert.match(block.querySelector('img').src, /\/image\/logo\.jpeg$/);
     assert.ok(test.calls.some(call => call.name === 'daily-menu'));
     assert.ok(test.calls.every(call => call.options.cache === 'no-cache' && call.options.credentials === 'omit'));
+    const deployment = await page(filename, [], { origin: 'https://o-tennis-pca6lgsyh-soares-2.vercel.app/' });
+    assert.equal(displayed(deployment), null, 'A generated deployment URL must never show a demo menu');
+    if (filename === 'index.html') {
+      const highlight = test.document.querySelector('.hero-daily');
+      assert.equal(highlight.hidden, false);
+      assert.equal(highlight.querySelector('[data-daily-dish]').textContent, standardMenu.main);
+      assert.equal(deployment.document.querySelector('.hero-daily').hidden, true);
+    }
   }
 
   for (const menus of [
