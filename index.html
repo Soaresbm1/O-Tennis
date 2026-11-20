@@ -95,205 +95,249 @@
         <a href="#contact">Contact</a>
       </nav>
       <a class="header-call" data-call href="tel:+41324814831">Réserver</a>
-      <button class="nav-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
+      <button class="nav-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false"
+        aria-controls="main-nav">&#9776;</button>
     </div>
   </header>
 
   <main id="contenu" tabindex="-1">
-  <!-- ===================== HERO / ACCUEIL ===================== -->
-  <section class="hero" id="accueil">
-    <div class="container hero-layout">
-      <div class="hero-copy">
-        <h1 class="hero-title">À table,
-chez Kryste.</h1>
-        <p class="accroche">Cuisine maison, viandes grillées et salades fraîches à deux pas des courts.</p>
-        <a class="hero-daily" href="#menu-du-jour" hidden>
-          <span class="hero-daily-copy">
-            <span class="hero-daily-label" data-daily-label>Plat du jour</span>
-            <strong data-daily-dish></strong>
-          </span>
-          <span class="hero-daily-price" data-daily-price></span>
-          <span class="hero-daily-arrow" aria-hidden="true">↓</span>
-        </a>
-        <div class="hero-actions">
-          <a href="menu.html" class="btn" data-menu-button>Voir la carte</a>
-          <a href="tel:+41324814831" class="btn btn-secondaire" data-call>Réserver par téléphone</a>
-        </div>
-      </div>
-      <figure class="hero-image">
-        <img src="image/gallery/terrasse.webp" alt="Terrasse du restaurant O’Tennis avec vue sur les collines de Reconvilier" width="2000" height="1500" fetchpriority="high">
-      </figure>
-    </div>
-  </section>
-
-  <div class="visit-bar">
-    <div class="container visit-bar-inner">
-      <div class="visit-hours">
-        <p class="opening-status" data-opening-status role="status" aria-live="polite">Consultez nos horaires</p>
-        <p data-today-hours>Du mardi au dimanche dès 10h00</p>
-      </div>
-      <a class="directions-link" data-directions href="https://www.google.com/maps/dir/?api=1&amp;destination=Vie+des+Cr%C3%AAts+49%2C+2732+Reconvilier">Venir au restaurant · Itinéraire ↗</a>
-    </div>
-  </div>
-
-  <section id="menu-du-jour" class="daily-menu" aria-labelledby="daily-menu-title" hidden></section>
-
-  <!-- ===================== PRESENTATION ===================== -->
-  <section class="alt" id="presentation">
-    <div class="container presentation">
-      <div class="presentation-texte">
-        <p class="section-soustitre">Le restaurant</p>
-        <h2>L’esprit club, dans l’assiette</h2>
-        <p>
-          Chez O'Tennis, on mise sur une cuisine maison simple et généreuse : viandes grillées, salades fraîches
-          et produits de saison préparés avec soin. Idéalement situé entre les terrains de tennis et de paddle
-          de Reconvilier, notre restaurant-buvette est l'endroit parfait pour se retrouver en famille ou entre amis,
-          avant ou après le match, dans une ambiance conviviale.
-        </p>
-
-        <div class="atouts">
-          <div class="atout">
-            <span class="emoji">🍖</span>
-            Cuisine maison
-          </div>
-          <div class="atout">
-            <span class="emoji">🥗</span>
-            Salades fraîches
-          </div>
-          <div class="atout">
-            <span class="emoji">🎾</span>
-            Au bord des courts
+    <!-- ===================== HERO / ACCUEIL ===================== -->
+    <section class="hero" id="accueil">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <h1 class="hero-title">À table,
+            chez Kryste.</h1>
+          <p class="accroche">Cuisine maison, viandes grillées et salades fraîches à deux pas des courts.</p>
+          <a class="hero-daily" href="#menu-du-jour" hidden>
+            <span class="hero-daily-copy">
+              <span class="hero-daily-label" data-daily-label>Plat du jour</span>
+              <strong data-daily-dish></strong>
+            </span>
+            <span class="hero-daily-price" data-daily-price></span>
+            <span class="hero-daily-arrow" aria-hidden="true">↓</span>
+          </a>
+          <div class="hero-actions">
+            <a href="menu.html" class="btn" data-menu-button>Voir la carte</a>
+            <a href="tel:+41324814831" class="btn btn-secondaire" data-call>Réserver par téléphone</a>
           </div>
         </div>
+        <figure class="hero-image">
+          <img src="image/gallery/terrasse.webp"
+            alt="Terrasse du restaurant O’Tennis avec vue sur les collines de Reconvilier" width="2000" height="1500"
+            fetchpriority="high">
+        </figure>
       </div>
+    </section>
 
-      <div class="presentation-image">
-        <img id="photo-terrasse" src="image/gallery/salle.jpg" alt="La salle du restaurant O’Tennis" width="1600" height="904" loading="lazy" decoding="async">
-      </div>
-    </div>
-  </section>
-
-  <section id="galerie" aria-labelledby="gallery-title">
-    <div class="container">
-      <p class="section-soustitre">Un avant-goût de chez nous</p>
-      <h2 id="gallery-title" class="section-titre">Le restaurant en images</h2>
-      <div id="gallery-grid" class="gallery-grid">
-        <figure class="gallery-card"><a class="gallery-photo-link" href="image/gallery/salle.jpg"><img src="image/gallery/salle.jpg" alt="La salle du restaurant" loading="lazy" width="800" height="600"></a><figcaption><h3>La salle du restaurant</h3></figcaption></figure>
-        <figure class="gallery-card"><a class="gallery-photo-link" href="image/gallery/terrasse.webp"><img src="image/gallery/terrasse.webp" alt="La terrasse du restaurant" loading="lazy" width="800" height="600"></a><figcaption><h3>La terrasse</h3></figcaption></figure>
-        <figure class="gallery-card"><a class="gallery-photo-link" href="image/gallery/plat-assiette.jpg"><img src="image/gallery/plat-assiette.jpg" alt="Assortiment de charcuterie et de fromages" loading="lazy" width="800" height="600"></a><figcaption><h3>Assiette O’Tennis</h3></figcaption></figure>
-        <figure class="gallery-card"><a class="gallery-photo-link" href="image/gallery/plat-tagliata.jpg"><img src="image/gallery/plat-tagliata.jpg" alt="Tagliata de bœuf sur roquette avec parmesan et frites" loading="lazy" width="800" height="600"></a><figcaption><h3>Tagliata de bœuf</h3></figcaption></figure>
-        <figure class="gallery-card"><a class="gallery-photo-link" href="image/gallery/plat-poulet.jpg"><img src="image/gallery/plat-poulet.jpg" alt="Blanc de poulet à la crème avec frites et tomate provençale" loading="lazy" width="800" height="600"></a><figcaption><h3>Blanc de poulet à la crème</h3></figcaption></figure>
-        <figure class="gallery-card"><a class="gallery-photo-link" href="image/gallery/plat-tartare.jpg"><img src="image/gallery/plat-tartare.jpg" alt="Tartare de bœuf avec toasts, frites et condiments" loading="lazy" width="800" height="600"></a><figcaption><h3>Tartare de bœuf</h3></figcaption></figure>
+    <div class="visit-bar">
+      <div class="container visit-bar-inner">
+        <div class="visit-hours">
+          <p class="opening-status" data-opening-status role="status" aria-live="polite">Consultez nos horaires</p>
+          <p data-today-hours>Du mardi au dimanche dès 10h00</p>
+        </div>
+        <a class="directions-link" data-directions
+          href="https://www.google.com/maps/dir/?api=1&amp;destination=Vie+des+Cr%C3%AAts+49%2C+2732+Reconvilier">Venir
+          au restaurant · Itinéraire ↗</a>
       </div>
     </div>
-  </section>
 
-  <!-- ===================== MENU (apercu) ===================== -->
-  <section id="menu" class="menu-teaser">
-    <div class="container menu-teaser-layout">
-      <div class="menu-teaser-photo">
-        <img src="image/gallery/plat-assiette.jpg" alt="L’assiette de charcuterie et de fromages d’O’Tennis" width="788" height="1050" loading="lazy" decoding="async">
-      </div>
-      <div class="menu-teaser-copy">
-        <p class="section-soustitre">À table</p>
-        <h2 class="section-titre">La carte</h2>
-        <p class="menu-teaser-description">Plats maison, suggestions de saison, petites faims et une carte des vins et des boissons.</p>
-        <a href="menu.html" class="btn">Voir la carte complète</a>
-      </div>
-    </div>
-  </section>
+    <section id="menu-du-jour" class="daily-menu" aria-labelledby="daily-menu-title" hidden></section>
 
-  <!-- ===================== HORAIRES & CONTACT ===================== -->
-  <section class="alt" id="contact">
-    <div class="container">
-      <p class="section-soustitre">On vous attend</p>
-      <h2 class="section-titre">Horaires &amp; Contact</h2>
-      <p class="contact-status opening-status" data-opening-status role="status" aria-live="polite">Consultez nos horaires</p>
+    <!-- ===================== PRESENTATION ===================== -->
+    <section class="alt" id="presentation">
+      <div class="container presentation">
+        <div class="presentation-texte">
+          <p class="section-soustitre">Le restaurant</p>
+          <h2>L’esprit club, dans l’assiette</h2>
+          <p>
+            Chez O'Tennis, on mise sur une cuisine maison simple et généreuse : viandes grillées, salades fraîches
+            et produits de saison préparés avec soin. Idéalement situé entre les terrains de tennis et de paddle
+            de Reconvilier, notre restaurant-buvette est l'endroit parfait pour se retrouver en famille ou entre amis,
+            avant ou après le match, dans une ambiance conviviale.
+          </p>
 
-      <div class="contact-grille">
-        <div class="bloc-infos">
-          <h3 class="contact-panel-title">Infos pratiques</h3>
-          <div class="ligne-info">
-            <span class="emoji">📍</span>
-            <div>
-              <strong>Adresse</strong><br>
-              Vie des Crêts 49<br>
-              2732 Reconvilier, Suisse
+          <div class="atouts">
+            <div class="atout">
+              <span class="emoji">🍖</span>
+              Cuisine maison
+            </div>
+            <div class="atout">
+              <span class="emoji">🥗</span>
+              Salades fraîches
+            </div>
+            <div class="atout">
+              <span class="emoji">🎾</span>
+              Au bord des courts
             </div>
           </div>
-          <div class="ligne-info">
-            <span class="emoji">📞</span>
-            <div>
-              <strong>Téléphone</strong><br>
-              <a href="tel:+41324814831">032 481 48 31</a>
-            </div>
-          </div>
-          <div class="ligne-info">
-            <span class="emoji">✉️</span>
-            <div>
-              <strong>Email</strong><br>
-              <!-- EMPLACEMENT : email à ajouter -->
-              <a href="#" data-email-user="Krystebitz" data-email-domaine="hotmail.com">Email</a>
-              <noscript>Activez JavaScript pour voir l'adresse, ou appelez-nous directement.</noscript>
-            </div>
-          </div>
-          <div class="ligne-info">
-            <span class="emoji">🍽️</span>
-            <div>
-              <strong>Réservation</strong><br>
-              Par téléphone ou directement sur place
-            </div>
-          </div>
-
-          <div class="contact-reseaux">
-            <a class="instagram-link" href="https://www.instagram.com/otennis_chez_kryste/" target="_blank"
-              rel="noopener noreferrer" aria-label="Instagram (nouvel onglet)" title="Instagram">
-              <img src="image/instagram.svg" width="22" height="22" alt="">
-            </a>
-          </div>
-
-          <table class="horaires">
-            <tr>
-              <td>Lundi</td>
-              <td>Fermé</td>
-            </tr>
-            <tr>
-              <td>Mardi</td>
-              <td>10h00 - 22h00</td>
-            </tr>
-            <tr>
-              <td>Mercredi</td>
-              <td>10h00 - 22h00</td>
-            </tr>
-            <tr>
-              <td>Jeudi</td>
-              <td>10h00 - 22h00</td>
-            </tr>
-            <tr>
-              <td>Vendredi</td>
-              <td>10h00 - 22h30</td>
-            </tr>
-            <tr>
-              <td>Samedi</td>
-              <td>10h00 - 22h30</td>
-            </tr>
-            <tr>
-              <td>Dimanche</td>
-              <td>10h00 - 22h00</td>
-            </tr>
-          </table>
         </div>
 
-        <div class="carte-embed">
-          <!-- Carte Google Maps : Vie des Crêts 49, 2732 Reconvilier -->
-          <iframe src="https://www.google.com/maps?q=Vie+des+Cr%C3%AAts+49,+2732+Reconvilier,+Suisse&output=embed"
-            loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Carte - O'Tennis Reconvilier"
-            sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
-          </iframe>
+        <div class="presentation-image">
+          <img id="photo-terrasse" src="image/gallery/salle.jpg" alt="La salle du restaurant O’Tennis" width="1600"
+            height="904" loading="lazy" decoding="async">
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section id="galerie" aria-labelledby="gallery-title">
+      <div class="container">
+        <p class="section-soustitre">Un avant-goût de chez nous</p>
+        <h2 id="gallery-title" class="section-titre">Le restaurant en images</h2>
+        <div id="gallery-grid" class="gallery-grid">
+          <figure class="gallery-card"><a class="gallery-photo-link" href="image/gallery/salle.jpg"><img
+                src="image/gallery/salle.jpg" alt="La salle du restaurant" loading="lazy" width="800" height="600"></a>
+            <figcaption>
+              <h3>La salle du restaurant</h3>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card"><a class="gallery-photo-link" href="image/gallery/terrasse.webp"><img
+                src="image/gallery/terrasse.webp" alt="La terrasse du restaurant" loading="lazy" width="800"
+                height="600"></a>
+            <figcaption>
+              <h3>La terrasse</h3>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card"><a class="gallery-photo-link" href="image/gallery/plat-assiette.jpg"><img
+                src="image/gallery/plat-assiette.jpg" alt="Assortiment de charcuterie et de fromages" loading="lazy"
+                width="800" height="600"></a>
+            <figcaption>
+              <h3>Assiette O’Tennis</h3>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card"><a class="gallery-photo-link" href="image/gallery/plat-tagliata.jpg"><img
+                src="image/gallery/plat-tagliata.jpg" alt="Tagliata de bœuf sur roquette avec parmesan et frites"
+                loading="lazy" width="800" height="600"></a>
+            <figcaption>
+              <h3>Tagliata de bœuf</h3>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card"><a class="gallery-photo-link" href="image/gallery/plat-poulet.jpg"><img
+                src="image/gallery/plat-poulet.jpg" alt="Blanc de poulet à la crème avec frites et tomate provençale"
+                loading="lazy" width="800" height="600"></a>
+            <figcaption>
+              <h3>Blanc de poulet à la crème</h3>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card"><a class="gallery-photo-link" href="image/gallery/plat-tartare.jpg"><img
+                src="image/gallery/plat-tartare.jpg" alt="Tartare de bœuf avec toasts, frites et condiments"
+                loading="lazy" width="800" height="600"></a>
+            <figcaption>
+              <h3>Tartare de bœuf</h3>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MENU (apercu) ===================== -->
+    <section id="menu" class="menu-teaser">
+      <div class="container menu-teaser-layout">
+        <div class="menu-teaser-photo">
+          <img src="image/gallery/plat-assiette.jpg" alt="L’assiette de charcuterie et de fromages d’O’Tennis"
+            width="788" height="1050" loading="lazy" decoding="async">
+        </div>
+        <div class="menu-teaser-copy">
+          <p class="section-soustitre">À table</p>
+          <h2 class="section-titre">La carte</h2>
+          <p class="menu-teaser-description">Plats maison, suggestions de saison, petites faims et une carte des vins et
+            des boissons.</p>
+          <a href="menu.html" class="btn">Voir la carte complète</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HORAIRES & CONTACT ===================== -->
+    <section class="alt" id="contact">
+      <div class="container">
+        <p class="section-soustitre">On vous attend</p>
+        <h2 class="section-titre">Horaires &amp; Contact</h2>
+        <p class="contact-status opening-status" data-opening-status role="status" aria-live="polite">Consultez nos
+          horaires</p>
+
+        <div class="contact-grille">
+          <div class="bloc-infos">
+            <h3 class="contact-panel-title">Infos pratiques</h3>
+            <div class="ligne-info">
+              <span class="emoji">📍</span>
+              <div>
+                <strong>Adresse</strong><br>
+                Vie des Crêts 49<br>
+                2732 Reconvilier, Suisse
+              </div>
+            </div>
+            <div class="ligne-info">
+              <span class="emoji">📞</span>
+              <div>
+                <strong>Téléphone</strong><br>
+                <a href="tel:+41324814831">032 481 48 31</a>
+              </div>
+            </div>
+            <div class="ligne-info">
+              <span class="emoji">✉️</span>
+              <div>
+                <strong>Email</strong><br>
+                <!-- EMPLACEMENT : email à ajouter -->
+                <a href="#" data-email-user="Krystebitz" data-email-domaine="hotmail.com">Email</a>
+                <noscript>Activez JavaScript pour voir l'adresse, ou appelez-nous directement.</noscript>
+              </div>
+            </div>
+            <div class="ligne-info">
+              <span class="emoji">🍽️</span>
+              <div>
+                <strong>Réservation</strong><br>
+                Par téléphone ou directement sur place
+              </div>
+            </div>
+
+            <div class="contact-reseaux">
+              <a class="instagram-link" href="https://www.instagram.com/otennis_chez_kryste/" target="_blank"
+                rel="noopener noreferrer" aria-label="Instagram (nouvel onglet)" title="Instagram">
+                <img src="image/instagram.svg" width="22" height="22" alt="">
+              </a>
+            </div>
+
+            <table class="horaires">
+              <tr>
+                <td>Lundi</td>
+                <td>Fermé</td>
+              </tr>
+              <tr>
+                <td>Mardi</td>
+                <td>10h00 - 22h00</td>
+              </tr>
+              <tr>
+                <td>Mercredi</td>
+                <td>10h00 - 22h00</td>
+              </tr>
+              <tr>
+                <td>Jeudi</td>
+                <td>10h00 - 22h00</td>
+              </tr>
+              <tr>
+                <td>Vendredi</td>
+                <td>10h00 - 22h30</td>
+              </tr>
+              <tr>
+                <td>Samedi</td>
+                <td>10h00 - 22h30</td>
+              </tr>
+              <tr>
+                <td>Dimanche</td>
+                <td>10h00 - 22h00</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="carte-embed">
+            <!-- Carte Google Maps : Vie des Crêts 49, 2732 Reconvilier -->
+            <iframe src="https://www.google.com/maps?q=Vie+des+Cr%C3%AAts+49,+2732+Reconvilier,+Suisse&output=embed"
+              loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Carte - O'Tennis Reconvilier"
+              sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- ===================== FOOTER ===================== -->
